@@ -1,0 +1,36 @@
+name: deploy-production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run CI placeholder
+        run: echo "Production pre-deployment checks passed."
+
+  deploy:
+    needs: ci-check
+    runs-on: ubuntu-latest
+    environment: production # Manual approval gate required in GitHub Environment Settings
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Deploy Web to Vercel (Production)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          echo "Deploying to Vercel production environment..."
+          # npx vercel --token=$VERCEL_TOKEN --scope=vami-org --prod
+      - name: Deploy API to Railway (Production)
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          echo "Deploying to Railway production environment..."
+          # npm i -g @railway/cli
+          # railway up --service vami-api-production

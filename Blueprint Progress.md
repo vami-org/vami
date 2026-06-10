@@ -6,8 +6,8 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 
 ## 📊 Summary Dashboard
 
-- **Current Sprint/Week:** Phase 0, Week 1
-- **Overall Completion:** ~20% (22/100+ Core Setup Tasks)
+- **Current Sprint/Week:** Phase 0, Week 2
+- **Overall Completion:** ~25% (27/100+ Core Setup Tasks)
 - **Status Key:**
   - 🟢 **Completed:** Work is done, verified, and merged.
   - 🟡 **In Progress:** Active work is being planned or executed.
@@ -19,9 +19,10 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 
 ### 🟡 Phase 0: Foundation Setup (Weeks 1–2)
 
-#### 🟡 Week 1 — Repository, Environment, Toolchain
+#### 🟢 Week 1 — Repository, Environment, Toolchain
+
 **Goal:** Every developer has an identical, working local environment. Repository exists. CI runs. No feature code yet.
-*Status: In Progress (AI Skeletons & Configs Completed, User GitHub Config Pending)*
+_Status: Completed_
 
 - **Completed Tasks:**
   - [x] Day 1: Initialize monorepo directory structure (all folders)
@@ -30,6 +31,7 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
   - [x] Day 1: Create `.gitignore` (comprehensive)
   - [x] Day 1: Create `.gitattributes` (enforces LF)
   - [x] Day 1: Create `.nvmrc` (node version 20.11.0)
+  - [x] Day 1: Create GitHub organization (`vami-org`) & private repository (`vami`) (Manual)
   - [x] Day 2: Create `packages/config/` shared config packages (ESLint, Prettier, Jest)
   - [x] Day 2: Install and configure ESLint & Prettier in root workspace (with `.eslintrc.js`)
   - [x] Day 3: Initialize `apps/api/` — Express app skeleton
@@ -46,28 +48,42 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
   - [x] Day 5: Create Pull Request template (`.github/PULL_REQUEST_TEMPLATE.md`)
   - [x] Day 5: Create Issue Templates (`bug_report.md`, `feature_request.md`, `task.md`)
   - [x] Day 5: Create `.github/CODEOWNERS` configuration file
-
-- **Remaining Tasks (User Manual Actions):**
-  - [ ] Day 1: Create GitHub organization (`vami-org`) & private repository (`vami`)
-  - [ ] Day 5: Configure branch protection rules on GitHub for `main` and `develop`
-  - [ ] Day 5: Add all team members to organization/repository
-  - [ ] Day 6-7: Developers follow `LOCAL_SETUP.md` from scratch and check environment alignment
+  - [x] Day 5: Configure branch protection rules on GitHub for `main` and `develop` (Manual)
+  - [x] Day 5: Add all team members to organization/repository (Manual)
+  - [x] Day 6-7: Developers follow `LOCAL_SETUP.md` from scratch and check environment alignment (Manual)
 
 ---
 
-#### ⚪ Week 2 — CI/CD Pipeline & Design Token Foundation
+#### 🟡 Week 2 — CI/CD Pipeline & Design Token Foundation
+
 **Goal:** CI runs on every PR. Design tokens defined. Staging and production environments created.
-*Status: Remaining*
-- [ ] Day 8-9 (Dev 1): Write `ci-web.yml` and `ci-api.yml` GitHub Actions workflows
-- [ ] Day 10-11 (Dev 1/3): Create Vercel, Railway, Neon.tech, Upstash accounts and configure environments
-- [ ] Day 10-11 (Dev 1): Write `deploy-staging.yml` and `deploy-production.yml` workflows
-- [ ] Day 12-13 (Dev 2): Create `tokens.css`, `globals.css`, `typography.css` in `apps/web/src/styles/`
-- [ ] Day 14 (All): Perform sprint retro, document tokens in `docs/design-system/TOKENS.md`
+_Status: In Progress (AI Skeletons & Configs Completed, User manual actions remaining)_
+
+- **Completed Tasks:**
+  - [x] Day 8-9 (Dev 1): Write `ci-web.yml` GitHub Actions workflow (lint + test + build jobs)
+  - [x] Day 8-9 (Dev 1): Write `ci-api.yml` GitHub Actions workflow (lint + test + security jobs)
+  - [x] Day 8-9 (Dev 1): Add PostgreSQL and Redis service containers to api CI workflow
+  - [x] Day 12-13 (Dev 2): Create `apps/web/src/styles/tokens.css` with CSS custom properties
+  - [x] Day 12-13 (Dev 2): Create `apps/web/src/styles/globals.css` with base layout resets
+  - [x] Day 12-13 (Dev 2): Create `apps/web/src/styles/typography.css` with font-scale configuration
+  - [x] Day 12-13 (Dev 2): Verify tokens load correctly and document token definitions in `docs/design-system/TOKENS.md`
+
+- **Remaining Tasks (User Manual Actions):**
+  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Vercel project linked to GitHub repository
+  - [ ] Day 10-11 (Dev 1 + Dev 3): Configure Vercel staging & production environments
+  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Railway project
+  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Neon.tech databases for staging and production
+  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Upstash Redis databases for staging and production
+  - [ ] Day 10-11 (Dev 1): Write `deploy-staging.yml` deployment workflow
+  - [ ] Day 10-11 (Dev 1): Write `deploy-production.yml` deployment workflow with manual approval gate
+  - [ ] Day 10-11 (Dev 1): Test staging deployment pipeline
 
 ---
 
 ### ⚪ Phase 1: Core Infrastructure (Weeks 3–10)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 3:** Database Schema & Migrations
 - **Week 4:** Authentication System (Backend)
 - **Week 5:** Authentication System (Frontend)
@@ -80,7 +96,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 2: Editor & Publishing (Weeks 11–20)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 11:** Editor Foundation (Tiptap Integration)
 - **Week 12:** Editor Block System (Images & Code)
 - **Week 13:** Editor Block System (Tables, Embeds, Math)
@@ -95,7 +113,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 3: Monetization (Weeks 21–28)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 21:** Stripe Integration Foundation
 - **Week 22:** Platform Membership (Reader Tiers)
 - **Week 23:** Creator Subscription Tiers
@@ -108,7 +128,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 4: AI Features (Weeks 29–36)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 29:** AI Writing Assistant (Backend)
 - **Week 30:** AI Writing Assistant (Frontend)
 - **Week 31:** Feed Recommendation Algorithm V2
@@ -121,7 +143,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 5: Community (Weeks 37–44)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 37:** Reaction System
 - **Week 38:** Inline Paragraph Comments
 - **Week 39:** Notification System
@@ -134,7 +158,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 6: Quality & Launch (Weeks 45–52)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 45:** Performance Audit & Optimization
 - **Week 46:** SEO System
 - **Week 47:** Accessibility Audit (WCAG AA)
