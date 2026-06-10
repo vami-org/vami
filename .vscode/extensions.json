@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "aaron-bond.better-comments",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "wix.vscode-import-cost",
+    "usernamehakobyan.errorlens",
+    "rangav.vscode-thunder-client",
+    "ms-azuretools.vscode-docker",
+    "ckolkman.vscode-postgres"
+  ]
+}

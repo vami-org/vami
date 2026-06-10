@@ -1,0 +1,14 @@
+# Set default behavior to force all files to have LF line endings
+* text=auto eol=lf
+
+# Force specific Windows files to keep CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Denote binary files (should not be modified by line ending rules)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary

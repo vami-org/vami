@@ -1,0 +1,11 @@
+{
+  "name": "@vami/config",
+  "version": "1.0.0",
+  "private": true,
+  "main": "eslint-base.js",
+  "files": [
+    "eslint-base.js",
+    "prettier.js",
+    "jest.base.js"
+  ]
+}

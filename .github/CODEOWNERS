@@ -1,0 +1,18 @@
+# Global fallback — any unowned file requires Dev 1 approval
+*                               @vami-org/dev1
+
+# Frontend — Dev 2 is required reviewer
+apps/web/                       @vami-org/dev2
+packages/ui/                    @vami-org/dev2
+
+# Backend — Dev 1 is required reviewer
+apps/api/                       @vami-org/dev1
+apps/api/database/              @vami-org/dev1
+
+# AI features — Dev 3 is required reviewer
+apps/api/src/ai/                @vami-org/dev3
+apps/web/src/features/ai/       @vami-org/dev3
+
+# Shared config — all must approve
+packages/config/                @vami-org/dev1 @vami-org/dev2 @vami-org/dev3
+.github/                        @vami-org/dev1

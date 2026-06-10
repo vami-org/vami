@@ -1,0 +1,24 @@
+{
+  "name": "vami-root",
+  "private": true,
+  "engines": {
+    "node": "20.11.0",
+    "pnpm": "9.1.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter api --filter web dev",
+    "lint": "eslint \"apps/**/*.{js,jsx}\" \"packages/**/*.{js,jsx}\" --max-warnings 0",
+    "format:check": "prettier --check \"**/*.{js,jsx,json,md,css,html,yml,yaml}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,css,html,yml,yaml}\"",
+    "services:up": "docker compose -f docker-compose.dev.yml up -d",
+    "services:down": "docker compose -f docker-compose.dev.yml down",
+    "services:reset": "docker compose -f docker-compose.dev.yml down -v && docker compose -f docker-compose.dev.yml up -d"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.5"
+  }
+}
