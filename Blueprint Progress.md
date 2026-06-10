@@ -20,8 +20,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ### 🟡 Phase 0: Foundation Setup (Weeks 1–2)
 
 #### 🟢 Week 1 — Repository, Environment, Toolchain
+
 **Goal:** Every developer has an identical, working local environment. Repository exists. CI runs. No feature code yet.
-*Status: Completed*
+_Status: Completed_
 
 - **Completed Tasks:**
   - [x] Day 1: Initialize monorepo directory structure (all folders)
@@ -54,8 +55,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 #### 🟡 Week 2 — CI/CD Pipeline & Design Token Foundation
+
 **Goal:** CI runs on every PR. Design tokens defined. Staging and production environments created.
-*Status: In Progress (AI Skeletons & Configs Completed, User manual actions remaining)*
+_Status: In Progress (AI Skeletons & Configs Completed, User manual actions remaining)_
 
 - **Completed Tasks:**
   - [x] Day 8-9 (Dev 1): Write `ci-web.yml` GitHub Actions workflow (lint + test + build jobs)
@@ -79,7 +81,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 1: Core Infrastructure (Weeks 3–10)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 3:** Database Schema & Migrations
 - **Week 4:** Authentication System (Backend)
 - **Week 5:** Authentication System (Frontend)
@@ -92,7 +96,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 2: Editor & Publishing (Weeks 11–20)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 11:** Editor Foundation (Tiptap Integration)
 - **Week 12:** Editor Block System (Images & Code)
 - **Week 13:** Editor Block System (Tables, Embeds, Math)
@@ -107,7 +113,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 3: Monetization (Weeks 21–28)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 21:** Stripe Integration Foundation
 - **Week 22:** Platform Membership (Reader Tiers)
 - **Week 23:** Creator Subscription Tiers
@@ -120,7 +128,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 4: AI Features (Weeks 29–36)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 29:** AI Writing Assistant (Backend)
 - **Week 30:** AI Writing Assistant (Frontend)
 - **Week 31:** Feed Recommendation Algorithm V2
@@ -133,7 +143,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 5: Community (Weeks 37–44)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 37:** Reaction System
 - **Week 38:** Inline Paragraph Comments
 - **Week 39:** Notification System
@@ -146,7 +158,9 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 ---
 
 ### ⚪ Phase 6: Quality & Launch (Weeks 45–52)
-*Status: Remaining*
+
+_Status: Remaining_
+
 - **Week 45:** Performance Audit & Optimization
 - **Week 46:** SEO System
 - **Week 47:** Accessibility Audit (WCAG AA)
