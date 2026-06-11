@@ -2,6 +2,8 @@ import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import env from "../config/env.js";
 import * as authRepo from "./authRepository.js";
+import redisClient from "../config/redis.js";
+import { AuthError } from "./errors.js";
 
 // Helper: SHA-256 Hasher
 function hashToken(token) {
@@ -106,22 +108,41 @@ export async function refreshAccessToken(refreshToken, userAgent, ipAddress) {
   try {
     decoded = jwt.verify(refreshToken, env.REFRESH_TOKEN_SECRET);
   } catch (err) {
-    throw new Error("Invalid refresh token signature");
+    throw new AuthError("Invalid refresh token signature", "UNAUTHORIZED");
   }
 
   if (!decoded || !decoded.jti) {
-    throw new Error("Invalid refresh token payload");
+    throw new AuthError("Invalid refresh token payload", "UNAUTHORIZED");
   }
 
   const hashed = hashToken(decoded.jti);
+
+  // 1. Check Redis grace period cache for concurrent requests
+  let cachedTokens;
+  try {
+    if (redisClient && redisClient.isOpen) {
+      const cached = await redisClient.get(`rotated_token:${hashed}`);
+      if (cached) {
+        cachedTokens = JSON.parse(cached);
+      }
+    }
+  } catch (err) {
+    console.error("Redis error during refresh grace check:", err);
+  }
+
+  if (cachedTokens) {
+    return cachedTokens;
+  }
+
+  // 2. Query Postgres database for the session
   const session = await authRepo.findSessionByHash(hashed);
 
   if (!session) {
-    throw new Error("Session not found or revoked");
+    throw new AuthError("Session not found or revoked", "UNAUTHORIZED");
   }
 
   if (new Date() > new Date(session.expires_at)) {
-    throw new Error("Session has expired");
+    throw new AuthError("Session has expired", "UNAUTHORIZED");
   }
 
   // Revoke the old session immediately (Token Rotation)
@@ -129,11 +150,29 @@ export async function refreshAccessToken(refreshToken, userAgent, ipAddress) {
 
   const user = await authRepo.findUserById(session.user_id);
   if (!user) {
-    throw new Error("User associated with this session no longer exists");
+    throw new AuthError(
+      "User associated with this session no longer exists",
+      "UNAUTHORIZED",
+    );
   }
 
   // Issue new rotated pair
-  return issueTokenPair(user, userAgent, ipAddress);
+  const newTokens = await issueTokenPair(user, userAgent, ipAddress);
+
+  // 3. Cache the new token pair in Redis grace cache with a 15-second TTL
+  try {
+    if (redisClient && redisClient.isOpen) {
+      await redisClient.setEx(
+        `rotated_token:${hashed}`,
+        15,
+        JSON.stringify(newTokens),
+      );
+    }
+  } catch (err) {
+    console.error("Redis error caching rotated token:", err);
+  }
+
+  return newTokens;
 }
 
 export async function revokeSession(refreshToken) {

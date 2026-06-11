@@ -1,16 +1,8 @@
 import crypto from "crypto";
-import { z } from "zod";
 import env from "../config/env.js";
 import * as authService from "../services/authService.js";
 import { sendMagicLinkEmail } from "../services/emailService.js";
-
-// Zod Input Schemas
-const emailSchema = z.string().email("Invalid email address");
-const tokenSchema = z.string().min(1, "Token is required");
-const oauthSchema = z.object({
-  provider: z.enum(["google", "github"]),
-  code: z.string().min(1, "OAuth code is required"),
-});
+import { AuthError, ValidationError } from "../services/errors.js";
 
 // Cookie Configuration Helpers
 const COOKIE_NAME = "refresh_token";
@@ -22,9 +14,9 @@ const getCookieOptions = () => ({
   path: "/",
 });
 
-export async function magicLink(req, res) {
+export async function magicLink(req, res, next) {
   try {
-    const email = emailSchema.parse(req.body.email);
+    const email = req.body.email;
     const token = await authService.generateMagicLinkToken(email);
 
     // Build URL pointing to Vite frontend auth verify route
@@ -37,21 +29,13 @@ export async function magicLink(req, res) {
       message: "Magic link sent successfully. Please check your inbox.",
     });
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return res
-        .status(400)
-        .json({ success: false, error: error.errors[0].message });
-    }
-    console.error("Error in magicLink controller:", error);
-    return res
-      .status(500)
-      .json({ success: false, error: "Failed to process magic link request" });
+    next(error);
   }
 }
 
-export async function verifyMagicLink(req, res) {
+export async function verifyMagicLink(req, res, next) {
   try {
-    const token = tokenSchema.parse(req.body.token);
+    const token = req.body.token;
     const userAgent = req.headers["user-agent"] || null;
     const ipAddress = req.ip || null;
 
@@ -78,26 +62,22 @@ export async function verifyMagicLink(req, res) {
       },
     });
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return res
-        .status(400)
-        .json({ success: false, error: error.errors[0].message });
+    // If it's a verification token error, map it to 401 AuthError
+    if (
+      error.message &&
+      (error.message.includes("Invalid") || error.message.includes("expired"))
+    ) {
+      return next(new AuthError(error.message, "UNAUTHORIZED"));
     }
-    console.error("Error in verifyMagicLink controller:", error.message);
-    return res.status(401).json({
-      success: false,
-      error: error.message || "Invalid or expired token",
-    });
+    next(error);
   }
 }
 
-export async function refresh(req, res) {
+export async function refresh(req, res, next) {
   try {
     const refreshToken = req.cookies[COOKIE_NAME];
     if (!refreshToken) {
-      return res
-        .status(401)
-        .json({ success: false, error: "Refresh token is missing" });
+      throw new AuthError("Refresh token is missing", "UNAUTHORIZED");
     }
 
     const userAgent = req.headers["user-agent"] || null;
@@ -114,16 +94,13 @@ export async function refresh(req, res) {
       accessToken,
     });
   } catch (error) {
-    console.error("Error in refresh controller:", error.message);
     // Clear cookie on verification failure
     res.clearCookie(COOKIE_NAME, { path: "/" });
-    return res
-      .status(401)
-      .json({ success: false, error: error.message || "Invalid session" });
+    next(error);
   }
 }
 
-export async function logout(req, res) {
+export async function logout(req, res, next) {
   try {
     const refreshToken = req.cookies[COOKIE_NAME];
     if (refreshToken) {
@@ -134,10 +111,7 @@ export async function logout(req, res) {
       .status(200)
       .json({ success: true, message: "Logged out successfully" });
   } catch (error) {
-    console.error("Error in logout controller:", error);
-    return res
-      .status(500)
-      .json({ success: false, error: "Failed to logout session" });
+    next(error);
   }
 }
 
@@ -149,9 +123,9 @@ export async function me(req, res) {
   });
 }
 
-export async function oauth(req, res) {
+export async function oauth(req, res, next) {
   try {
-    const { provider, code } = oauthSchema.parse(req.body);
+    const { provider, code } = req.body;
     const userAgent = req.headers["user-agent"] || null;
     const ipAddress = req.ip || null;
 
@@ -164,9 +138,7 @@ export async function oauth(req, res) {
       env.NODE_ENV === "staging"
     ) {
       if (code === "mock_invalid_code") {
-        return res
-          .status(400)
-          .json({ success: false, error: "OAuth code exchange failed" });
+        throw new ValidationError("OAuth code exchange failed");
       }
       // Return a simulated OAuth profile response
       oauthUser = {
@@ -298,7 +270,7 @@ export async function oauth(req, res) {
     }
 
     if (!oauthUser) {
-      throw new Error("OAuth profile resolution failed");
+      throw new AuthError("OAuth profile resolution failed", "UNAUTHORIZED");
     }
 
     const user = await authService.oauthLogin(
@@ -331,15 +303,6 @@ export async function oauth(req, res) {
       },
     });
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return res
-        .status(400)
-        .json({ success: false, error: error.errors[0].message });
-    }
-    console.error("Error in oauth controller:", error.message);
-    return res.status(400).json({
-      success: false,
-      error: error.message || "OAuth authentication failed",
-    });
+    next(error);
   }
 }

@@ -15,6 +15,9 @@ export function AuthProvider({ children }) {
       try {
         const refreshData = await authService.refresh();
         if (refreshData.success && refreshData.accessToken) {
+          // Pre-populate accessToken in the state store so that apiClient request interceptor
+          // can attach it immediately when fetching the user's profile
+          useAuthStore.setState({ accessToken: refreshData.accessToken });
           const profileData = await authService.fetchProfile();
           setAuth(profileData.user, refreshData.accessToken);
         } else {

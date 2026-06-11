@@ -19,6 +19,17 @@ jest.unstable_mockModule("./authRepository.js", () => {
   };
 });
 
+// Mock the Redis client to prevent real Redis connections or caches during unit tests
+jest.unstable_mockModule("../config/redis.js", () => {
+  return {
+    default: {
+      isOpen: false,
+      get: jest.fn().mockResolvedValue(null),
+      setEx: jest.fn().mockResolvedValue(null),
+    },
+  };
+});
+
 // Import dynamically after mock registration
 const authRepo = await import("./authRepository.js");
 const authService = await import("./authService.js");
