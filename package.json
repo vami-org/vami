@@ -13,13 +13,18 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md,css,html,yml,yaml}\"",
     "services:up": "docker compose -f docker-compose.dev.yml up -d",
     "services:down": "docker compose -f docker-compose.dev.yml down",
-    "services:reset": "docker compose -f docker-compose.dev.yml down -v && docker compose -f docker-compose.dev.yml up -d"
+    "services:reset": "docker compose -f docker-compose.dev.yml down -v && docker compose -f docker-compose.dev.yml up -d",
+    "db:migrate": "pnpm --filter api db:migrate",
+    "db:rollback": "pnpm --filter api db:rollback",
+    "db:seed": "pnpm --filter api db:seed"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "dotenv": "^16.4.5",
+    "pg": "^8.11.5"
   }
 }
