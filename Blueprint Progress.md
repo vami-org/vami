@@ -6,8 +6,8 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 
 ## 📊 Summary Dashboard
 
-- **Current Sprint/Week:** Phase 1, Week 4
-- **Overall Completion:** ~40% (47/100+ Core Setup Tasks)
+- **Current Sprint/Week:** Phase 1, Week 5
+- **Overall Completion:** ~45% (54/100+ Core Setup Tasks)
 - **Status Key:**
   - 🟢 **Completed:** Work is done, verified, and merged.
   - 🟡 **In Progress:** Active work is being planned or executed.
@@ -95,8 +95,24 @@ _Status: Completed_
   - [x] Day 19 (Dev 1): Verify local Postgres migration up/down database workflows
   - [x] Day 20-21 (Dev 1): Document monorepo structure, commands, and schema definitions in workspace `README.md`
 
+---
+
+#### 🟢 Week 4 — Authentication System (Backend)
+
+**Goal:** Implement Magic Link email authentication, secure token-rotation sessions, Redis rate limiting, and OAuth backend flows.
+_Status: Completed_
+
+- **Completed Tasks:**
+  - [x] Day 22 (Dev 1): Install `jsonwebtoken`, `cookie-parser`, and `nodemailer` dependencies
+  - [x] Day 22 (Dev 1): Define env validation rules for JWT parameters and SMTP settings
+  - [x] Day 23 (Dev 1): Implement Postgres connection pool and Redis connection wrappers
+  - [x] Day 23-24 (Dev 1): Create authRepository.js and authService.js (magic link tokens, verifications, cookie sessions)
+  - [x] Day 24 (Dev 1): Write emailService helper integrating Nodemailer with HTML templates and MailHog
+  - [x] Day 25 (Dev 1): Implement auth controller endpoints, JWT extraction middleware, and Redis-backed rate limiting
+  - [x] Day 26 (Dev 2): Build interactive frontend Authentication Sandbox inside `apps/web/src/App.jsx`
+  - [x] Day 27 (Dev 3): Write full Jest and supertest unit and integration test suites, achieving passing coverage metrics
+
 - **Remaining Tasks:**
-  - [ ] **Week 4:** Authentication System (Backend)
   - [ ] **Week 5:** Authentication System (Frontend)
   - [ ] **Week 6:** User Profile System & Follows
   - [ ] **Week 7:** Atom Component Library (Part 1)
