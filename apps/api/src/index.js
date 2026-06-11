@@ -4,7 +4,9 @@ import db from "./config/db.js";
 import redisClient from "./config/redis.js";
 
 const server = app.listen(env.PORT, () => {
-  console.info(`🚀 Server running in ${env.NODE_ENV} mode on port ${env.PORT}`);
+  console.info(
+    `🚀 Server running in ${(env.NODE_ENV, env.DATABASE_URL)} mode on port ${env.PORT}`,
+  );
   console.info(`👉 API Health endpoint: ${env.APP_URL}/health`);
 });
 

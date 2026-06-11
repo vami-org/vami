@@ -14,6 +14,19 @@ Vami implements a passwordless **Magic Link** authentication and **OAuth** (Goog
 
 ---
 
+## 👤 User Profile System & Follows (Week 6 Implementation)
+
+Vami implements a flexible profile management and social networking system:
+
+- **Profile Customization**: Users can edit their display name, biography, website URL, and upload custom avatars.
+- **Avatar Media Uploader**: Features direct-to-Cloudinary signed uploads. If Cloudinary credentials are not configured, it gracefully falls back to a developer mockup upload returning auto-generated SVG avatars.
+- **Account Privacy**: Users can choose to set their profiles as private. Private accounts place a content lock guarding their articles feed from non-followers.
+- **Follow Request Workflow**:
+  - Following a **public** profile immediately establishes an `accepted` follow relationship.
+  - Following a **private** profile initiates a `pending` request, which the target user can review, accept, or reject via their Dashboard's Follow Requests tab.
+
+---
+
 ## 📁 Repository Architecture
 
 This codebase is configured as a `pnpm` workspace monorepo:

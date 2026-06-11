@@ -63,3 +63,35 @@ export default async function authMiddleware(req, res, next) {
     });
   }
 }
+
+export async function optionalAuthMiddleware(req, res, next) {
+  try {
+    const authHeader = req.headers.authorization;
+    if (authHeader && authHeader.startsWith("Bearer ")) {
+      const token = authHeader.split(" ")[1];
+      let decoded;
+      try {
+        decoded = jwt.verify(token, env.JWT_SECRET);
+        if (decoded && decoded.sub) {
+          const user = await authRepo.findUserById(decoded.sub);
+          if (user) {
+            req.user = {
+              id: user.id,
+              email: user.email,
+              username: user.username,
+              display_name: user.display_name,
+              is_creator: user.is_creator,
+              creator_tier: user.creator_tier,
+            };
+          }
+        }
+      } catch (err) {
+        // Fail silently for optional auth
+      }
+    }
+    return next();
+  } catch (error) {
+    // Fail silently and proceed
+    return next();
+  }
+}
