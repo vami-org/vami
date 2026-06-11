@@ -5,6 +5,7 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import env from "./env.js";
 import authRoutes from "../routes/authRoutes.js";
+import userRoutes from "../routes/userRoutes.js";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Mount routes
 app.use("/auth", authRoutes);
+app.use("/v1", userRoutes);
 
 // Basic health check
 app.get("/health", (req, res) => {

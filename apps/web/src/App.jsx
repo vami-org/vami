@@ -6,6 +6,7 @@ import { Login } from "./pages/Login";
 import { Verify } from "./pages/Verify";
 import { Dashboard } from "./pages/Dashboard";
 import { DevSandbox } from "./pages/DevSandbox";
+import { UserProfile } from "./pages/UserProfile";
 
 import "./styles/globals.css";
 import "./styles/typography.css";
@@ -31,6 +32,9 @@ export default function App() {
 
           {/* Developer Sandbox Testing route */}
           <Route path="/dev-sandbox" element={<DevSandbox />} />
+
+          {/* Public Profile views */}
+          <Route path="/users/:username" element={<UserProfile />} />
 
           {/* Root Redirect mapping */}
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
