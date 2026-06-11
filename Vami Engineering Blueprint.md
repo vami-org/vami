@@ -2106,37 +2106,37 @@ DAY 14 (All devs):
 
 ```
 TASKS:
-  □ Install node-pg-migrate
-  □ Configure migration runner (npm script: db:migrate, db:rollback, db:status)
-  □ Create migration: users table (with all columns from schema spec)
-  □ Create migration: user_sessions table
-  □ Create migration: oauth_providers table
-  □ Create migration: articles table (with body_json, all status checks)
-  □ Create migration: article_revisions table
-  □ Create migration: tags and article_tags tables
-  □ Create migration: media_files and article_media tables
-  □ Create migration: follow_relationships table
-  □ Create migration: article_bookmarks table
-  □ Create migration: article_reactions table
-  □ Create migration: reading_sessions table
-  □ Create migration: annotations table
-  □ Create migration: circles and circle_members tables
-  □ Create migration: comments and comment_reactions tables
-  □ Create migration: platform_memberships table
-  □ Create migration: creator_subscriptions table
-  □ Create migration: creator_tiers table
-  □ Create migration: partner_pool_periods table
-  □ Create migration: article_earnings table
-  □ Create migration: creator_payouts table
-  □ Create migration: stripe_events table
-  □ Create migration: notifications table
-  □ Create migration: newsletter_sends and email_events tables
-  □ Create migration: ai_usage_log table
-  □ Create migration: audit_log table
-  □ Create comprehensive seed file for development data
-  □ Verify: all migrations run forward cleanly
-  □ Verify: all migrations roll back cleanly
-  □ Add pgvector extension migration (for article embeddings — Week 20)
+  [x] Install node-pg-migrate (Completed)
+  [x] Configure migration runner (npm script: db:migrate, db:rollback, db:status) (Completed)
+  [x] Create migration: users table (with all columns from schema spec) (Completed)
+  [x] Create migration: user_sessions table (Completed)
+  [x] Create migration: oauth_providers table (Completed)
+  [x] Create migration: articles table (with body_json, all status checks) (Completed)
+  [x] Create migration: article_revisions table (Completed)
+  [x] Create migration: tags and article_tags tables (Completed)
+  [x] Create migration: media_files and article_media tables (Completed)
+  [x] Create migration: follow_relationships table (Completed)
+  [x] Create migration: article_bookmarks table (Completed)
+  [x] Create migration: article_reactions table (Completed)
+  [x] Create migration: reading_sessions table (Completed)
+  [x] Create migration: annotations table (Completed)
+  [x] Create migration: circles and circle_members tables (Completed)
+  [x] Create migration: comments and comment_reactions tables (Completed)
+  [x] Create migration: platform_memberships table (Completed)
+  [x] Create migration: creator_subscriptions table (Completed)
+  [x] Create migration: creator_tiers table (Completed)
+  [x] Create migration: partner_pool_periods table (Completed)
+  [x] Create migration: article_earnings table (Completed)
+  [x] Create migration: creator_payouts table (Completed)
+  [x] Create migration: stripe_events table (Completed)
+  [x] Create migration: notifications table (Completed)
+  [x] Create migration: newsletter_sends and email_events tables (Completed)
+  [x] Create migration: ai_usage_log table (Completed)
+  [x] Create migration: audit_log table (Completed)
+  [x] Create comprehensive seed file for development data (Completed)
+  [x] Verify: all migrations run forward cleanly (Completed)
+  [x] Verify: all migrations roll back cleanly (Completed)
+  [x] Add pgvector extension migration (for article embeddings — Week 20) (Completed)
 
 Branch naming: feat/[nn]-create-[table]-migration for each table
 Consolidated commit message example:
