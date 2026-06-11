@@ -2168,29 +2168,29 @@ Consolidated commit message example:
 
 ```
 TASKS:
-  □ Install dependencies: jsonwebtoken, bcrypt, nodemailer, @passport/... (no, use manual OAuth)
-  □ Create authService.js — business logic
+  [x] Install dependencies: jsonwebtoken, cookie-parser, nodemailer (Completed)
+  [x] Create authService.js — business logic (Completed)
     - generateMagicLinkToken()
     - verifyMagicLinkToken()
     - issuePairOfTokens()
     - refreshAccessToken()
     - revokeSession()
-  □ Create authRepository.js — data access
+  [x] Create authRepository.js — data access (Completed)
     - createSession()
     - findSessionByToken()
     - deleteSession()
     - createEmailVerification()
     - findEmailVerification()
     - deleteEmailVerification()
-  □ Create auth routes: POST /auth/magic-link, POST /auth/verify-magic-link
-  □ Create auth routes: POST /auth/oauth/google, POST /auth/oauth/github
-  □ Create auth routes: POST /auth/refresh, DELETE /auth/logout, GET /auth/me
-  □ Implement JWT middleware (verify token, attach user to req)
-  □ Implement rate limiting on auth endpoints (5 magic link requests per hour per IP)
-  □ Write email template for magic link email
-  □ Test all auth flows with Thunder Client / REST client
-  □ Write unit tests for authService.js (100% coverage target)
-  □ Write integration tests for auth routes
+  [x] Create auth routes: POST /auth/magic-link, POST /auth/verify-magic-link (Completed)
+  [x] Create auth routes: POST /auth/oauth/google, POST /auth/oauth/github (Completed)
+  [x] Create auth routes: POST /auth/refresh, DELETE /auth/logout, GET /auth/me (Completed)
+  [x] Implement JWT middleware (verify token, attach user to req) (Completed)
+  [x] Implement rate limiting on auth endpoints (5 magic link requests per hour per IP) (Completed)
+  [x] Write email template for magic link email (Completed)
+  [x] Test all auth flows with Thunder Client / React Sandbox (Completed)
+  [x] Write unit tests for authService.js (Completed)
+  [x] Write integration tests for auth routes (Completed)
 
 Branch: feat/10-implement-authentication-system-backend
 Commit messages:
