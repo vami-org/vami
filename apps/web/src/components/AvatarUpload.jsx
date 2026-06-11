@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import apiClient from "../services/apiClient";
-import { VamiAvatar } from "./VamiAvatar";
+import { VamiAvatar } from "./atoms/VamiAvatar";
 
 export function AvatarUpload({ currentAvatarUrl, onUploadSuccess, name }) {
   const [isUploading, setIsUploading] = useState(false);

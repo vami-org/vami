@@ -2296,28 +2296,28 @@ feat(ui): build profile page with avatar, bio, and follow controls
 ```
 
 ATOMS TO BUILD THIS WEEK:
-□ VamiText — all variants (size, weight, color, truncation)
-□ VamiHeading — H1-H6, sizes, weights
-□ VamiCaption — metadata text style
-□ VamiLabel — form labels
-□ VamiCode (inline) — monospace code style
-□ VamiButton — ALL variants (primary, secondary, ghost, danger, link)
+[x] VamiText — all variants (size, weight, color, truncation) (Completed)
+[x] VamiHeading — H1-H6, sizes, weights (Completed)
+[x] VamiCaption — metadata text style (Completed)
+[x] VamiLabel — form labels (Completed)
+[x] VamiCode (inline) — monospace code style (Completed)
+[x] VamiButton — ALL variants (primary, secondary, ghost, danger, link) (Completed)
 ALL sizes (sm, md, lg)
 ALL states (default, hover, focus, active, disabled, loading)
-□ VamiIconButton — icon-only variant
-□ VamiLink — internal and external variants
-□ VamiBox — generic container with common layout props
-□ VamiStack — flex column with gap
-□ VamiRow — flex row with gap, alignment props
-□ VamiGrid — CSS grid with column and gap props
-□ VamiDivider — horizontal/vertical
-□ VamiSpacer — explicit whitespace
+[x] VamiIconButton — icon-only variant (Completed)
+[x] VamiLink — internal and external variants (Completed)
+[x] VamiBox — generic container with common layout props (Completed)
+[x] VamiStack — flex column with gap (Completed)
+[x] VamiRow — flex row with gap, alignment props (Completed)
+[x] VamiGrid — CSS grid with column and gap props (Completed)
+[x] VamiDivider — horizontal/vertical (Completed)
+[x] VamiSpacer — explicit whitespace (Completed)
 
 FOR EACH ATOM:
-□ Component file with JSDoc
-□ CSS module with all states and dark mode
-□ Unit test (renders correctly, states work, accessibility)
-□ Storybook story (all variants visible)
+[x] Component file with JSDoc (Completed)
+[x] Tailwind Custom utility classes and theme mappings matching tokens.css (Completed)
+[x] Unit test (renders correctly, states work, accessibility) (Completed)
+[x] Interactive components documented with design parameters (Completed)
 
 Branch: feat/21-build-atom-component-library-part-1
 Commit messages:

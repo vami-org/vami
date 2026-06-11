@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import apiClient from "../services/apiClient";
-import { VamiAvatar } from "./VamiAvatar";
-import { VamiButton } from "./VamiButton";
+import { VamiAvatar } from "./atoms/VamiAvatar";
+import { VamiButton } from "./atoms/VamiButton";
 
 export function FollowRequestsList() {
   const [requests, setRequests] = useState([]);

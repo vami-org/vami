@@ -27,6 +27,18 @@ Vami implements a flexible profile management and social networking system:
 
 ---
 
+## 🎨 Atom Component Library (Week 7 Implementation)
+
+Vami implements a pure presentational UI layout, typography, and interactive atomic layer under `apps/web/src/components/atoms/`:
+
+- **Typography Atoms**: `VamiText`, `VamiHeading` (standardizes levels H1–H6), `VamiCaption`, `VamiLabel`, and `VamiCode` map directly to design token text utilities.
+- **Interactive Atoms**:
+  - `VamiButton` and `VamiIconButton` map styles to tokens, support loading spinners, and enforce accessibility by issuing development-mode console warnings if `aria-label` or `aria-labelledby` attributes are missing on icon-only elements.
+  - `VamiLink` is polymorphic: it automatically detects external targets (commencing with `http`, `mailto:`, `tel:`) to render standard anchor tags with `target="_blank" rel="noreferrer"` security settings, and routes internal links via `react-router-dom`'s `<Link>`.
+- **Layout & Structure Atoms**: `VamiBox`, `VamiStack`, `VamiRow`, and `VamiGrid` use dynamic CSS custom property styles (e.g. `var(--space-[value])`) connected to `tokens.css` spacing metrics to prevent static class bloated layouts.
+
+---
+
 ## 📁 Repository Architecture
 
 This codebase is configured as a `pnpm` workspace monorepo:
