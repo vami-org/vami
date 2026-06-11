@@ -11,13 +11,18 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@vami/utils": "workspace:*",
+    "axios": "^1.17.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@vami/utils": "workspace:*"
+    "react-router-dom": "^7.17.0",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
     "@vitejs/plugin-react": "^4.3.0",
     "jsdom": "^24.0.0",
+    "tailwindcss": "^4.3.0",
     "vite": "^5.2.11",
     "vitest": "^1.6.0"
   }

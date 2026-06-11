@@ -1,4 +1,48 @@
+@import "tailwindcss";
 @import "./tokens.css";
+
+@theme {
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-600: var(--color-ink-600);
+  --color-ink-400: var(--color-ink-400);
+  --color-ink-200: var(--color-ink-200);
+  --color-ink-100: var(--color-ink-100);
+  --color-ink-050: var(--color-ink-050);
+
+  --color-amber-500: var(--color-amber-500);
+  --color-amber-400: var(--color-amber-400);
+  --color-amber-100: var(--color-amber-100);
+
+  --color-surface-white: var(--color-surface-white);
+  --color-surface-warm: var(--color-surface-warm);
+  --color-surface-elevated: var(--color-surface-elevated);
+  --color-surface-sunken: var(--color-surface-sunken);
+
+  --color-success-500: var(--color-success-500);
+  --color-success-100: var(--color-success-100);
+  --color-error-500: var(--color-error-500);
+  --color-error-100: var(--color-error-100);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-100: var(--color-warning-100);
+  --color-info-500: var(--color-info-500);
+  --color-info-100: var(--color-info-100);
+
+  --color-border-default: var(--border-color-default);
+  --color-border-strong: var(--border-color-strong);
+  --color-border-focus: var(--border-color-focus);
+
+  --font-reading: var(--font-reading);
+  --font-ui: var(--font-ui);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-full: var(--radius-full);
+}
 
 /* Modern CSS Reset */
 *,
