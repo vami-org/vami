@@ -6,8 +6,8 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 
 ## 📊 Summary Dashboard
 
-- **Current Sprint/Week:** Phase 1, Week 8
-- **Overall Completion:** ~71% (79/110+ Core Setup Tasks)
+- **Current Sprint/Week:** Phase 1, Week 9
+- **Overall Completion:** ~77% (85/110+ Core Setup Tasks)
 - **Status Key:**
   - 🟢 **Completed:** Work is done, verified, and merged.
   - 🟡 **In Progress:** Active work is being planned or executed.
@@ -171,8 +171,33 @@ _Status: Completed_
   - [x] Maintained strict zero linting warnings and clean environment formatting across the codebase
   - [x] Fully documented design token mappings and atom properties in `docs/design-system/ATOMS.md`
 
+- **Completed Tasks:**
+  - [x] Day 49 (Dev 2): Extend `VamiAvatar` with online status indicators and xs/2xl sizing ranges
+  - [x] Day 49 (Dev 2): Implement custom accessibility form input components (`VamiInput`, `VamiTextarea`)
+  - [x] Day 50 (Dev 2): Implement custom selectors, toggles, and checkboxes (`VamiCheckbox`, `VamiRadio`, `VamiSelect`, `VamiSwitch`)
+  - [x] Day 51 (Dev 2): Implement visual utility atoms (`VamiBadge`, `VamiTag`, `VamiIcon`, `VamiProgressBar`, `VamiSpinner`, `VamiSkeleton`, `VamiImage`, `VamiFileUpload`)
+  - [x] Day 52 (Dev 2): Implement molecules directory and core field/search containers (`FormField`, `SearchBox`)
+  - [x] Day 53 (Dev 2): Implement global notifications popup overlay system (`Toast` + `useToast` Zustand store, `AlertBanner`)
+  - [x] Day 54 (Dev 2): Implement descriptive placeholder and metadata display cards (`EmptyState`, `ReadTimeDisplay`, `AuthorByline`)
+  - [x] Day 55 (Dev 3): Write detailed Vitest test suites in `atoms-molecules-v8.test.jsx` confirming clean fast execution
+
+---
+
+#### 🟢 Week 8 — Atom Component Library (Part 2) & Core Molecules
+
+**Goal:** Form atoms, visual atoms, and critical molecules complete.
+_Status: Completed_
+
+- **Completed Tasks:**
+  - [x] Built all 14 form, selection, and visual layout atom elements under `atoms/`
+  - [x] Established custom listbox combobox keyboard arrow events and hidden selects mirroring
+  - [x] Built all 7 layout molecules combining visuals, forms, and absolute stack cards under `molecules/`
+  - [x] Created lightweight notification toastManager store utilizing Zustand bindings
+  - [x] Wrote 24 detailed unit tests validating state selections, keystroke navigation, auto height, image fallbacks, and drag drops
+  - [x] Ensured zero linter warnings and clean prettier formatting rulesets
+  - [x] Updated repository guides and design documentation references
+
 - **Remaining Tasks:**
-  - [ ] **Week 8:** Atom Component Library (Part 2) + Core Molecules
   - [ ] **Week 9:** API Infrastructure (Middleware, Error Handling, Routing)
   - [ ] **Week 10:** Navigation, Layout, & Application Shell
 

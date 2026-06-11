@@ -39,6 +39,22 @@ Vami implements a pure presentational UI layout, typography, and interactive ato
 
 ---
 
+## 🧩 Atom Component Library (Part 2) & Core Molecules (Week 8 Implementation)
+
+Vami implements the remaining form/visual atoms (`apps/web/src/components/atoms/`) and structured layout molecules (`apps/web/src/components/molecules/`):
+
+- **Extended Form Atoms**: `VamiInput` and `VamiTextarea` (with content-driven auto-resizing height) enforce WCAG AA accessibility. `VamiCheckbox`, `VamiRadio`/`VamiRadioGroup`, and `VamiSwitch` provide custom toggle UI states.
+- **Custom Accessible Dropdown**: `VamiSelect` implements a fully keyboard-accessible listbox (`combobox` role) that syncs value changes to a hidden standard `<select>` element for form submissions.
+- **Visual Utility Atoms**: `VamiBadge`, `VamiTag` (with dismiss triggers), `VamiProgressBar`, `VamiSpinner`, `VamiSkeleton` (pulsing text/circle placeholders), `VamiImage` (broken source fallbacks), and `VamiFileUpload` (drag-and-drop handles) map directly to styling tokens.
+- **Self-Contained Icons**: `VamiIcon` houses a dictionary of 21 inline vector SVG elements, preventing layout asset resolution issues.
+- **Core Assembly Molecules**:
+  - `FormField` links input controls with labels, validation errors, and helper text.
+  - `SearchBox` combines search triggers with input reset button nodes.
+  - `Toast` popups manage notifications dynamically via `toastStore` (Zustand state manager) and a `<ToastContainer />` viewport stack.
+  - `AlertBanner`, `EmptyState`, `ReadTimeDisplay` (clock estimates), and `AuthorByline` (author meta info header blocks).
+
+---
+
 ## 📁 Repository Architecture
 
 This codebase is configured as a `pnpm` workspace monorepo:
