@@ -2,6 +2,8 @@ import { Router } from "express";
 import * as authController from "../controllers/authController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 import createRateLimiter from "../middlewares/rateLimiter.js";
+import validate from "../middlewares/validate.js";
+import { z } from "zod";
 
 const router = Router();
 
@@ -13,11 +15,46 @@ const magicLinkRateLimiter = createRateLimiter({
 });
 
 // Authentication endpoints
-router.post("/magic-link", magicLinkRateLimiter, authController.magicLink);
-router.post("/verify-magic-link", authController.verifyMagicLink);
+router.post(
+  "/magic-link",
+  magicLinkRateLimiter,
+  validate(
+    z.object({
+      body: z.object({
+        email: z.string().email("Invalid email address"),
+      }),
+    }),
+  ),
+  authController.magicLink,
+);
+
+router.post(
+  "/verify-magic-link",
+  validate(
+    z.object({
+      body: z.object({
+        token: z.string().min(1, "Token is required"),
+      }),
+    }),
+  ),
+  authController.verifyMagicLink,
+);
+
 router.post("/refresh", authController.refresh);
 router.delete("/logout", authController.logout);
-router.post("/oauth", authController.oauth);
+
+router.post(
+  "/oauth",
+  validate(
+    z.object({
+      body: z.object({
+        provider: z.enum(["google", "github"]),
+        code: z.string().min(1, "OAuth code is required"),
+      }),
+    }),
+  ),
+  authController.oauth,
+);
 
 // Protected endpoint
 router.get("/me", authMiddleware, authController.me);

@@ -55,6 +55,20 @@ Vami implements the remaining form/visual atoms (`apps/web/src/components/atoms/
 
 ---
 
+## ⚙️ API Infrastructure (Week 9 Implementation)
+
+Vami implements a standardized, high-performance API infrastructure under `apps/api/src/`:
+
+- **Structured JSON Logging**: Centralized `pino` high-performance logger logging all request transactions, response statuses, and errors.
+- **Request Identification**: Custom middleware injecting a unique client/server-generated transaction ID (`req_` prefix) into the `X-Request-Id` response header.
+- **Standardized Error Handling**: An Express `errorHandler` intercepting bubbled errors and formatting them into the exact Section D.5 Blueprint shape, while hiding stack traces in non-development modes.
+- **Zod Validation Middleware**: Offloads schema body/query/params validation to the routing layer via `validate.js` middleware, returning clean `ValidationError` objects.
+- **Rate Limit Optimization**: Refactored the Redis/memory-fallback rate limiter to delegate error response handling to the global error formatter.
+- **Concurrency Grace Period**: Integrated Redis-based grace checks into refresh token rotation, resolving concurrent silent refresh calls from double renders or browser tab refreshes without logging users out.
+- **Detailed Health Check Probe**: Mounted a unified detailed health check on `/health` reporting Postgres pool status, Redis status, uptime, memory, CPU, and platform metadata.
+
+---
+
 ## 📁 Repository Architecture
 
 This codebase is configured as a `pnpm` workspace monorepo:

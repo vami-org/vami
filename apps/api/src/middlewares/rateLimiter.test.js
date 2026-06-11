@@ -40,11 +40,11 @@ describe("rateLimiter Middleware", () => {
 
       // Request 3 (exceeds limit)
       await limiter(req, res, next);
-      expect(res.status).toHaveBeenCalledWith(429);
-      expect(res.json).toHaveBeenCalledWith({
-        success: false,
-        error: "Too many requests",
-      });
+      expect(next).toHaveBeenCalledTimes(3);
+      const errorPassed = next.mock.calls[2][0];
+      expect(errorPassed).toBeDefined();
+      expect(errorPassed.statusCode).toBe(429);
+      expect(errorPassed.message).toBe("Too many requests");
     } finally {
       process.env.NODE_ENV = originalEnv;
     }

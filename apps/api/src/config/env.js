@@ -23,6 +23,7 @@ const envSchema = z.object({
   CLOUDINARY_CLOUD_NAME: z.string().optional(),
   CLOUDINARY_API_KEY: z.string().optional(),
   CLOUDINARY_API_SECRET: z.string().optional(),
+  LOG_LEVEL: z.enum(["info", "debug", "warn", "error"]).default("info"),
 });
 
 let env;

@@ -1,4 +1,5 @@
 import redisClient from "../config/redis.js";
+import { RateLimitError } from "../services/errors.js";
 
 // In-memory fallback map in case Redis is down
 const memoryFallback = new Map();
@@ -13,6 +14,15 @@ setInterval(() => {
   }
 }, 60000); // every minute
 
+/**
+ * Express middleware builder generating rate limiters.
+ *
+ * @param {Object} [options={}]
+ * @param {number} [options.limit=5] - Allowed requests count
+ * @param {number} [options.windowSecs=3600] - Window size in seconds
+ * @param {string} [options.message="Too many requests. Please try again later."] - Error message description
+ * @returns {import('express').RequestHandler}
+ */
 export default function createRateLimiter({
   limit = 5,
   windowSecs = 3600,
@@ -35,10 +45,7 @@ export default function createRateLimiter({
         }
 
         if (currentCount > limit) {
-          return res.status(429).json({
-            success: false,
-            error: message,
-          });
+          return next(new RateLimitError(message));
         }
         return next();
       } catch (err) {
@@ -64,10 +71,7 @@ export default function createRateLimiter({
 
     record.count++;
     if (record.count > limit) {
-      return res.status(429).json({
-        success: false,
-        error: message,
-      });
+      return next(new RateLimitError(message));
     }
 
     return next();
