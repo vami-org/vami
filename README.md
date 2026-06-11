@@ -27,6 +27,34 @@ Vami implements a flexible profile management and social networking system:
 
 ---
 
+## 🎨 Atom Component Library (Week 7 Implementation)
+
+Vami implements a pure presentational UI layout, typography, and interactive atomic layer under `apps/web/src/components/atoms/`:
+
+- **Typography Atoms**: `VamiText`, `VamiHeading` (standardizes levels H1–H6), `VamiCaption`, `VamiLabel`, and `VamiCode` map directly to design token text utilities.
+- **Interactive Atoms**:
+  - `VamiButton` and `VamiIconButton` map styles to tokens, support loading spinners, and enforce accessibility by issuing development-mode console warnings if `aria-label` or `aria-labelledby` attributes are missing on icon-only elements.
+  - `VamiLink` is polymorphic: it automatically detects external targets (commencing with `http`, `mailto:`, `tel:`) to render standard anchor tags with `target="_blank" rel="noreferrer"` security settings, and routes internal links via `react-router-dom`'s `<Link>`.
+- **Layout & Structure Atoms**: `VamiBox`, `VamiStack`, `VamiRow`, and `VamiGrid` use dynamic CSS custom property styles (e.g. `var(--space-[value])`) connected to `tokens.css` spacing metrics to prevent static class bloated layouts.
+
+---
+
+## 🧩 Atom Component Library (Part 2) & Core Molecules (Week 8 Implementation)
+
+Vami implements the remaining form/visual atoms (`apps/web/src/components/atoms/`) and structured layout molecules (`apps/web/src/components/molecules/`):
+
+- **Extended Form Atoms**: `VamiInput` and `VamiTextarea` (with content-driven auto-resizing height) enforce WCAG AA accessibility. `VamiCheckbox`, `VamiRadio`/`VamiRadioGroup`, and `VamiSwitch` provide custom toggle UI states.
+- **Custom Accessible Dropdown**: `VamiSelect` implements a fully keyboard-accessible listbox (`combobox` role) that syncs value changes to a hidden standard `<select>` element for form submissions.
+- **Visual Utility Atoms**: `VamiBadge`, `VamiTag` (with dismiss triggers), `VamiProgressBar`, `VamiSpinner`, `VamiSkeleton` (pulsing text/circle placeholders), `VamiImage` (broken source fallbacks), and `VamiFileUpload` (drag-and-drop handles) map directly to styling tokens.
+- **Self-Contained Icons**: `VamiIcon` houses a dictionary of 21 inline vector SVG elements, preventing layout asset resolution issues.
+- **Core Assembly Molecules**:
+  - `FormField` links input controls with labels, validation errors, and helper text.
+  - `SearchBox` combines search triggers with input reset button nodes.
+  - `Toast` popups manage notifications dynamically via `toastStore` (Zustand state manager) and a `<ToastContainer />` viewport stack.
+  - `AlertBanner`, `EmptyState`, `ReadTimeDisplay` (clock estimates), and `AuthorByline` (author meta info header blocks).
+
+---
+
 ## 📁 Repository Architecture
 
 This codebase is configured as a `pnpm` workspace monorepo:

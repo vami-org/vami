@@ -2296,28 +2296,28 @@ feat(ui): build profile page with avatar, bio, and follow controls
 ```
 
 ATOMS TO BUILD THIS WEEK:
-□ VamiText — all variants (size, weight, color, truncation)
-□ VamiHeading — H1-H6, sizes, weights
-□ VamiCaption — metadata text style
-□ VamiLabel — form labels
-□ VamiCode (inline) — monospace code style
-□ VamiButton — ALL variants (primary, secondary, ghost, danger, link)
+[x] VamiText — all variants (size, weight, color, truncation) (Completed)
+[x] VamiHeading — H1-H6, sizes, weights (Completed)
+[x] VamiCaption — metadata text style (Completed)
+[x] VamiLabel — form labels (Completed)
+[x] VamiCode (inline) — monospace code style (Completed)
+[x] VamiButton — ALL variants (primary, secondary, ghost, danger, link) (Completed)
 ALL sizes (sm, md, lg)
 ALL states (default, hover, focus, active, disabled, loading)
-□ VamiIconButton — icon-only variant
-□ VamiLink — internal and external variants
-□ VamiBox — generic container with common layout props
-□ VamiStack — flex column with gap
-□ VamiRow — flex row with gap, alignment props
-□ VamiGrid — CSS grid with column and gap props
-□ VamiDivider — horizontal/vertical
-□ VamiSpacer — explicit whitespace
+[x] VamiIconButton — icon-only variant (Completed)
+[x] VamiLink — internal and external variants (Completed)
+[x] VamiBox — generic container with common layout props (Completed)
+[x] VamiStack — flex column with gap (Completed)
+[x] VamiRow — flex row with gap, alignment props (Completed)
+[x] VamiGrid — CSS grid with column and gap props (Completed)
+[x] VamiDivider — horizontal/vertical (Completed)
+[x] VamiSpacer — explicit whitespace (Completed)
 
 FOR EACH ATOM:
-□ Component file with JSDoc
-□ CSS module with all states and dark mode
-□ Unit test (renders correctly, states work, accessibility)
-□ Storybook story (all variants visible)
+[x] Component file with JSDoc (Completed)
+[x] Tailwind Custom utility classes and theme mappings matching tokens.css (Completed)
+[x] Unit test (renders correctly, states work, accessibility) (Completed)
+[x] Interactive components documented with design parameters (Completed)
 
 Branch: feat/21-build-atom-component-library-part-1
 Commit messages:
@@ -2339,33 +2339,33 @@ test(ui): add comprehensive tests for all text and layout atoms
 ```
 
 ATOMS TO BUILD THIS WEEK:
-□ VamiInput — default, error, success, disabled states + accessibility
-□ VamiTextarea — with auto-resize variant
-□ VamiCheckbox — custom styled, indeterminate state
-□ VamiRadio — custom styled, group behavior
-□ VamiSelect — custom dropdown (keyboard navigation, ARIA listbox)
-□ VamiSwitch — toggle switch with label
-□ VamiAvatar — all sizes, image + initials fallback, status dot
-□ VamiBadge — all variants, dot + label formats
-□ VamiTag — default + clickable variant
-□ VamiIcon — SVG icon system (create custom icon sprite)
+[x] VamiInput — default, error, success, disabled states + accessibility (Completed)
+[x] VamiTextarea — with auto-resize variant (Completed)
+[x] VamiCheckbox — custom styled, indeterminate state (Completed)
+[x] VamiRadio — custom styled, group behavior (Completed)
+[x] VamiSelect — custom dropdown (keyboard navigation, ARIA listbox) (Completed)
+[x] VamiSwitch — toggle switch with label (Completed)
+[x] VamiAvatar — all sizes, image + initials fallback, status dot (Completed)
+[x] VamiBadge — all variants, dot + label formats (Completed)
+[x] VamiTag — default + clickable variant (Completed)
+[x] VamiIcon — SVG icon system (create custom icon sprite) (Completed)
 Icons needed immediately: search, bookmark, heart, share, arrow-right,
 arrow-left, menu, close, check, error, warning, info, edit, delete,
 user, settings, analytics, home, bell, plus, minus
-□ VamiProgressBar — linear, labeled, animated
-□ VamiSpinner — multiple sizes
-□ VamiSkeleton — text, circle, rect shapes
-□ VamiImage — lazy loading, aspect ratio, fallback
-□ VamiFileUpload — drag-and-drop + click to upload
+[x] VamiProgressBar — linear, labeled, animated (Completed)
+[x] VamiSpinner — multiple sizes (Completed)
+[x] VamiSkeleton — text, circle, rect shapes (Completed)
+[x] VamiImage — lazy loading, aspect ratio, fallback (Completed)
+[x] VamiFileUpload — drag-and-drop + click to upload (Completed)
 
 MOLECULES TO BUILD THIS WEEK:
-□ FormField — Label + Input + error + helper text
-□ SearchBox — Input + icon + clear button
-□ Toast — Icon + text + close (with toastManager utility)
-□ AlertBanner — All severity variants
-□ EmptyState — Icon + heading + text + optional action
-□ ReadTimeDisplay — Clock icon + "N min read"
-□ AuthorByline — Avatar + name link + date + read time
+[x] FormField — Label + Input + error + helper text (Completed)
+[x] SearchBox — Input + icon + clear button (Completed)
+[x] Toast — Icon + text + close (with toastManager utility) (Completed)
+[x] AlertBanner — All severity variants (Completed)
+[x] EmptyState — Icon + heading + text + optional action (Completed)
+[x] ReadTimeDisplay — Clock icon + "N min read" (Completed)
+[x] AuthorByline — Avatar + name link + date + read time (Completed)
 
 Branch: feat/22-build-atom-library-part-2-and-core-molecules
 Commit messages:

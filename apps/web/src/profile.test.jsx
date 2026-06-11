@@ -2,7 +2,7 @@ import React from "react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import { ProfileHero } from "./components/ProfileHero";
-import { VamiAvatar } from "./components/VamiAvatar";
+import { VamiAvatar } from "./components/atoms/VamiAvatar";
 import { UserProfile } from "./pages/UserProfile";
 import apiClient from "./services/apiClient";
 import { useAuth } from "./hooks/useAuth";

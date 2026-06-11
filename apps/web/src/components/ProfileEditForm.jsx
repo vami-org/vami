@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import apiClient from "../services/apiClient";
 import { AvatarUpload } from "./AvatarUpload";
-import { VamiButton } from "./VamiButton";
+import { VamiButton } from "./atoms/VamiButton";
 
 export function ProfileEditForm({ user, onSuccess }) {
   const [displayName, setDisplayName] = useState(user.display_name || "");
