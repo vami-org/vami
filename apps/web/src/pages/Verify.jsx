@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { AuthTemplate } from "../components/AuthTemplate";
-import { VamiButton } from "../components/VamiButton";
+import { VamiButton } from "../components/atoms/VamiButton";
 
 export function Verify() {
   const { verifyEmailToken } = useAuth();
