@@ -2221,34 +2221,30 @@ Commit messages:
 
 **Owner:** Dev 2 (UI), Dev 3 (integration)
 
-```
 TASKS:
-  □ Create API client module: apps/web/src/services/apiClient.js
-    - Axios instance with base URL
-    - Request interceptor: attach Authorization header
-    - Response interceptor: auto-refresh on 401
-    - Error normalization
-  □ Create authService.js (frontend): API calls for auth endpoints
-  □ Create useAuth.js hook — auth state (user, isLoading, isAuthenticated)
-  □ Create AuthContext.js — provide auth state throughout app
-  □ Create Zustand auth store: stores user, tokens, persists to localStorage
-  □ Build Login page using AuthTemplate
-  □ Build VamiButton with Google OAuth icon + label
-  □ Build VamiButton with GitHub OAuth icon + label
-  □ Build magic link email input form
-  □ Build "Check your email" confirmation screen
-  □ Build magic link verification page (handles ?token= URL param)
-  □ Implement React Router protected routes (redirect to login if not auth'd)
-  □ Implement token refresh on app load
-  □ Test full login flow end-to-end
+[x] Create API client module: apps/web/src/services/apiClient.js (Completed) - Axios instance with base URL - Request interceptor: attach Authorization header - Response interceptor: auto-refresh on 401 - Error normalization
+[x] Create authService.js (frontend): API calls for auth endpoints (Completed)
+[x] Create useAuth.js hook — auth state (user, isLoading, isAuthenticated) (Completed)
+[x] Create AuthContext.js — provide auth state throughout app (Completed)
+[x] Create Zustand auth store: stores user, tokens, persists to localStorage (Completed)
+[x] Build Login page using AuthTemplate (Completed)
+[x] Build VamiButton with Google OAuth icon + label (Completed)
+[x] Build VamiButton with GitHub OAuth icon + label (Completed)
+[x] Build magic link email input form (Completed)
+[x] Build "Check your email" confirmation screen (Completed)
+[x] Build magic link verification page (handles ?token= URL param) (Completed)
+[x] Implement React Router protected routes (redirect to login if not auth'd) (Completed)
+[x] Implement token refresh on app load (Completed)
+[x] Test full login flow end-to-end (Completed)
 
 Branch: feat/11-implement-authentication-frontend
 Commit messages:
-  feat(auth): create API client with token management and auto-refresh
-  feat(auth): implement auth context, store, and useAuth hook
-  feat(auth): build login page with magic link and OAuth flows
-  feat(auth): implement protected routes and auth state persistence
-  test(auth): add authentication flow integration tests
+feat(auth): create API client with token management and auto-refresh
+feat(auth): implement auth context, store, and useAuth hook
+feat(auth): build login page with magic link and OAuth flows
+feat(auth): implement protected routes and auth state persistence
+test(auth): add authentication flow integration tests
+
 ```
 
 ---
@@ -2260,31 +2256,33 @@ Commit messages:
 **Owner:** Dev 3 (backend), Dev 2 (frontend)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ userRepository.js — findByUsername, findById, updateProfile, deleteAccount
-  □ followRepository.js — createFollow, deleteFollow, getFollowing, getFollowers
-  □ userService.js — profile logic, follow/unfollow business rules
-  □ PATCH /v1/users/me — profile update (displayName, bio, avatarUrl, websiteUrl)
-  □ GET /v1/users/:username — public profile (+ subscriber count, quality score)
-  □ POST /v1/follows/:userId — follow
-  □ DELETE /v1/follows/:userId — unfollow
-  □ GET /v1/follows/following — who I follow
-  □ GET /v1/follows/followers — who follows me
-  □ Cloudinary image upload signed URL endpoint: POST /v1/media/upload-url
+□ userRepository.js — findByUsername, findById, updateProfile, deleteAccount
+□ followRepository.js — createFollow, deleteFollow, getFollowing, getFollowers
+□ userService.js — profile logic, follow/unfollow business rules
+□ PATCH /v1/users/me — profile update (displayName, bio, avatarUrl, websiteUrl)
+□ GET /v1/users/:username — public profile (+ subscriber count, quality score)
+□ POST /v1/follows/:userId — follow
+□ DELETE /v1/follows/:userId — unfollow
+□ GET /v1/follows/following — who I follow
+□ GET /v1/follows/followers — who follows me
+□ Cloudinary image upload signed URL endpoint: POST /v1/media/upload-url
 
 FRONTEND TASKS (Dev 2):
-  □ Build ProfileHero organism (avatar, name, bio, follow button, subscriber count)
-  □ Build writer profile page (WriterProfile template)
-  □ Build avatar upload component (using Cloudinary direct upload)
-  □ Build profile edit form
-  □ Build VamiAvatar atom (all sizes, fallback to initials)
-  □ Wire follow/unfollow button with optimistic updates
+□ Build ProfileHero organism (avatar, name, bio, follow button, subscriber count)
+□ Build writer profile page (WriterProfile template)
+□ Build avatar upload component (using Cloudinary direct upload)
+□ Build profile edit form
+□ Build VamiAvatar atom (all sizes, fallback to initials)
+□ Wire follow/unfollow button with optimistic updates
 
 Branch: feat/15-implement-user-profile-and-follow-system
 Commit messages:
-  feat(users): implement user profile CRUD and follow graph endpoints
-  feat(users): add Cloudinary media upload integration
-  feat(ui): build profile page with avatar, bio, and follow controls
+feat(users): implement user profile CRUD and follow graph endpoints
+feat(users): add Cloudinary media upload integration
+feat(ui): build profile page with avatar, bio, and follow controls
+
 ```
 
 ---
@@ -2296,36 +2294,38 @@ Commit messages:
 **Owner:** Dev 2 (primary), Dev 3 (review and tests)
 
 ```
+
 ATOMS TO BUILD THIS WEEK:
-  □ VamiText — all variants (size, weight, color, truncation)
-  □ VamiHeading — H1-H6, sizes, weights
-  □ VamiCaption — metadata text style
-  □ VamiLabel — form labels
-  □ VamiCode (inline) — monospace code style
-  □ VamiButton — ALL variants (primary, secondary, ghost, danger, link)
-               ALL sizes (sm, md, lg)
-               ALL states (default, hover, focus, active, disabled, loading)
-  □ VamiIconButton — icon-only variant
-  □ VamiLink — internal and external variants
-  □ VamiBox — generic container with common layout props
-  □ VamiStack — flex column with gap
-  □ VamiRow — flex row with gap, alignment props
-  □ VamiGrid — CSS grid with column and gap props
-  □ VamiDivider — horizontal/vertical
-  □ VamiSpacer — explicit whitespace
+□ VamiText — all variants (size, weight, color, truncation)
+□ VamiHeading — H1-H6, sizes, weights
+□ VamiCaption — metadata text style
+□ VamiLabel — form labels
+□ VamiCode (inline) — monospace code style
+□ VamiButton — ALL variants (primary, secondary, ghost, danger, link)
+ALL sizes (sm, md, lg)
+ALL states (default, hover, focus, active, disabled, loading)
+□ VamiIconButton — icon-only variant
+□ VamiLink — internal and external variants
+□ VamiBox — generic container with common layout props
+□ VamiStack — flex column with gap
+□ VamiRow — flex row with gap, alignment props
+□ VamiGrid — CSS grid with column and gap props
+□ VamiDivider — horizontal/vertical
+□ VamiSpacer — explicit whitespace
 
 FOR EACH ATOM:
-  □ Component file with JSDoc
-  □ CSS module with all states and dark mode
-  □ Unit test (renders correctly, states work, accessibility)
-  □ Storybook story (all variants visible)
+□ Component file with JSDoc
+□ CSS module with all states and dark mode
+□ Unit test (renders correctly, states work, accessibility)
+□ Storybook story (all variants visible)
 
 Branch: feat/21-build-atom-component-library-part-1
 Commit messages:
-  feat(ui): implement VamiText, VamiHeading, VamiCaption, VamiLabel atoms
-  feat(ui): implement VamiButton with all variants, sizes, and states
-  feat(ui): implement layout atoms (VamiBox, VamiStack, VamiRow, VamiGrid)
-  test(ui): add comprehensive tests for all text and layout atoms
+feat(ui): implement VamiText, VamiHeading, VamiCaption, VamiLabel atoms
+feat(ui): implement VamiButton with all variants, sizes, and states
+feat(ui): implement layout atoms (VamiBox, VamiStack, VamiRow, VamiGrid)
+test(ui): add comprehensive tests for all text and layout atoms
+
 ```
 
 ---
@@ -2337,41 +2337,43 @@ Commit messages:
 **Owner:** Dev 2 (atoms + molecules), Dev 1 (review accessibility)
 
 ```
+
 ATOMS TO BUILD THIS WEEK:
-  □ VamiInput — default, error, success, disabled states + accessibility
-  □ VamiTextarea — with auto-resize variant
-  □ VamiCheckbox — custom styled, indeterminate state
-  □ VamiRadio — custom styled, group behavior
-  □ VamiSelect — custom dropdown (keyboard navigation, ARIA listbox)
-  □ VamiSwitch — toggle switch with label
-  □ VamiAvatar — all sizes, image + initials fallback, status dot
-  □ VamiBadge — all variants, dot + label formats
-  □ VamiTag — default + clickable variant
-  □ VamiIcon — SVG icon system (create custom icon sprite)
-               Icons needed immediately: search, bookmark, heart, share, arrow-right,
-               arrow-left, menu, close, check, error, warning, info, edit, delete,
-               user, settings, analytics, home, bell, plus, minus
-  □ VamiProgressBar — linear, labeled, animated
-  □ VamiSpinner — multiple sizes
-  □ VamiSkeleton — text, circle, rect shapes
-  □ VamiImage — lazy loading, aspect ratio, fallback
-  □ VamiFileUpload — drag-and-drop + click to upload
+□ VamiInput — default, error, success, disabled states + accessibility
+□ VamiTextarea — with auto-resize variant
+□ VamiCheckbox — custom styled, indeterminate state
+□ VamiRadio — custom styled, group behavior
+□ VamiSelect — custom dropdown (keyboard navigation, ARIA listbox)
+□ VamiSwitch — toggle switch with label
+□ VamiAvatar — all sizes, image + initials fallback, status dot
+□ VamiBadge — all variants, dot + label formats
+□ VamiTag — default + clickable variant
+□ VamiIcon — SVG icon system (create custom icon sprite)
+Icons needed immediately: search, bookmark, heart, share, arrow-right,
+arrow-left, menu, close, check, error, warning, info, edit, delete,
+user, settings, analytics, home, bell, plus, minus
+□ VamiProgressBar — linear, labeled, animated
+□ VamiSpinner — multiple sizes
+□ VamiSkeleton — text, circle, rect shapes
+□ VamiImage — lazy loading, aspect ratio, fallback
+□ VamiFileUpload — drag-and-drop + click to upload
 
 MOLECULES TO BUILD THIS WEEK:
-  □ FormField — Label + Input + error + helper text
-  □ SearchBox — Input + icon + clear button
-  □ Toast — Icon + text + close (with toastManager utility)
-  □ AlertBanner — All severity variants
-  □ EmptyState — Icon + heading + text + optional action
-  □ ReadTimeDisplay — Clock icon + "N min read"
-  □ AuthorByline — Avatar + name link + date + read time
+□ FormField — Label + Input + error + helper text
+□ SearchBox — Input + icon + clear button
+□ Toast — Icon + text + close (with toastManager utility)
+□ AlertBanner — All severity variants
+□ EmptyState — Icon + heading + text + optional action
+□ ReadTimeDisplay — Clock icon + "N min read"
+□ AuthorByline — Avatar + name link + date + read time
 
 Branch: feat/22-build-atom-library-part-2-and-core-molecules
 Commit messages:
-  feat(ui): implement form atoms with WCAG AA accessibility
-  feat(ui): implement visual atoms (avatar, badge, tag, icon, progress, skeleton)
-  feat(ui): implement core molecules (form field, search box, toast, empty state)
-  feat(ui): create custom SVG icon system with all required icons
+feat(ui): implement form atoms with WCAG AA accessibility
+feat(ui): implement visual atoms (avatar, badge, tag, icon, progress, skeleton)
+feat(ui): implement core molecules (form field, search box, toast, empty state)
+feat(ui): create custom SVG icon system with all required icons
+
 ```
 
 ---
@@ -2383,30 +2385,32 @@ Commit messages:
 **Owner:** Dev 1
 
 ```
+
 TASKS:
-  □ Set up Pino logger (structured JSON logging)
-  □ Implement request ID middleware (UUID per request)
-  □ Implement request + response logging middleware
-  □ Implement Helmet security headers (all recommended headers)
-  □ Implement CORS (per-environment configuration)
-  □ Implement Redis-backed rate limiter (multiple tiers: global, per-user, per-endpoint)
-  □ Implement error handler classes (AppError hierarchy — see Section D.5)
-  □ Implement global error handling middleware
-  □ Implement request validation middleware (Zod schema validation)
-  □ Create API router structure (all route files, even if empty)
-  □ Implement health check endpoint (/health, /health/detailed)
-  □ Set up Sentry error reporting
-  □ Implement graceful shutdown (SIGTERM handling, drain in-flight requests)
-  □ Write integration tests for middleware stack
+□ Set up Pino logger (structured JSON logging)
+□ Implement request ID middleware (UUID per request)
+□ Implement request + response logging middleware
+□ Implement Helmet security headers (all recommended headers)
+□ Implement CORS (per-environment configuration)
+□ Implement Redis-backed rate limiter (multiple tiers: global, per-user, per-endpoint)
+□ Implement error handler classes (AppError hierarchy — see Section D.5)
+□ Implement global error handling middleware
+□ Implement request validation middleware (Zod schema validation)
+□ Create API router structure (all route files, even if empty)
+□ Implement health check endpoint (/health, /health/detailed)
+□ Set up Sentry error reporting
+□ Implement graceful shutdown (SIGTERM handling, drain in-flight requests)
+□ Write integration tests for middleware stack
 
 Branch: feat/25-implement-api-middleware-and-error-handling
 Commit messages:
-  feat(api): implement structured logging with Pino and request tracing
-  feat(api): add security middleware (Helmet, CORS, rate limiting)
-  feat(api): implement error class hierarchy and global error handler
-  feat(api): add Zod-based request validation middleware
-  feat(api): configure Sentry error reporting and graceful shutdown
-  test(api): add middleware integration tests
+feat(api): implement structured logging with Pino and request tracing
+feat(api): add security middleware (Helmet, CORS, rate limiting)
+feat(api): implement error class hierarchy and global error handler
+feat(api): add Zod-based request validation middleware
+feat(api): configure Sentry error reporting and graceful shutdown
+test(api): add middleware integration tests
+
 ```
 
 ---
@@ -2418,40 +2422,36 @@ Commit messages:
 **Owner:** Dev 2 (primary), Dev 3 (routing)
 
 ```
+
 TASKS:
-  □ Build TopNavigation organism
-    - Logo (custom SVG)
-    - Nav links (using NavItem molecule)
-    - SearchBox molecule (triggers search page)
-    - User menu (avatar + dropdown)
-    - Write button (for creators)
-    - Mobile hamburger → MobileNavDrawer
-    - Scroll behavior (hide on down, reveal on up)
-  □ Build MobileNavDrawer organism
-  □ Build PublicPageTemplate (layout for non-auth users)
-  □ Build AuthenticatedTemplate (layout for logged-in users)
-  □ Build AuthTemplate (centered card for auth flows)
-  □ Build ErrorTemplate (404, 500 error pages)
-  □ Set up React Router (all routes defined, lazy-loaded)
-  □ Implement dark mode toggle (tokens.css data-theme approach)
-  □ Persist dark mode preference
-  □ Build 404 page
-  □ Build 500 error boundary page
-  □ Implement page title management (dynamic <title> tags)
-  □ Implement scroll restoration on route change
+□ Build TopNavigation organism - Logo (custom SVG) - Nav links (using NavItem molecule) - SearchBox molecule (triggers search page) - User menu (avatar + dropdown) - Write button (for creators) - Mobile hamburger → MobileNavDrawer - Scroll behavior (hide on down, reveal on up)
+□ Build MobileNavDrawer organism
+□ Build PublicPageTemplate (layout for non-auth users)
+□ Build AuthenticatedTemplate (layout for logged-in users)
+□ Build AuthTemplate (centered card for auth flows)
+□ Build ErrorTemplate (404, 500 error pages)
+□ Set up React Router (all routes defined, lazy-loaded)
+□ Implement dark mode toggle (tokens.css data-theme approach)
+□ Persist dark mode preference
+□ Build 404 page
+□ Build 500 error boundary page
+□ Implement page title management (dynamic <title> tags)
+□ Implement scroll restoration on route change
 
 Branch: feat/30-build-application-shell-and-navigation
 Commit messages:
-  feat(ui): build top navigation organism with responsive mobile drawer
-  feat(ui): implement page layout templates (public, authenticated, auth, error)
-  feat(ui): configure React Router with lazy-loaded routes
-  feat(ui): implement system and manual dark mode with token-based theming
-  feat(ui): add 404 and error boundary pages
+feat(ui): build top navigation organism with responsive mobile drawer
+feat(ui): implement page layout templates (public, authenticated, auth, error)
+feat(ui): configure React Router with lazy-loaded routes
+feat(ui): implement system and manual dark mode with token-based theming
+feat(ui): add 404 and error boundary pages
+
 ```
 
 **End of Phase 1 Acceptance Criteria:**
 
 ```
+
 ✓ Full auth flow works (magic link + OAuth)
 ✓ Profile view and edit works
 ✓ Follow/unfollow works
@@ -2462,6 +2462,7 @@ Commit messages:
 ✓ API middleware stack operational
 ✓ Error handling standardized
 ✓ All CI checks passing
+
 ```
 
 ---
@@ -2475,36 +2476,32 @@ Commit messages:
 **Owner:** Dev 2 (editor), Dev 3 (backend draft endpoint)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ articleRepository.js — createDraft, findDraftById, updateDraft, deleteDraft
-  □ POST /v1/articles → creates empty draft, returns id
-  □ PATCH /v1/articles/:id → partial update (supports autosave)
-  □ GET /v1/articles/me/drafts → list creator's drafts
+□ articleRepository.js — createDraft, findDraftById, updateDraft, deleteDraft
+□ POST /v1/articles → creates empty draft, returns id
+□ PATCH /v1/articles/:id → partial update (supports autosave)
+□ GET /v1/articles/me/drafts → list creator's drafts
 
 FRONTEND TASKS (Dev 2):
-  □ Install @tiptap/react, @tiptap/starter-kit + required extensions
-  □ Create EditorCore.jsx — base Tiptap wrapper
-  □ Configure base extensions:
-    - Document, Paragraph, Text
-    - Heading (levels 1, 2, 3)
-    - Bold, Italic, Underline, Strike
-    - Blockquote, HorizontalRule
-    - BulletList, OrderedList, ListItem
-    - HardBreak
-  □ Create EditorToolbar organism — floating/fixed formatting bar
-  □ Wire toolbar to editor commands
-  □ Apply reading typography to editor (Lora, 21px, 660px max-width)
-  □ Implement autosave (debounced, 3-second delay after last keystroke)
-  □ Implement offline draft saving (IndexedDB fallback when API unavailable)
-  □ Create word count + read time display (floating bottom)
-  □ Create /write route → new draft creation + redirect to editor
+□ Install @tiptap/react, @tiptap/starter-kit + required extensions
+□ Create EditorCore.jsx — base Tiptap wrapper
+□ Configure base extensions: - Document, Paragraph, Text - Heading (levels 1, 2, 3) - Bold, Italic, Underline, Strike - Blockquote, HorizontalRule - BulletList, OrderedList, ListItem - HardBreak
+□ Create EditorToolbar organism — floating/fixed formatting bar
+□ Wire toolbar to editor commands
+□ Apply reading typography to editor (Lora, 21px, 660px max-width)
+□ Implement autosave (debounced, 3-second delay after last keystroke)
+□ Implement offline draft saving (IndexedDB fallback when API unavailable)
+□ Create word count + read time display (floating bottom)
+□ Create /write route → new draft creation + redirect to editor
 
 Branch: feat/35-implement-tiptap-editor-foundation
 Commit messages:
-  feat(editor): integrate Tiptap with base text formatting extensions
-  feat(editor): build editor toolbar with all formatting controls
-  feat(editor): implement debounced autosave with offline IndexedDB fallback
-  feat(editor): apply reading typography and content width constraints
+feat(editor): integrate Tiptap with base text formatting extensions
+feat(editor): build editor toolbar with all formatting controls
+feat(editor): implement debounced autosave with offline IndexedDB fallback
+feat(editor): apply reading typography and content width constraints
+
 ```
 
 ---
@@ -2516,35 +2513,23 @@ Commit messages:
 **Owner:** Dev 2 (primary)
 
 ```
+
 TASKS:
-  □ Implement slash command palette (/ triggers command menu)
-    - VamiInput for filtering
-    - Block options: Heading 1, Heading 2, Image, Code Block, Quote, Divider
-    - Keyboard navigation (arrow keys, enter to select, escape to close)
-  □ Build image upload block extension
-    - Drag and drop image into editor
-    - Click to upload
-    - Direct Cloudinary upload (signed URL from API)
-    - Upload progress indicator
-    - Caption input below image
-    - Resize handle (small, medium, large, full-width)
-  □ Build code block extension
-    - Syntax highlighting (using lowlight + highlight.js)
-    - Language selector (dropdown)
-    - Copy to clipboard button
-    - Line numbers (optional)
-    - Supports: JavaScript, Python, SQL, Bash, CSS, HTML, JSON, TypeScript, Go, Rust
-  □ Build blockquote styling (custom, not default Tiptap)
-  □ Build horizontal rule styling
-  □ Test: paste code from clipboard into code block (preserve indentation)
-  □ Test: image upload on slow connection (progress, error states)
+□ Implement slash command palette (/ triggers command menu) - VamiInput for filtering - Block options: Heading 1, Heading 2, Image, Code Block, Quote, Divider - Keyboard navigation (arrow keys, enter to select, escape to close)
+□ Build image upload block extension - Drag and drop image into editor - Click to upload - Direct Cloudinary upload (signed URL from API) - Upload progress indicator - Caption input below image - Resize handle (small, medium, large, full-width)
+□ Build code block extension - Syntax highlighting (using lowlight + highlight.js) - Language selector (dropdown) - Copy to clipboard button - Line numbers (optional) - Supports: JavaScript, Python, SQL, Bash, CSS, HTML, JSON, TypeScript, Go, Rust
+□ Build blockquote styling (custom, not default Tiptap)
+□ Build horizontal rule styling
+□ Test: paste code from clipboard into code block (preserve indentation)
+□ Test: image upload on slow connection (progress, error states)
 
 Branch: feat/38-implement-editor-block-extensions
 Commit messages:
-  feat(editor): implement slash command palette with keyboard navigation
-  feat(editor): add image upload block with Cloudinary integration
-  feat(editor): implement code block with syntax highlighting and language selector
-  feat(editor): add blockquote and divider block extensions
+feat(editor): implement slash command palette with keyboard navigation
+feat(editor): add image upload block with Cloudinary integration
+feat(editor): implement code block with syntax highlighting and language selector
+feat(editor): add blockquote and divider block extensions
+
 ```
 
 ---
@@ -2556,36 +2541,24 @@ Commit messages:
 **Owner:** Dev 2 (primary)
 
 ```
+
 TASKS:
-  □ Install @tiptap/extension-table extensions
-  □ Build table block:
-    - Insert table (rows × columns)
-    - Add/remove rows and columns
-    - Custom table styling (not default browser)
-    - Mobile: horizontal scroll on overflow
-  □ Build embed block:
-    - Paste URL → detect YouTube/Twitter/CodePen/Loom
-    - Render appropriate iframe embed
-    - Aspect ratio preserved
-    - Fallback: link card for unrecognized URLs
-  □ Build link card block:
-    - URL input → fetch Open Graph metadata (via API proxy)
-    - Show title, description, image preview
-    - Clickable card
-  □ Install KaTeX for math rendering
-  □ Build LaTeX math block:
-    - Block mode (centered equation)
-    - Inline mode (in-line equation)
-    - Preview renders in real-time
-  □ Build table of contents extension (auto-generates from headings)
-  □ Implement word count breakdown by section
+□ Install @tiptap/extension-table extensions
+□ Build table block: - Insert table (rows × columns) - Add/remove rows and columns - Custom table styling (not default browser) - Mobile: horizontal scroll on overflow
+□ Build embed block: - Paste URL → detect YouTube/Twitter/CodePen/Loom - Render appropriate iframe embed - Aspect ratio preserved - Fallback: link card for unrecognized URLs
+□ Build link card block: - URL input → fetch Open Graph metadata (via API proxy) - Show title, description, image preview - Clickable card
+□ Install KaTeX for math rendering
+□ Build LaTeX math block: - Block mode (centered equation) - Inline mode (in-line equation) - Preview renders in real-time
+□ Build table of contents extension (auto-generates from headings)
+□ Implement word count breakdown by section
 
 Branch: feat/40-implement-advanced-editor-blocks
 Commit messages:
-  feat(editor): implement table block with row and column management
-  feat(editor): add URL embed block supporting YouTube, Twitter, and CodePen
-  feat(editor): implement LaTeX math block with real-time KaTeX rendering
-  feat(editor): add link unfurling card and table of contents generation
+feat(editor): implement table block with row and column management
+feat(editor): add URL embed block supporting YouTube, Twitter, and CodePen
+feat(editor): implement LaTeX math block with real-time KaTeX rendering
+feat(editor): add link unfurling card and table of contents generation
+
 ```
 
 ---
@@ -2597,29 +2570,29 @@ Commit messages:
 **Owner:** Dev 3 (backend), Dev 2 (frontend)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ Implement article_revisions — save full snapshot on each manual save
-  □ GET /v1/articles/:id/revisions → list revisions (title, date, word count)
-  □ GET /v1/articles/:id/revisions/:revisionId → full revision content
-  □ POST /v1/articles/:id/revisions/:revisionId/restore → restore revision
-  □ Implement content import:
-    - POST /v1/articles/import/url → scrape + convert to editor blocks
-    - POST /v1/articles/import/file → parse HTML/Markdown file → blocks
-  □ DELETE /v1/articles/:id → delete draft (with confirmation)
+□ Implement article_revisions — save full snapshot on each manual save
+□ GET /v1/articles/:id/revisions → list revisions (title, date, word count)
+□ GET /v1/articles/:id/revisions/:revisionId → full revision content
+□ POST /v1/articles/:id/revisions/:revisionId/restore → restore revision
+□ Implement content import: - POST /v1/articles/import/url → scrape + convert to editor blocks - POST /v1/articles/import/file → parse HTML/Markdown file → blocks
+□ DELETE /v1/articles/:id → delete draft (with confirmation)
 
 FRONTEND TASKS (Dev 2):
-  □ Build drafts list page (all unpublished articles)
-  □ Build revision history sidebar (appears in editor)
-  □ Build revision diff view (before/after comparison)
-  □ Build restore revision confirmation modal
-  □ Build import modal (URL or file upload)
-  □ Build draft deletion confirmation
+□ Build drafts list page (all unpublished articles)
+□ Build revision history sidebar (appears in editor)
+□ Build revision diff view (before/after comparison)
+□ Build restore revision confirmation modal
+□ Build import modal (URL or file upload)
+□ Build draft deletion confirmation
 
 Branch: feat/42-implement-draft-management-and-version-history
 Commit messages:
-  feat(articles): implement article revision history with restore capability
-  feat(articles): add content import from URL and file (HTML/Markdown)
-  feat(ui): build drafts management interface with revision history viewer
+feat(articles): implement article revision history with restore capability
+feat(articles): add content import from URL and file (HTML/Markdown)
+feat(ui): build drafts management interface with revision history viewer
+
 ```
 
 ---
@@ -2631,36 +2604,28 @@ Commit messages:
 **Owner:** Dev 3 (backend), Dev 2 (frontend)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ POST /v1/articles/:id/publish — validate + publish (sets status, published_at)
-  □ POST /v1/articles/:id/schedule — schedule with future timestamp
-  □ POST /v1/articles/:id/unpublish — revert to published (keep published_at)
-  □ Implement tag system:
-    - GET /v1/tags/suggestions?q= → autocomplete suggestions
-    - POST /v1/tags → create new tag (moderator approved or auto-approve)
-  □ Implement slug generation (from title, deduplicated)
-  □ Implement scheduled publish job (BullMQ cron job)
-  □ Implement article indexing on publish (triggers Meilisearch indexing)
+□ POST /v1/articles/:id/publish — validate + publish (sets status, published_at)
+□ POST /v1/articles/:id/schedule — schedule with future timestamp
+□ POST /v1/articles/:id/unpublish — revert to published (keep published_at)
+□ Implement tag system: - GET /v1/tags/suggestions?q= → autocomplete suggestions - POST /v1/tags → create new tag (moderator approved or auto-approve)
+□ Implement slug generation (from title, deduplicated)
+□ Implement scheduled publish job (BullMQ cron job)
+□ Implement article indexing on publish (triggers Meilisearch indexing)
 
 FRONTEND TASKS (Dev 2):
-  □ Build PublishModal organism:
-    - Title and subtitle confirmation
-    - Cover image upload
-    - Tags input (autocomplete with VamiTag chips)
-    - Visibility selector (public / subscribers only / paid subscribers)
-    - SEO override fields (meta title, meta description)
-    - OG image selection
-    - Schedule toggle + datetime picker
-    - Canonical URL (for cross-posting)
-  □ Build SEO preview (shows Google snippet preview)
-  □ Build publish success confirmation (with share links)
+□ Build PublishModal organism: - Title and subtitle confirmation - Cover image upload - Tags input (autocomplete with VamiTag chips) - Visibility selector (public / subscribers only / paid subscribers) - SEO override fields (meta title, meta description) - OG image selection - Schedule toggle + datetime picker - Canonical URL (for cross-posting)
+□ Build SEO preview (shows Google snippet preview)
+□ Build publish success confirmation (with share links)
 
 Branch: feat/45-implement-article-publishing-flow
 Commit messages:
-  feat(articles): implement publish, schedule, and unpublish endpoints
-  feat(articles): add tag system with autocomplete and slug generation
-  feat(ui): build publish modal with SEO controls and scheduling
-  feat(ui): add SEO preview and publish success confirmation
+feat(articles): implement publish, schedule, and unpublish endpoints
+feat(articles): add tag system with autocomplete and slug generation
+feat(ui): build publish modal with SEO controls and scheduling
+feat(ui): add SEO preview and publish success confirmation
+
 ```
 
 ---
@@ -2672,37 +2637,36 @@ Commit messages:
 **Owner:** Dev 2 (primary), Dev 3 (reading event tracking)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ GET /v1/articles/:slug → full article response
-  □ POST /v1/reading-events → fire-and-forget read tracking
-    Body: { articleId, sessionId, event: start|scroll|complete, scrollDepth, isReturning }
-  □ GET /v1/articles/:id/similar → related articles (basic — by tags, Week 20 upgrades this)
+□ GET /v1/articles/:slug → full article response
+□ POST /v1/reading-events → fire-and-forget read tracking
+Body: { articleId, sessionId, event: start|scroll|complete, scrollDepth, isReturning }
+□ GET /v1/articles/:id/similar → related articles (basic — by tags, Week 20 upgrades this)
 
 FRONTEND TASKS (Dev 2):
-  □ Build ArticleHero organism (title, subtitle, cover image, author byline, tags)
-  □ Build ArticleBody organism (renders all block types from body_json)
-  □ Build ArticleFooter organism (author card, reactions, related articles)
-  □ Implement reading progress bar (fixed at top, shows scroll percentage)
-  □ Implement auto-hiding navigation on scroll down
-  □ Implement text selection → highlight toolbar (highlight, annotate, share)
-  □ Build shareable highlight image card (text on branded background)
-  □ Build reading mode controls (floating bottom-right):
-    - Font size (small/medium/large)
-    - Quick/Read/Study mode toggle
-    - Dark mode toggle
-  □ Implement read time tracking (fire reading events to API)
-  □ Build "estimated N min read" + reading progress in minutes
-  □ Build table of contents sidebar (if article has 3+ headings)
-  □ Build social share panel (Twitter, LinkedIn, copy link)
-  □ Implement Open Graph meta tags (SSR or dynamic injection)
+□ Build ArticleHero organism (title, subtitle, cover image, author byline, tags)
+□ Build ArticleBody organism (renders all block types from body_json)
+□ Build ArticleFooter organism (author card, reactions, related articles)
+□ Implement reading progress bar (fixed at top, shows scroll percentage)
+□ Implement auto-hiding navigation on scroll down
+□ Implement text selection → highlight toolbar (highlight, annotate, share)
+□ Build shareable highlight image card (text on branded background)
+□ Build reading mode controls (floating bottom-right): - Font size (small/medium/large) - Quick/Read/Study mode toggle - Dark mode toggle
+□ Implement read time tracking (fire reading events to API)
+□ Build "estimated N min read" + reading progress in minutes
+□ Build table of contents sidebar (if article has 3+ headings)
+□ Build social share panel (Twitter, LinkedIn, copy link)
+□ Implement Open Graph meta tags (SSR or dynamic injection)
 
 Branch: feat/48-build-article-reading-experience
 Commit messages:
-  feat(article): implement article content rendering for all block types
-  feat(article): build reading progress, mode controls, and text highlights
-  feat(article): implement reading event tracking for analytics
-  feat(article): add social sharing with highlight card generation
-  feat(ui): build article hero, body, and footer organisms
+feat(article): implement article content rendering for all block types
+feat(article): build reading progress, mode controls, and text highlights
+feat(article): implement reading event tracking for analytics
+feat(article): add social sharing with highlight card generation
+feat(ui): build article hero, body, and footer organisms
+
 ```
 
 ---
@@ -2714,43 +2678,29 @@ Commit messages:
 **Owner:** Dev 1 (feed algorithm), Dev 2 (feed UI), Dev 3 (feed API)
 
 ```
+
 BACKEND TASKS (Dev 1 + Dev 3):
-  □ GET /v1/feed — personalized feed
-    Algorithm V1 (simple):
-      - 60% followed authors' recent articles (sorted by published_at)
-      - 40% popular articles by topic affinity (from follows + reading history)
-      - Exclude: already-read articles, articles from last 30 days of feed
-      - Cursor-based pagination (20 articles per page)
-  □ GET /v1/feed/new-to-you — discovery feed
-    Algorithm V1:
-      - 100% non-followed authors
-      - Ranked by: read completion rate (last 7 days) × recency score
-      - Diversity: max 2 articles per author per page
-  □ POST /v1/feed/not-interested/:articleId — negative signal (mark article, hide)
+□ GET /v1/feed — personalized feed
+Algorithm V1 (simple): - 60% followed authors' recent articles (sorted by published_at) - 40% popular articles by topic affinity (from follows + reading history) - Exclude: already-read articles, articles from last 30 days of feed - Cursor-based pagination (20 articles per page)
+□ GET /v1/feed/new-to-you — discovery feed
+Algorithm V1: - 100% non-followed authors - Ranked by: read completion rate (last 7 days) × recency score - Diversity: max 2 articles per author per page
+□ POST /v1/feed/not-interested/:articleId — negative signal (mark article, hide)
 
 FRONTEND TASKS (Dev 2):
-  □ Build ArticleFeedCard organism (full interactive article card)
-    - Cover image (optional, 16:9 aspect ratio)
-    - Title + subtitle (line clamped)
-    - Author byline molecule
-    - Tags (VamiTag chips, max 3 shown)
-    - Read time
-    - Reaction preview (shows top reaction count)
-    - Bookmark toggle (optimistic)
-    - "Not interested" overflow menu
-    - Member badge (if paywalled)
-  □ Build FeedTabBar organism (For You / New to You / Deep Dives / Circles)
-  □ Build FeedList organism (infinite scroll, loading skeletons)
-  □ Implement infinite scroll (IntersectionObserver, fetch next page on near-bottom)
-  □ Implement loading state (ArticleCard skeletons)
-  □ Implement empty state (no articles, onboarding CTA)
+□ Build ArticleFeedCard organism (full interactive article card) - Cover image (optional, 16:9 aspect ratio) - Title + subtitle (line clamped) - Author byline molecule - Tags (VamiTag chips, max 3 shown) - Read time - Reaction preview (shows top reaction count) - Bookmark toggle (optimistic) - "Not interested" overflow menu - Member badge (if paywalled)
+□ Build FeedTabBar organism (For You / New to You / Deep Dives / Circles)
+□ Build FeedList organism (infinite scroll, loading skeletons)
+□ Implement infinite scroll (IntersectionObserver, fetch next page on near-bottom)
+□ Implement loading state (ArticleCard skeletons)
+□ Implement empty state (no articles, onboarding CTA)
 
 Branch: feat/51-implement-article-feed-system
 Commit messages:
-  feat(feed): implement personalized and discovery feed algorithms
-  feat(feed): add negative interest signal endpoint
-  feat(ui): build article feed card organism with all interactive states
-  feat(ui): implement infinite scroll feed with loading states
+feat(feed): implement personalized and discovery feed algorithms
+feat(feed): add negative interest signal endpoint
+feat(ui): build article feed card organism with all interactive states
+feat(ui): implement infinite scroll feed with loading states
+
 ```
 
 ---
@@ -2762,29 +2712,28 @@ Commit messages:
 **Owner:** Dev 2 (profile page), Dev 3 (subscriber backend)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ POST /v1/subscriptions/:creatorId → subscribe (free)
-  □ DELETE /v1/subscriptions/:creatorId → unsubscribe
-  □ GET /v1/subscribers → creator's subscriber list (paginated)
-  □ GET /v1/subscribers/export → CSV export with all subscriber data
-  □ User service: getPublicProfile (includes subscriber count, article count, quality score)
+□ POST /v1/subscriptions/:creatorId → subscribe (free)
+□ DELETE /v1/subscriptions/:creatorId → unsubscribe
+□ GET /v1/subscribers → creator's subscriber list (paginated)
+□ GET /v1/subscribers/export → CSV export with all subscriber data
+□ User service: getPublicProfile (includes subscriber count, article count, quality score)
 
 FRONTEND TASKS (Dev 2):
-  □ Build complete writer profile page:
-    - ProfileHero (avatar, name, bio, social links, subscriber count, follow + subscribe)
-    - Article grid/list (published articles, sorted by date)
-    - Tab navigation (Articles / About)
-  □ Build subscribe modal (email input + confirmation)
-  □ Build subscriber management page (creator's own view)
-  □ Build subscriber export button (downloads CSV)
-  □ Build subscriber count + growth sparkline
-  □ Build "Subscribed" success state and email confirmation copy
+□ Build complete writer profile page: - ProfileHero (avatar, name, bio, social links, subscriber count, follow + subscribe) - Article grid/list (published articles, sorted by date) - Tab navigation (Articles / About)
+□ Build subscribe modal (email input + confirmation)
+□ Build subscriber management page (creator's own view)
+□ Build subscriber export button (downloads CSV)
+□ Build subscriber count + growth sparkline
+□ Build "Subscribed" success state and email confirmation copy
 
 Branch: feat/54-implement-writer-profile-and-subscriber-system
 Commit messages:
-  feat(users): implement subscriber management endpoints and CSV export
-  feat(ui): build complete writer profile page with subscriber CTAs
-  feat(ui): implement subscriber management dashboard
+feat(users): implement subscriber management endpoints and CSV export
+feat(ui): build complete writer profile page with subscriber CTAs
+feat(ui): implement subscriber management dashboard
+
 ```
 
 ---
@@ -2796,33 +2745,32 @@ Commit messages:
 **Owner:** Dev 1 (search backend), Dev 2 (search UI)
 
 ```
+
 BACKEND TASKS (Dev 1):
-  □ Configure Meilisearch index (articles)
-  □ Define searchable attributes (title, subtitle, body_text, tags, author_username)
-  □ Define filterable attributes (tags, read_time_min, published_at, is_partner)
-  □ Define rankable attributes (custom ranking rules: read_completion_rate first, then recency)
-  □ Implement article indexing event (triggers on article.published event)
-  □ Implement article de-indexing (on article deletion or unpublish)
-  □ Implement search service: search(query, filters, pagination)
-  □ GET /v1/search?q=&tags=&minReadTime=&maxReadTime=&from=&to=
-  □ GET /v1/search/suggestions?q= → real-time suggestions (typo-tolerant)
-  □ Index all existing published articles on first run (backfill script)
+□ Configure Meilisearch index (articles)
+□ Define searchable attributes (title, subtitle, body_text, tags, author_username)
+□ Define filterable attributes (tags, read_time_min, published_at, is_partner)
+□ Define rankable attributes (custom ranking rules: read_completion_rate first, then recency)
+□ Implement article indexing event (triggers on article.published event)
+□ Implement article de-indexing (on article deletion or unpublish)
+□ Implement search service: search(query, filters, pagination)
+□ GET /v1/search?q=&tags=&minReadTime=&maxReadTime=&from=&to=
+□ GET /v1/search/suggestions?q= → real-time suggestions (typo-tolerant)
+□ Index all existing published articles on first run (backfill script)
 
 FRONTEND TASKS (Dev 2):
-  □ Build SearchBox molecule (already built Week 8 — wire it up)
-  □ Build SearchSuggestions organism (dropdown below search box)
-  □ Build Search page:
-    - SearchFilters organism (tags, reading time range, date range)
-    - SearchResultsList organism (highlighted matches, sort options)
-    - Empty state with suggestions
-  □ Build search keyboard shortcut (Cmd+K opens search)
+□ Build SearchBox molecule (already built Week 8 — wire it up)
+□ Build SearchSuggestions organism (dropdown below search box)
+□ Build Search page: - SearchFilters organism (tags, reading time range, date range) - SearchResultsList organism (highlighted matches, sort options) - Empty state with suggestions
+□ Build search keyboard shortcut (Cmd+K opens search)
 
 Branch: feat/57-implement-keyword-search-with-meilisearch
 Commit messages:
-  feat(search): configure Meilisearch index with custom ranking and filters
-  feat(search): implement article indexing on publish and de-indexing on delete
-  feat(search): add search and suggestions endpoints
-  feat(ui): build search page with filters, results list, and keyboard shortcut
+feat(search): configure Meilisearch index with custom ranking and filters
+feat(search): implement article indexing on publish and de-indexing on delete
+feat(search): add search and suggestions endpoints
+feat(ui): build search page with filters, results list, and keyboard shortcut
+
 ```
 
 ---
@@ -2834,38 +2782,33 @@ Commit messages:
 **Owner:** Dev 1 (vector infrastructure), Dev 3 (embedding service)
 
 ```
+
 TASKS:
-  □ Enable pgvector PostgreSQL extension (migration)
-  □ Create article_embeddings table (migration — already defined Week 3)
-  □ Install OpenAI SDK
-  □ Build embeddingService.js:
-    - generateEmbedding(text) → calls OpenAI text-embedding-3-small
-    - storeArticleEmbedding(articleId, embedding)
-    - findSimilarArticles(articleId, limit) → cosine similarity query
-  □ Trigger embedding generation on article publish (event listener)
-  □ Backfill embeddings for existing published articles (one-time script)
-  □ Implement hybrid search:
-    - Run Meilisearch keyword search → get 50 candidates
-    - Generate embedding for query
-    - Re-rank candidates by cosine similarity to query embedding
-    - Combine scores: 0.6 × semantic + 0.4 × keyword relevance
-  □ Update GET /v1/search to use hybrid search by default
-  □ Implement semantic similar articles: GET /v1/articles/:id/similar
-    - Uses embedding cosine similarity, not tags
-  □ Rate limit embedding generation (prevent abuse of OpenAI API)
-  □ Cache query embeddings in Redis (1-hour TTL, same query = same result)
+□ Enable pgvector PostgreSQL extension (migration)
+□ Create article_embeddings table (migration — already defined Week 3)
+□ Install OpenAI SDK
+□ Build embeddingService.js: - generateEmbedding(text) → calls OpenAI text-embedding-3-small - storeArticleEmbedding(articleId, embedding) - findSimilarArticles(articleId, limit) → cosine similarity query
+□ Trigger embedding generation on article publish (event listener)
+□ Backfill embeddings for existing published articles (one-time script)
+□ Implement hybrid search: - Run Meilisearch keyword search → get 50 candidates - Generate embedding for query - Re-rank candidates by cosine similarity to query embedding - Combine scores: 0.6 × semantic + 0.4 × keyword relevance
+□ Update GET /v1/search to use hybrid search by default
+□ Implement semantic similar articles: GET /v1/articles/:id/similar - Uses embedding cosine similarity, not tags
+□ Rate limit embedding generation (prevent abuse of OpenAI API)
+□ Cache query embeddings in Redis (1-hour TTL, same query = same result)
 
 Branch: feat/60-implement-semantic-search-with-vector-embeddings
 Commit messages:
-  feat(search): enable pgvector and implement article embedding generation
-  feat(search): implement hybrid keyword + semantic search with OpenAI embeddings
-  feat(search): add semantic similar articles using cosine similarity
-  perf(search): cache query embeddings in Redis to reduce API costs
+feat(search): enable pgvector and implement article embedding generation
+feat(search): implement hybrid keyword + semantic search with OpenAI embeddings
+feat(search): add semantic similar articles using cosine similarity
+perf(search): cache query embeddings in Redis to reduce API costs
+
 ```
 
 **End of Phase 2 Acceptance Criteria:**
 
 ```
+
 ✓ Writer can create, edit, save, and publish articles
 ✓ All block types work (text, image, code, table, embed, math)
 ✓ Autosave works offline
@@ -2877,6 +2820,7 @@ Commit messages:
 ✓ Subscriber export downloads CSV immediately
 ✓ Search returns semantically relevant results
 ✓ Search suggestions appear in real-time
+
 ```
 
 ---
@@ -2890,28 +2834,25 @@ Commit messages:
 **Owner:** Dev 1
 
 ```
+
 TASKS:
-  □ Create Stripe account (test mode)
-  □ Create Stripe Connect account (for creator payouts)
-  □ Install stripe npm package
-  □ Build stripeClient.js — Stripe SDK wrapper
-  □ Implement Stripe webhook handler:
-    - POST /v1/webhooks/stripe
-    - Verify webhook signature (STRIPE_WEBHOOK_SECRET)
-    - Parse event type and route to handler
-    - Idempotent processing (check stripe_events table for duplicates)
-    - Handle: checkout.session.completed, customer.subscription.updated,
-              customer.subscription.deleted, invoice.payment_succeeded,
-              invoice.payment_failed, transfer.created
-  □ Write stripe_events logging (every webhook logged, status tracked)
-  □ Test with Stripe CLI: stripe listen --forward-to localhost:3000/v1/webhooks/stripe
-  □ Write webhook handler tests (using Stripe test fixtures)
+□ Create Stripe account (test mode)
+□ Create Stripe Connect account (for creator payouts)
+□ Install stripe npm package
+□ Build stripeClient.js — Stripe SDK wrapper
+□ Implement Stripe webhook handler: - POST /v1/webhooks/stripe - Verify webhook signature (STRIPE_WEBHOOK_SECRET) - Parse event type and route to handler - Idempotent processing (check stripe_events table for duplicates) - Handle: checkout.session.completed, customer.subscription.updated,
+customer.subscription.deleted, invoice.payment_succeeded,
+invoice.payment_failed, transfer.created
+□ Write stripe_events logging (every webhook logged, status tracked)
+□ Test with Stripe CLI: stripe listen --forward-to localhost:3000/v1/webhooks/stripe
+□ Write webhook handler tests (using Stripe test fixtures)
 
 Branch: feat/63-implement-stripe-integration-foundation
 Commit messages:
-  feat(payments): integrate Stripe SDK with webhook handler and event logging
-  feat(payments): implement idempotent webhook processing with duplicate detection
-  test(payments): add Stripe webhook handler tests with test fixtures
+feat(payments): integrate Stripe SDK with webhook handler and event logging
+feat(payments): implement idempotent webhook processing with duplicate detection
+test(payments): add Stripe webhook handler tests with test fixtures
+
 ```
 
 ---
@@ -2923,29 +2864,31 @@ Commit messages:
 **Owner:** Dev 1 (backend), Dev 2 (frontend), Dev 3 (testing)
 
 ```
+
 BACKEND TASKS (Dev 1):
-  □ Create Stripe products and prices (Reader: $4/mo, Supporter: $8/mo)
-  □ POST /v1/memberships/checkout → create Stripe Checkout Session (subscription)
-  □ Webhook handler: checkout.session.completed → create platform_membership record
-  □ Webhook handler: subscription cancelled → update platform_membership.cancelled_at
-  □ Webhook handler: invoice.payment_succeeded → update platform_membership.renewed_at
-  □ GET /v1/auth/me → include membership tier in response
-  □ Membership middleware: check req.user.membershipTier for gated content
+□ Create Stripe products and prices (Reader: $4/mo, Supporter: $8/mo)
+□ POST /v1/memberships/checkout → create Stripe Checkout Session (subscription)
+□ Webhook handler: checkout.session.completed → create platform_membership record
+□ Webhook handler: subscription cancelled → update platform_membership.cancelled_at
+□ Webhook handler: invoice.payment_succeeded → update platform_membership.renewed_at
+□ GET /v1/auth/me → include membership tier in response
+□ Membership middleware: check req.user.membershipTier for gated content
 
 FRONTEND TASKS (Dev 2):
-  □ Build Membership pricing page (Billing page)
-  □ Build feature comparison table (Free vs Reader vs Supporter)
-  □ Build upgrade CTA component (appears at natural upgrade moments)
-  □ Implement Stripe Checkout redirect flow
-  □ Build success page (post-Stripe Checkout return)
-  □ Build billing management page (shows current plan, next renewal, cancel option)
-  □ Implement soft paywall for creator premium content
+□ Build Membership pricing page (Billing page)
+□ Build feature comparison table (Free vs Reader vs Supporter)
+□ Build upgrade CTA component (appears at natural upgrade moments)
+□ Implement Stripe Checkout redirect flow
+□ Build success page (post-Stripe Checkout return)
+□ Build billing management page (shows current plan, next renewal, cancel option)
+□ Implement soft paywall for creator premium content
 
 Branch: feat/66-implement-platform-membership-tiers
 Commit messages:
-  feat(payments): implement platform membership checkout and lifecycle webhooks
-  feat(ui): build membership pricing page and Stripe checkout integration
-  feat(ui): implement soft paywall for member-only content
+feat(payments): implement platform membership checkout and lifecycle webhooks
+feat(ui): build membership pricing page and Stripe checkout integration
+feat(ui): implement soft paywall for member-only content
+
 ```
 
 ---
@@ -2957,33 +2900,30 @@ Commit messages:
 **Owner:** Dev 1 (backend), Dev 3 (integration)
 
 ```
+
 BACKEND TASKS (Dev 1):
-  □ Create Stripe Connect onboarding flow:
-    - POST /v1/payments/connect/onboard → create Stripe Connect account link
-    - GET /v1/payments/connect/status → check Connect account status
-  □ POST /v1/creator-tiers — creator creates paid tier (name, price, interval, description)
-  □ PATCH /v1/creator-tiers/:id — update tier
-  □ DELETE /v1/creator-tiers/:id — archive tier (existing subs continue)
-  □ GET /v1/creator-tiers/:creatorId — public tier listing
-  □ POST /v1/creator-tiers/:id/subscribe — reader subscribes to creator tier
-    - Creates Stripe Subscription
-    - 5% application fee via Stripe Connect
-    - Creates creator_subscription record
-  □ Webhook: subscription cancelled → update creator_subscription
-  □ Webhook: invoice paid → update creator_subscription.renewed_at
+□ Create Stripe Connect onboarding flow: - POST /v1/payments/connect/onboard → create Stripe Connect account link - GET /v1/payments/connect/status → check Connect account status
+□ POST /v1/creator-tiers — creator creates paid tier (name, price, interval, description)
+□ PATCH /v1/creator-tiers/:id — update tier
+□ DELETE /v1/creator-tiers/:id — archive tier (existing subs continue)
+□ GET /v1/creator-tiers/:creatorId — public tier listing
+□ POST /v1/creator-tiers/:id/subscribe — reader subscribes to creator tier - Creates Stripe Subscription - 5% application fee via Stripe Connect - Creates creator_subscription record
+□ Webhook: subscription cancelled → update creator_subscription
+□ Webhook: invoice paid → update creator_subscription.renewed_at
 
 FRONTEND TASKS (Dev 2 + Dev 3):
-  □ Build Stripe Connect onboarding flow (creator dashboard)
-  □ Build creator tier management UI (create/edit/delete tiers)
-  □ Build subscriber-facing tier selection modal
-  □ Build creator subscription status indicator on writer profile
-  □ Build "Manage subscription" page for subscribers
+□ Build Stripe Connect onboarding flow (creator dashboard)
+□ Build creator tier management UI (create/edit/delete tiers)
+□ Build subscriber-facing tier selection modal
+□ Build creator subscription status indicator on writer profile
+□ Build "Manage subscription" page for subscribers
 
 Branch: feat/69-implement-creator-subscription-tiers
 Commit messages:
-  feat(payments): implement Stripe Connect onboarding for creator payouts
-  feat(payments): add creator subscription tiers with application fee
-  feat(ui): build creator tier management and subscriber onboarding flows
+feat(payments): implement Stripe Connect onboarding for creator payouts
+feat(payments): add creator subscription tiers with application fee
+feat(ui): build creator tier management and subscriber onboarding flows
+
 ```
 
 ---
@@ -2995,30 +2935,26 @@ Commit messages:
 **Owner:** Dev 1 (earnings engine), Dev 3 (earnings API)
 
 ```
+
 TASKS:
-  □ Build earnings calculation service:
-    - Input: period, all reading_sessions, all article_bookmarks, all comments
-    - Step 1: Calculate pool size (30% of platform membership revenue for period)
-    - Step 2: Per article score:
-        memberReadsScore = memberReads / totalMemberReads × 0.40
-        completionScore  = completionRate × 0.30
-        bookmarkScore    = bookmarks / totalBookmarks × 0.20
-        communityScore   = qualifiedComments / totalComments × 0.10
-    - Step 3: Normalize to 1.0 across all articles
-    - Step 4: Each article earnings = normalizedScore × poolSize
-    - Step 5: Write to article_earnings table with full breakdown_json
-  □ Schedule: Run earnings calculation monthly (BullMQ cron, 1st of month)
-  □ GET /v1/analytics/earnings — creator's earnings summary with breakdown
-  □ GET /v1/analytics/earnings/articles — per-article earnings table
-  □ GET /v1/analytics/earnings/simulator — what-if endpoint
-    Input: hypothetical changes to any signal
-    Output: projected earnings change
+□ Build earnings calculation service: - Input: period, all reading_sessions, all article_bookmarks, all comments - Step 1: Calculate pool size (30% of platform membership revenue for period) - Step 2: Per article score:
+memberReadsScore = memberReads / totalMemberReads × 0.40
+completionScore = completionRate × 0.30
+bookmarkScore = bookmarks / totalBookmarks × 0.20
+communityScore = qualifiedComments / totalComments × 0.10 - Step 3: Normalize to 1.0 across all articles - Step 4: Each article earnings = normalizedScore × poolSize - Step 5: Write to article_earnings table with full breakdown_json
+□ Schedule: Run earnings calculation monthly (BullMQ cron, 1st of month)
+□ GET /v1/analytics/earnings — creator's earnings summary with breakdown
+□ GET /v1/analytics/earnings/articles — per-article earnings table
+□ GET /v1/analytics/earnings/simulator — what-if endpoint
+Input: hypothetical changes to any signal
+Output: projected earnings change
 
 Branch: feat/72-implement-platform-revenue-share-engine
 Commit messages:
-  feat(analytics): implement monthly quality pool earnings calculation engine
-  feat(analytics): add earnings breakdown endpoints with full signal transparency
-  feat(analytics): implement earnings what-if simulator
+feat(analytics): implement monthly quality pool earnings calculation engine
+feat(analytics): add earnings breakdown endpoints with full signal transparency
+feat(analytics): implement earnings what-if simulator
+
 ```
 
 ---
@@ -3030,29 +2966,22 @@ Commit messages:
 **Owner:** Dev 2 (UI), Dev 3 (charts)
 
 ```
+
 TASKS:
-  □ Install Recharts (data visualization library)
-  □ Build EarningsBreakdown organism:
-    - Monthly total (large, prominent)
-    - Signal breakdown donut chart (Member Reads 40%, Completion 30%, etc.)
-    - Formula explanation card (expandable)
-    - "How to earn more" actionable tips
-  □ Build ArticlePerformanceTable organism:
-    - All partner articles with per-article earnings, reads, completion rate, bookmarks
-    - Sortable columns
-    - Row click → article analytics detail
-  □ Build EarningsSimulator:
-    - Sliders for each signal (member reads, completion rate, bookmarks)
-    - Real-time earnings projection updates
-  □ Build PayoutHistory component (past payouts with status)
-  □ Build EarningsMonth selector (browse historical months)
-  □ Build ConnectPayout setup prompt (if not on Stripe Connect yet)
+□ Install Recharts (data visualization library)
+□ Build EarningsBreakdown organism: - Monthly total (large, prominent) - Signal breakdown donut chart (Member Reads 40%, Completion 30%, etc.) - Formula explanation card (expandable) - "How to earn more" actionable tips
+□ Build ArticlePerformanceTable organism: - All partner articles with per-article earnings, reads, completion rate, bookmarks - Sortable columns - Row click → article analytics detail
+□ Build EarningsSimulator: - Sliders for each signal (member reads, completion rate, bookmarks) - Real-time earnings projection updates
+□ Build PayoutHistory component (past payouts with status)
+□ Build EarningsMonth selector (browse historical months)
+□ Build ConnectPayout setup prompt (if not on Stripe Connect yet)
 
 Branch: feat/75-build-transparent-earnings-dashboard
 Commit messages:
-  feat(ui): build earnings breakdown with signal visualization and formula explanation
-  feat(ui): implement article performance table with sortable columns
-  feat(ui): add earnings simulator with real-time projection updates
+feat(ui): build earnings breakdown with signal visualization and formula explanation
+feat(ui): implement article performance table with sortable columns
+feat(ui): add earnings simulator with real-time projection updates
+
 ```
 
 ---
@@ -3064,29 +2993,27 @@ Commit messages:
 **Owner:** Dev 3 (analytics backend), Dev 2 (analytics UI)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ GET /v1/analytics/overview — 30-day summary (views, reads, completion, subs, earnings)
-  □ GET /v1/analytics/subscribers — subscriber growth chart data + churn events
-  □ GET /v1/analytics/articles — all articles metrics table
-  □ GET /v1/analytics/articles/:id — single article deep dive
-    - Traffic sources (referrer breakdown)
-    - Reading funnel (started vs 50% vs completed)
-    - Time-to-complete distribution
-    - Subscriber conversions attributed to this article
+□ GET /v1/analytics/overview — 30-day summary (views, reads, completion, subs, earnings)
+□ GET /v1/analytics/subscribers — subscriber growth chart data + churn events
+□ GET /v1/analytics/articles — all articles metrics table
+□ GET /v1/analytics/articles/:id — single article deep dive - Traffic sources (referrer breakdown) - Reading funnel (started vs 50% vs completed) - Time-to-complete distribution - Subscriber conversions attributed to this article
 
 FRONTEND TASKS (Dev 2):
-  □ Build analytics overview page (StatCard row + key charts)
-  □ Build SubscriberGrowthChart (line chart, daily/weekly/monthly toggle)
-  □ Build traffic source attribution chart (donut)
-  □ Build article-level analytics detail page
-  □ Build reading funnel visualization (horizontal bar)
-  □ Build date range selector (last 7/30/90/365 days, custom)
+□ Build analytics overview page (StatCard row + key charts)
+□ Build SubscriberGrowthChart (line chart, daily/weekly/monthly toggle)
+□ Build traffic source attribution chart (donut)
+□ Build article-level analytics detail page
+□ Build reading funnel visualization (horizontal bar)
+□ Build date range selector (last 7/30/90/365 days, custom)
 
 Branch: feat/78-build-creator-analytics-dashboard
 Commit messages:
-  feat(analytics): implement creator analytics endpoints with multiple time ranges
-  feat(analytics): add article-level analytics with reading funnel and attribution
-  feat(ui): build analytics dashboard with growth charts and article performance
+feat(analytics): implement creator analytics endpoints with multiple time ranges
+feat(analytics): add article-level analytics with reading funnel and attribution
+feat(ui): build analytics dashboard with growth charts and article performance
+
 ```
 
 ---
@@ -3098,28 +3025,26 @@ Commit messages:
 **Owner:** Dev 1 (email infrastructure), Dev 3 (newsletter backend)
 
 ```
+
 TASKS:
-  □ Integrate Resend email API
-  □ Build email template system (HTML email templates — mobile-responsive)
-    Templates: newsletter_broadcast, new_article_notification, welcome_subscriber,
-               new_follower_notification, earnings_report, magic_link
-  □ POST /v1/newsletters — create newsletter draft
-  □ PATCH /v1/newsletters/:id — update newsletter content
-  □ POST /v1/newsletters/:id/send — send to subscriber list
-    - Rate limit: max 1 newsletter per 24 hours
-    - Segment: all / free subscribers / paid subscribers
-    - Personalize: {{firstName}} merge tag support
-    - Unsubscribe link automatically appended
-  □ POST /v1/newsletters/:id/preview — send test email to creator
-  □ GET /v1/newsletters/:id/analytics — open rate, click rate, unsub rate
-  □ Webhook: Resend delivery events → update email_events table
-  □ Implement email preferences + unsubscribe (respects suppression list)
+□ Integrate Resend email API
+□ Build email template system (HTML email templates — mobile-responsive)
+Templates: newsletter_broadcast, new_article_notification, welcome_subscriber,
+new_follower_notification, earnings_report, magic_link
+□ POST /v1/newsletters — create newsletter draft
+□ PATCH /v1/newsletters/:id — update newsletter content
+□ POST /v1/newsletters/:id/send — send to subscriber list - Rate limit: max 1 newsletter per 24 hours - Segment: all / free subscribers / paid subscribers - Personalize: {{firstName}} merge tag support - Unsubscribe link automatically appended
+□ POST /v1/newsletters/:id/preview — send test email to creator
+□ GET /v1/newsletters/:id/analytics — open rate, click rate, unsub rate
+□ Webhook: Resend delivery events → update email_events table
+□ Implement email preferences + unsubscribe (respects suppression list)
 
 Branch: feat/81-implement-newsletter-broadcast-system
 Commit messages:
-  feat(email): integrate Resend and build responsive HTML email templates
-  feat(email): implement newsletter creation, scheduling, and delivery
-  feat(email): add email analytics tracking with open and click events
+feat(email): integrate Resend and build responsive HTML email templates
+feat(email): implement newsletter creation, scheduling, and delivery
+feat(email): add email analytics tracking with open and click events
+
 ```
 
 ---
@@ -3131,33 +3056,28 @@ Commit messages:
 **Owner:** Dev 1
 
 ```
+
 TASKS:
-  □ Build payout execution service:
-    - Query creators with unpaid earnings above threshold ($25 default)
-    - Create Stripe Transfer to each creator's Connect account
-    - Record in creator_payouts table
-    - Send payout_confirmed email notification
-  □ Schedule: Run payout on 5th of each month (BullMQ cron)
-  □ Handle payout failures gracefully:
-    - Log failure in creator_payouts
-    - Send failure notification email with reason
-    - Retry after 48 hours
-  □ Build creator payout settings:
-    - PATCH /v1/users/me/payout-settings → minimum payout threshold, payout schedule
-  □ Implement earnings summary email (monthly, sent with payout notification)
-  □ GET /v1/analytics/earnings/export → CSV of all earnings for tax reporting
-  □ Build 1099 summary generation (for US creators with >$600/year)
+□ Build payout execution service: - Query creators with unpaid earnings above threshold ($25 default) - Create Stripe Transfer to each creator's Connect account - Record in creator_payouts table - Send payout_confirmed email notification
+□ Schedule: Run payout on 5th of each month (BullMQ cron)
+□ Handle payout failures gracefully: - Log failure in creator_payouts - Send failure notification email with reason - Retry after 48 hours
+□ Build creator payout settings: - PATCH /v1/users/me/payout-settings → minimum payout threshold, payout schedule
+□ Implement earnings summary email (monthly, sent with payout notification)
+□ GET /v1/analytics/earnings/export → CSV of all earnings for tax reporting
+□ Build 1099 summary generation (for US creators with >$600/year)
 
 Branch: feat/84-implement-creator-payout-system
 Commit messages:
-  feat(payments): implement automated monthly payout execution via Stripe Connect
-  feat(payments): add payout failure handling with retry and notifications
-  feat(payments): build earnings export and tax documentation for creators
+feat(payments): implement automated monthly payout execution via Stripe Connect
+feat(payments): add payout failure handling with retry and notifications
+feat(payments): build earnings export and tax documentation for creators
+
 ```
 
 **End of Phase 3 Acceptance Criteria:**
 
 ```
+
 ✓ Reader can subscribe to platform ($4/$8/mo) via Stripe Checkout
 ✓ Creator can create paid subscription tiers
 ✓ Reader can pay creator directly (5% platform fee)
@@ -3167,6 +3087,7 @@ Commit messages:
 ✓ Newsletter sends to subscriber list with tracking
 ✓ Monthly payouts execute automatically to bank account
 ✓ All Stripe webhooks processed idempotently
+
 ```
 
 ---
@@ -3180,31 +3101,24 @@ Commit messages:
 **Owner:** Dev 3
 
 ```
+
 TASKS:
-  □ Install Anthropic SDK
-  □ Build aiService.js:
-    - writingAssistant(content, mode, context) → streaming response
-    - Modes: grammar_style, clarity, restructure, headline_options, expand_paragraph
-    - Rate limiting: 100 requests/day (free), 1000/day (pro)
-    - Cost tracking: log tokens used to ai_usage_log
-  □ POST /v1/ai/writing-assistant
-    Body: { content, mode, selectionText, fullDraftContext }
-    Response: streaming (SSE — Server-Sent Events)
-  □ Implement SSE handler for streaming AI responses
-  □ System prompt engineering for each mode:
-    - grammar_style: preserve author voice, fix errors only
-    - clarity: simplify without losing meaning
-    - restructure: suggest section reorganization
-    - headline_options: return 5 options, varying hooks
-    - expand_paragraph: add depth, add examples
-  □ Implement AI response quality checks (prevent toxic output)
-  □ Implement context window management (summarize long drafts)
+□ Install Anthropic SDK
+□ Build aiService.js: - writingAssistant(content, mode, context) → streaming response - Modes: grammar_style, clarity, restructure, headline_options, expand_paragraph - Rate limiting: 100 requests/day (free), 1000/day (pro) - Cost tracking: log tokens used to ai_usage_log
+□ POST /v1/ai/writing-assistant
+Body: { content, mode, selectionText, fullDraftContext }
+Response: streaming (SSE — Server-Sent Events)
+□ Implement SSE handler for streaming AI responses
+□ System prompt engineering for each mode: - grammar_style: preserve author voice, fix errors only - clarity: simplify without losing meaning - restructure: suggest section reorganization - headline_options: return 5 options, varying hooks - expand_paragraph: add depth, add examples
+□ Implement AI response quality checks (prevent toxic output)
+□ Implement context window management (summarize long drafts)
 
 Branch: feat/87-implement-ai-writing-assistant-backend
 Commit messages:
-  feat(ai): integrate Anthropic Claude API with streaming SSE responses
-  feat(ai): implement five writing assistant modes with voice-preserving prompts
-  feat(ai): add AI usage tracking and rate limiting by user tier
+feat(ai): integrate Anthropic Claude API with streaming SSE responses
+feat(ai): implement five writing assistant modes with voice-preserving prompts
+feat(ai): add AI usage tracking and rate limiting by user tier
+
 ```
 
 ---
@@ -3216,29 +3130,22 @@ Commit messages:
 **Owner:** Dev 2
 
 ```
+
 TASKS:
-  □ Build AiAssistantPanel organism (slide-in right sidebar):
-    - Mode selector tabs (Grammar, Clarity, Restructure, Headlines, Expand)
-    - Context display (selected text or full draft)
-    - "Improve" trigger button
-    - Streaming response renders in real-time (character by character)
-    - AiThinkingDot molecule (animated during generation)
-    - Response display area (rendered markdown)
-    - Accept / Reject buttons (for paragraph/restructure modes)
-    - 5-item list (for headline options mode)
-    - Each headline has "Apply" button (replaces article title in editor)
-  □ Implement AiSuggestionChip molecule (inline small chip in editor)
-  □ Implement streaming SSE consumer (EventSource API)
-  □ Implement usage counter display ("87 / 100 daily suggestions used")
-  □ Implement upgrade prompt when limit reached
-  □ Build keyboard shortcut: Cmd+K opens AI panel with selected text pre-filled
-  □ Build free tier limitation UI (blurred assistant, upgrade CTA)
+□ Build AiAssistantPanel organism (slide-in right sidebar): - Mode selector tabs (Grammar, Clarity, Restructure, Headlines, Expand) - Context display (selected text or full draft) - "Improve" trigger button - Streaming response renders in real-time (character by character) - AiThinkingDot molecule (animated during generation) - Response display area (rendered markdown) - Accept / Reject buttons (for paragraph/restructure modes) - 5-item list (for headline options mode) - Each headline has "Apply" button (replaces article title in editor)
+□ Implement AiSuggestionChip molecule (inline small chip in editor)
+□ Implement streaming SSE consumer (EventSource API)
+□ Implement usage counter display ("87 / 100 daily suggestions used")
+□ Implement upgrade prompt when limit reached
+□ Build keyboard shortcut: Cmd+K opens AI panel with selected text pre-filled
+□ Build free tier limitation UI (blurred assistant, upgrade CTA)
 
 Branch: feat/90-build-ai-writing-assistant-editor-panel
 Commit messages:
-  feat(ai): build AI assistant panel with streaming response and mode selection
-  feat(ai): implement real-time SSE streaming consumer with character animation
-  feat(ai): add usage limit display and upgrade prompts for AI features
+feat(ai): build AI assistant panel with streaming response and mode selection
+feat(ai): implement real-time SSE streaming consumer with character animation
+feat(ai): add usage limit display and upgrade prompts for AI features
+
 ```
 
 ---
@@ -3250,34 +3157,21 @@ Commit messages:
 **Owner:** Dev 3 (algorithm), Dev 1 (infrastructure)
 
 ```
+
 TASKS:
-  □ Build user interest profile:
-    - Compute from: reading history (last 90 days), follows, bookmarks, reactions
-    - Tag affinity scores (how often user reads each tag)
-    - Author affinity scores (engagement rate with each author)
-    - Store in Redis (update daily via background job)
-  □ Build article quality score:
-    - Input: read_completion_rate, bookmark_rate, response_rate
-    - Quality floor: articles below 0.35 completion rate excluded from recommendations
-    - Score stored on articles table (updated nightly)
-  □ Build recommendation candidate generation:
-    - Generate 200 candidates per user per request
-    - Sources: followed authors (40%), tag affinity (40%), diversity injection (20%)
-    - Exclude: seen in last 72 hours, author explicitly muted
-  □ Build recommendation ranking:
-    - Re-rank 200 candidates by: quality × (interest alignment × 0.5 + recency × 0.3 + diversity × 0.2)
-    - Apply diversity penalty (max 2 per author per feed page)
-    - Return top 20
-  □ Build New to You feed:
-    - Only non-followed authors
-    - Rank by: quality score × tag affinity × serendipity injection
-  □ Build serendipity injection (20% of feed = outside known interests)
+□ Build user interest profile: - Compute from: reading history (last 90 days), follows, bookmarks, reactions - Tag affinity scores (how often user reads each tag) - Author affinity scores (engagement rate with each author) - Store in Redis (update daily via background job)
+□ Build article quality score: - Input: read_completion_rate, bookmark_rate, response_rate - Quality floor: articles below 0.35 completion rate excluded from recommendations - Score stored on articles table (updated nightly)
+□ Build recommendation candidate generation: - Generate 200 candidates per user per request - Sources: followed authors (40%), tag affinity (40%), diversity injection (20%) - Exclude: seen in last 72 hours, author explicitly muted
+□ Build recommendation ranking: - Re-rank 200 candidates by: quality × (interest alignment × 0.5 + recency × 0.3 + diversity × 0.2) - Apply diversity penalty (max 2 per author per feed page) - Return top 20
+□ Build New to You feed: - Only non-followed authors - Rank by: quality score × tag affinity × serendipity injection
+□ Build serendipity injection (20% of feed = outside known interests)
 
 Branch: feat/93-implement-recommendation-algorithm-v2
 Commit messages:
-  feat(feed): build user interest profile with 90-day tag and author affinity
-  feat(feed): implement quality floor and recommendation candidate generation
-  feat(feed): add diversity-weighted ranking with serendipity injection
+feat(feed): build user interest profile with 90-day tag and author affinity
+feat(feed): implement quality floor and recommendation candidate generation
+feat(feed): add diversity-weighted ranking with serendipity injection
+
 ```
 
 ---
@@ -3289,25 +3183,19 @@ Commit messages:
 **Owner:** Dev 3
 
 ```
+
 TASKS:
-  □ Build summarization service:
-    - Input: article body_text (truncated to 4K tokens for Haiku)
-    - Prompt: extract 3 sentences covering main argument, key insight, practical takeaway
-    - Model: Claude Haiku (cost-efficient, sufficient quality)
-    - Cache result in article_ai_summaries table
-    - Generation triggered on article.published event
-  □ POST /v1/ai/summarize/:articleId — manual trigger (Pro creator)
-  □ GET /v1/articles/:slug → include aiSummary field in response
-  □ Frontend: build collapsible summary panel above article
-    - Collapsed by default on desktop, expanded on mobile
-    - "AI-generated summary" label with info tooltip
-    - Collapse/expand toggle with smooth animation
-  □ A/B test: show summary to 50% of readers, track if completion rate improves
+□ Build summarization service: - Input: article body_text (truncated to 4K tokens for Haiku) - Prompt: extract 3 sentences covering main argument, key insight, practical takeaway - Model: Claude Haiku (cost-efficient, sufficient quality) - Cache result in article_ai_summaries table - Generation triggered on article.published event
+□ POST /v1/ai/summarize/:articleId — manual trigger (Pro creator)
+□ GET /v1/articles/:slug → include aiSummary field in response
+□ Frontend: build collapsible summary panel above article - Collapsed by default on desktop, expanded on mobile - "AI-generated summary" label with info tooltip - Collapse/expand toggle with smooth animation
+□ A/B test: show summary to 50% of readers, track if completion rate improves
 
 Branch: feat/96-implement-ai-article-summaries
 Commit messages:
-  feat(ai): implement automated article summarization on publish with Claude Haiku
-  feat(ui): add collapsible AI summary panel above article content
+feat(ai): implement automated article summarization on publish with Claude Haiku
+feat(ui): add collapsible AI summary panel above article content
+
 ```
 
 ---
@@ -3319,23 +3207,17 @@ Commit messages:
 **Owner:** Dev 3 (service), Dev 2 (UI)
 
 ```
+
 TASKS:
-  □ Build content analytics AI service:
-    - Input: article metadata + engagement metrics (7 days after publish)
-    - Analyze: headline effectiveness (CTR), hook (first 100 words vs completion), length, topic, structure
-    - Generate: 3 specific insights + 3 actionable recommendations for next article
-    - Model: Claude Haiku
-    - Run 7 days after publish (BullMQ delayed job)
-  □ GET /v1/analytics/articles/:id/ai-insights → returns insights + recommendations
-  □ Frontend: build AI Performance Insights card on article analytics page
-    - Loading state: "Generating insights..." (if <7 days old)
-    - 3 insight cards with specific data references
-    - 3 recommendation chips with copy that creators can implement
+□ Build content analytics AI service: - Input: article metadata + engagement metrics (7 days after publish) - Analyze: headline effectiveness (CTR), hook (first 100 words vs completion), length, topic, structure - Generate: 3 specific insights + 3 actionable recommendations for next article - Model: Claude Haiku - Run 7 days after publish (BullMQ delayed job)
+□ GET /v1/analytics/articles/:id/ai-insights → returns insights + recommendations
+□ Frontend: build AI Performance Insights card on article analytics page - Loading state: "Generating insights..." (if <7 days old) - 3 insight cards with specific data references - 3 recommendation chips with copy that creators can implement
 
 Branch: feat/99-implement-ai-content-performance-analytics
 Commit messages:
-  feat(ai): implement post-publish performance analysis with Claude Haiku
-  feat(ui): build AI insights card on article analytics page
+feat(ai): implement post-publish performance analysis with Claude Haiku
+feat(ui): build AI insights card on article analytics page
+
 ```
 
 ---
@@ -3347,25 +3229,19 @@ Commit messages:
 **Owner:** Dev 1 (integration), Dev 3 (classification)
 
 ```
+
 TASKS:
-  □ Build content classification service:
-    - Input: article title + body_text (first 1000 words)
-    - Classify: spam probability (0–1), AI-generated probability (0–1), quality_signal (low/medium/high)
-    - Model: Claude Haiku with constrained classification prompt
-    - Result stored on articles table (moderation_signals JSONB column — add migration)
-    - Triggers on article.published event (async, does not block publish)
-  □ Integrate moderation signals into feed ranking:
-    - High spam probability → exclude from recommendations
-    - AI-generated probability > 0.8 → distribute at 30% of normal rate
-    - quality_signal = low → exclude from "New to You" feed
-  □ Build admin moderation queue (basic — just a list of flagged articles for manual review)
-  □ Human review outcome updates moderation_signals (override AI classification)
+□ Build content classification service: - Input: article title + body_text (first 1000 words) - Classify: spam probability (0–1), AI-generated probability (0–1), quality_signal (low/medium/high) - Model: Claude Haiku with constrained classification prompt - Result stored on articles table (moderation_signals JSONB column — add migration) - Triggers on article.published event (async, does not block publish)
+□ Integrate moderation signals into feed ranking: - High spam probability → exclude from recommendations - AI-generated probability > 0.8 → distribute at 30% of normal rate - quality_signal = low → exclude from "New to You" feed
+□ Build admin moderation queue (basic — just a list of flagged articles for manual review)
+□ Human review outcome updates moderation_signals (override AI classification)
 
 Branch: feat/102-implement-ai-content-moderation-signals
 Commit messages:
-  feat(ai): implement content classification for spam and quality signals
-  feat(feed): integrate moderation signals into feed distribution algorithm
-  feat(admin): build content moderation review queue
+feat(ai): implement content classification for spam and quality signals
+feat(feed): integrate moderation signals into feed distribution algorithm
+feat(admin): build content moderation review queue
+
 ```
 
 ---
@@ -3377,24 +3253,18 @@ Commit messages:
 **Owner:** Dev 3 (digest generation), Dev 1 (email delivery)
 
 ```
+
 TASKS:
-  □ Build weekly digest generator:
-    - Runs every Monday 06:00 UTC (BullMQ cron)
-    - Per active reader (read at least once in last 14 days):
-      - Fetch top 10 candidates from recommendation engine
-      - Remove articles from already-read list
-      - Select top 5
-    - Generate AI subject line: "Your week in [top tag]: 5 reads you'll love"
-    - Build personalized email HTML (using email template system)
-    - Queue for delivery via Resend (batch, rate-limited)
-  □ GET /v1/users/me/digest-preferences → manage digest settings
-  □ PATCH /v1/users/me/digest-preferences → opt out / change day
-  □ Track: digest open rate, click rate, attributable reads per issue
+□ Build weekly digest generator: - Runs every Monday 06:00 UTC (BullMQ cron) - Per active reader (read at least once in last 14 days): - Fetch top 10 candidates from recommendation engine - Remove articles from already-read list - Select top 5 - Generate AI subject line: "Your week in [top tag]: 5 reads you'll love" - Build personalized email HTML (using email template system) - Queue for delivery via Resend (batch, rate-limited)
+□ GET /v1/users/me/digest-preferences → manage digest settings
+□ PATCH /v1/users/me/digest-preferences → opt out / change day
+□ Track: digest open rate, click rate, attributable reads per issue
 
 Branch: feat/105-implement-personalized-weekly-digest
 Commit messages:
-  feat(email): implement AI-personalized weekly reading digest generation
-  feat(email): add weekly digest scheduling and delivery with performance tracking
+feat(email): implement AI-personalized weekly reading digest generation
+feat(email): add weekly digest scheduling and delivery with performance tracking
+
 ```
 
 ---
@@ -3406,31 +3276,21 @@ Commit messages:
 **Owner:** Dev 3 (optimization), Dev 1 (monitoring)
 
 ```
+
 TASKS:
-  □ Audit all AI API calls:
-    - Are all responses cached where appropriate?
-    - Are prompts optimized for token efficiency?
-    - Are Haiku vs Sonnet model choices correct?
-  □ Implement Redis caching for AI responses:
-    - Same article summarization request: serve from cache
-    - Cache key: hash(articleId + model_version)
-    - TTL: 30 days
-  □ Build AI cost dashboard (admin view):
-    - Total spend by feature, by period
-    - Cost per active user
-    - Top users by AI consumption
-    - Projected monthly cost at current growth rate
-  □ Implement per-user monthly AI budget:
-    - Free tier: $0.10 equivalent / month
-    - Pro tier: $1.00 equivalent / month
-  □ Add AI feature degradation (if provider is down, graceful fallback)
-  □ Load test AI endpoints (concurrent writers using AI assistant)
+□ Audit all AI API calls: - Are all responses cached where appropriate? - Are prompts optimized for token efficiency? - Are Haiku vs Sonnet model choices correct?
+□ Implement Redis caching for AI responses: - Same article summarization request: serve from cache - Cache key: hash(articleId + model_version) - TTL: 30 days
+□ Build AI cost dashboard (admin view): - Total spend by feature, by period - Cost per active user - Top users by AI consumption - Projected monthly cost at current growth rate
+□ Implement per-user monthly AI budget: - Free tier: $0.10 equivalent / month - Pro tier: $1.00 equivalent / month
+□ Add AI feature degradation (if provider is down, graceful fallback)
+□ Load test AI endpoints (concurrent writers using AI assistant)
 
 Branch: perf/108-optimize-ai-feature-cost-and-reliability
 Commit messages:
-  perf(ai): implement Redis caching for AI responses to reduce API costs
-  feat(admin): build AI cost monitoring dashboard with spend tracking
-  perf(ai): add per-user AI budget enforcement and graceful degradation
+perf(ai): implement Redis caching for AI responses to reduce API costs
+feat(admin): build AI cost monitoring dashboard with spend tracking
+perf(ai): add per-user AI budget enforcement and graceful degradation
+
 ```
 
 ---
@@ -3444,26 +3304,28 @@ Commit messages:
 **Owner:** Dev 3 (backend), Dev 2 (frontend)
 
 ```
+
 BACKEND TASKS:
-  □ POST /v1/reactions/:articleId — { reactionType: 'insightful'|'disagree'|'surprising'|'moving'|'practical' }
-  □ DELETE /v1/reactions/:articleId — remove reaction (toggle off)
-  □ GET /v1/reactions/:articleId — reaction counts per type + viewer's reaction
-  □ Reactions stored in article_reactions table
-  □ Reaction counts denormalized to articles table (for feed performance)
-  □ 'disagree' reaction → highest weight in quality signal (valuable debate indicator)
+□ POST /v1/reactions/:articleId — { reactionType: 'insightful'|'disagree'|'surprising'|'moving'|'practical' }
+□ DELETE /v1/reactions/:articleId — remove reaction (toggle off)
+□ GET /v1/reactions/:articleId — reaction counts per type + viewer's reaction
+□ Reactions stored in article_reactions table
+□ Reaction counts denormalized to articles table (for feed performance)
+□ 'disagree' reaction → highest weight in quality signal (valuable debate indicator)
 
 FRONTEND TASKS:
-  □ Build ReactionButton atom (icon + count, filled/unfilled states)
-  □ Build ReactionBar molecule (5 reactions in a row)
-  □ Implement optimistic updates (instant feedback, rollback on error)
-  □ Build reaction tooltip (hover → see label "Insightful")
-  □ Build reaction summary in feed card (show top 2 reactions + count)
-  □ No reaction counts visible in editor draft (only on published articles)
+□ Build ReactionButton atom (icon + count, filled/unfilled states)
+□ Build ReactionBar molecule (5 reactions in a row)
+□ Implement optimistic updates (instant feedback, rollback on error)
+□ Build reaction tooltip (hover → see label "Insightful")
+□ Build reaction summary in feed card (show top 2 reactions + count)
+□ No reaction counts visible in editor draft (only on published articles)
 
 Branch: feat/111-implement-five-reaction-system
 Commit messages:
-  feat(community): implement five-reaction system replacing clap mechanic
-  feat(ui): build reaction bar with optimistic updates and hover labels
+feat(community): implement five-reaction system replacing clap mechanic
+feat(ui): build reaction bar with optimistic updates and hover labels
+
 ```
 
 ---
@@ -3475,32 +3337,27 @@ Commit messages:
 **Owner:** Dev 2 (UI/UX), Dev 3 (backend), Dev 1 (real-time, if Pub/Sub available)
 
 ```
+
 BACKEND TASKS:
-  □ POST /v1/comments — { articleId, blockId, parentCommentId?, content }
-  □ PATCH /v1/comments/:id — edit own comment
-  □ DELETE /v1/comments/:id — delete own comment (soft delete)
-  □ GET /v1/comments/:articleId — all comments grouped by blockId
-  □ POST /v1/reactions to comments (same reaction types)
-  □ Notify article author on new comment (notification record)
+□ POST /v1/comments — { articleId, blockId, parentCommentId?, content }
+□ PATCH /v1/comments/:id — edit own comment
+□ DELETE /v1/comments/:id — delete own comment (soft delete)
+□ GET /v1/comments/:articleId — all comments grouped by blockId
+□ POST /v1/reactions to comments (same reaction types)
+□ Notify article author on new comment (notification record)
 
 FRONTEND TASKS:
-  □ Implement inline comment UI in ArticleBody:
-    - Each paragraph on hover: shows comment bubble icon in margin
-    - Click bubble → CommentThread opens anchored to paragraph
-    - Thread shows existing comments + compose field
-    - Thread is collapsible (doesn't push content)
-  □ Build CommentThread organism:
-    - Comment item (avatar + author + text + timestamp + reactions)
-    - Reply input (nested, 1 level only)
-    - Edit/delete controls (own comments)
-  □ Build comment count indicator in article header
-  □ Build comments panel (all comments listed by section, like GitHub PR review summary)
+□ Implement inline comment UI in ArticleBody: - Each paragraph on hover: shows comment bubble icon in margin - Click bubble → CommentThread opens anchored to paragraph - Thread shows existing comments + compose field - Thread is collapsible (doesn't push content)
+□ Build CommentThread organism: - Comment item (avatar + author + text + timestamp + reactions) - Reply input (nested, 1 level only) - Edit/delete controls (own comments)
+□ Build comment count indicator in article header
+□ Build comments panel (all comments listed by section, like GitHub PR review summary)
 
 Branch: feat/114-implement-inline-paragraph-comment-system
 Commit messages:
-  feat(community): implement paragraph-anchored comment threads
-  feat(ui): build inline comment thread UI anchored to article paragraphs
-  feat(ui): add comment count indicator and all-comments panel view
+feat(community): implement paragraph-anchored comment threads
+feat(ui): build inline comment thread UI anchored to article paragraphs
+feat(ui): add comment count indicator and all-comments panel view
+
 ```
 
 ---
@@ -3512,37 +3369,30 @@ Commit messages:
 **Owner:** Dev 3 (backend), Dev 2 (frontend)
 
 ```
+
 BACKEND TASKS:
-  □ Notification creation service:
-    - createNotification(userId, type, data) → writes to notifications table
-    - Types: new_follower, new_subscriber, new_comment, new_reaction,
-             article_published_by_followed, earnings_payout_sent, system_announcement
-  □ GET /v1/users/me/notifications — paginated notifications (latest first)
-  □ PATCH /v1/users/me/notifications/:id/read — mark read
-  □ PATCH /v1/users/me/notifications/read-all — mark all read
-  □ GET /v1/users/me/notifications/unread-count — badge count
-  □ Email notification dispatch:
-    - On new_comment: send email to article author (if preference enabled)
-    - On new_subscriber: send email to creator (daily digest of new subs, not per-sub)
-    - On earnings_payout_sent: always send email (financial)
-  □ PATCH /v1/users/me/notification-preferences — control which events trigger email
+□ Notification creation service: - createNotification(userId, type, data) → writes to notifications table - Types: new_follower, new_subscriber, new_comment, new_reaction,
+article_published_by_followed, earnings_payout_sent, system_announcement
+□ GET /v1/users/me/notifications — paginated notifications (latest first)
+□ PATCH /v1/users/me/notifications/:id/read — mark read
+□ PATCH /v1/users/me/notifications/read-all — mark all read
+□ GET /v1/users/me/notifications/unread-count — badge count
+□ Email notification dispatch: - On new_comment: send email to article author (if preference enabled) - On new_subscriber: send email to creator (daily digest of new subs, not per-sub) - On earnings_payout_sent: always send email (financial)
+□ PATCH /v1/users/me/notification-preferences — control which events trigger email
 
 FRONTEND TASKS:
-  □ Build notification bell icon with unread count badge
-  □ Build NotificationPanel (slide-in from right or dropdown):
-    - List of notifications (grouped by date)
-    - Unread state visual distinction
-    - Click → navigate to relevant page
-    - Mark all read button
-  □ Build NotificationItem molecule (avatar + description + timestamp)
-  □ Build notification preferences settings page
-  □ Implement real-time notification count update (polling every 30 seconds — not WebSocket yet)
+□ Build notification bell icon with unread count badge
+□ Build NotificationPanel (slide-in from right or dropdown): - List of notifications (grouped by date) - Unread state visual distinction - Click → navigate to relevant page - Mark all read button
+□ Build NotificationItem molecule (avatar + description + timestamp)
+□ Build notification preferences settings page
+□ Implement real-time notification count update (polling every 30 seconds — not WebSocket yet)
 
 Branch: feat/117-implement-notification-system
 Commit messages:
-  feat(community): implement notification creation service for all event types
-  feat(community): add notification endpoints with read state management
-  feat(ui): build notification panel with unread badge and preference controls
+feat(community): implement notification creation service for all event types
+feat(community): add notification endpoints with read state management
+feat(ui): build notification panel with unread badge and preference controls
+
 ```
 
 ---
@@ -3554,24 +3404,26 @@ Commit messages:
 **Owner:** Dev 2 (primary)
 
 ```
+
 BACKEND TASKS (Dev 3):
-  □ POST /v1/bookmarks/:articleId — save article
-  □ DELETE /v1/bookmarks/:articleId — remove
-  □ GET /v1/bookmarks — all saved articles (with pagination)
-  □ Reading position: save scroll_depth per article per user (PATCH /v1/reading-events with position)
-  □ GET /v1/reading-events/in-progress — articles started but not finished (for "continue reading")
+□ POST /v1/bookmarks/:articleId — save article
+□ DELETE /v1/bookmarks/:articleId — remove
+□ GET /v1/bookmarks — all saved articles (with pagination)
+□ Reading position: save scroll_depth per article per user (PATCH /v1/reading-events with position)
+□ GET /v1/reading-events/in-progress — articles started but not finished (for "continue reading")
 
 FRONTEND TASKS (Dev 2):
-  □ Build BookmarkButton atom (toggle, shows filled when saved)
-  □ Build bookmarks page (grid of saved articles, organized by save date)
-  □ Build "Continue Reading" section on feed page (3 in-progress articles)
-  □ Build reading position restore (on article open, scroll to last position)
-  □ Build reading list empty state with "Start exploring" CTA
+□ Build BookmarkButton atom (toggle, shows filled when saved)
+□ Build bookmarks page (grid of saved articles, organized by save date)
+□ Build "Continue Reading" section on feed page (3 in-progress articles)
+□ Build reading position restore (on article open, scroll to last position)
+□ Build reading list empty state with "Start exploring" CTA
 
 Branch: feat/120-implement-bookmarks-and-reading-position
 Commit messages:
-  feat(reading): implement article bookmarking and reading position persistence
-  feat(ui): build bookmarks page and continue reading feature
+feat(reading): implement article bookmarking and reading position persistence
+feat(ui): build bookmarks page and continue reading feature
+
 ```
 
 ---
@@ -3583,34 +3435,28 @@ Commit messages:
 **Owner:** Dev 2 (UI), Dev 3 (backend)
 
 ```
+
 BACKEND TASKS:
-  □ POST /v1/annotations — { articleId, blockId, selectedText, note, isPublic }
-  □ PATCH /v1/annotations/:id — update note or visibility
-  □ DELETE /v1/annotations/:id
-  □ GET /v1/annotations/:articleId — viewer's own annotations
-  □ GET /v1/annotations/:articleId/public — public annotations from all readers
-    (aggregated by blockId — show most-highlighted passages)
+□ POST /v1/annotations — { articleId, blockId, selectedText, note, isPublic }
+□ PATCH /v1/annotations/:id — update note or visibility
+□ DELETE /v1/annotations/:id
+□ GET /v1/annotations/:articleId — viewer's own annotations
+□ GET /v1/annotations/:articleId/public — public annotations from all readers
+(aggregated by blockId — show most-highlighted passages)
 
 FRONTEND TASKS:
-  □ Build text selection → highlight toolbar in Study mode
-    - Highlight: save with amber/yellow color, no note
-    - Annotate: highlight + open note input
-    - Share: generates shareable card
-  □ Build annotation sidebar (in Study mode):
-    - List of all annotations in this article
-    - Organized by position in article
-    - Click → scrolls to highlighted text
-  □ Build public highlights overlay:
-    - Show passages highlighted by 3+ readers (subtle amber underline)
-    - Hover → see count ("47 readers highlighted this")
-  □ Build annotations export (Markdown format — for Obsidian/Notion compatibility)
-  □ Build annotation search (search within own annotations)
+□ Build text selection → highlight toolbar in Study mode - Highlight: save with amber/yellow color, no note - Annotate: highlight + open note input - Share: generates shareable card
+□ Build annotation sidebar (in Study mode): - List of all annotations in this article - Organized by position in article - Click → scrolls to highlighted text
+□ Build public highlights overlay: - Show passages highlighted by 3+ readers (subtle amber underline) - Hover → see count ("47 readers highlighted this")
+□ Build annotations export (Markdown format — for Obsidian/Notion compatibility)
+□ Build annotation search (search within own annotations)
 
 Branch: feat/123-implement-annotations-and-public-highlights
 Commit messages:
-  feat(reading): implement annotation creation with public/private visibility
-  feat(ui): build text selection toolbar and annotation sidebar for Study mode
-  feat(ui): add public highlights overlay showing community wisdom
+feat(reading): implement annotation creation with public/private visibility
+feat(ui): build text selection toolbar and annotation sidebar for Study mode
+feat(ui): add public highlights overlay showing community wisdom
+
 ```
 
 ---
@@ -3622,28 +3468,30 @@ Commit messages:
 **Owner:** Dev 3 (backend), Dev 2 (frontend)
 
 ```
+
 BACKEND TASKS:
-  □ POST /v1/circles — create circle (name, description, topic_tags)
-  □ GET /v1/circles/:slug — circle detail + stats
-  □ POST /v1/circles/:id/join
-  □ DELETE /v1/circles/:id/leave
-  □ GET /v1/circles/:id/feed — articles tagged with circle's topic_tags (curated)
-  □ GET /v1/circles (search) — discover circles (keyword + tag filter)
-  □ Recommend circles based on user reading history (tag affinity match)
+□ POST /v1/circles — create circle (name, description, topic_tags)
+□ GET /v1/circles/:slug — circle detail + stats
+□ POST /v1/circles/:id/join
+□ DELETE /v1/circles/:id/leave
+□ GET /v1/circles/:id/feed — articles tagged with circle's topic_tags (curated)
+□ GET /v1/circles (search) — discover circles (keyword + tag filter)
+□ Recommend circles based on user reading history (tag affinity match)
 
 FRONTEND TASKS:
-  □ Build CircleCard organism (name, description, member count, join button)
-  □ Build circle discovery page (search + recommended circles)
-  □ Build circle detail page (CircleCard header + CircleFeed + member leaderboard)
-  □ Build circle article feed (same ArticleFeedCard, filtered to circle topic)
-  □ Build "My Circles" section in authenticated feed sidebar
-  □ Build Circles tab in main feed (content from joined circles)
+□ Build CircleCard organism (name, description, member count, join button)
+□ Build circle discovery page (search + recommended circles)
+□ Build circle detail page (CircleCard header + CircleFeed + member leaderboard)
+□ Build circle article feed (same ArticleFeedCard, filtered to circle topic)
+□ Build "My Circles" section in authenticated feed sidebar
+□ Build Circles tab in main feed (content from joined circles)
 
 Branch: feat/126-implement-interest-circles
 Commit messages:
-  feat(community): implement interest circle creation, discovery, and membership
-  feat(ui): build circle discovery and detail pages with member leaderboard
-  feat(feed): add circles tab showing content from joined topic communities
+feat(community): implement interest circle creation, discovery, and membership
+feat(ui): build circle discovery and detail pages with member leaderboard
+feat(feed): add circles tab showing content from joined topic communities
+
 ```
 
 ---
@@ -3655,23 +3503,21 @@ Commit messages:
 **Owner:** Dev 3 (backend), Dev 2 (frontend)
 
 ```
+
 TASKS:
-  □ Build "Ask the Author" feature (extends comment system):
-    - Any reader can submit a question via comment with type='question'
-    - Author can mark their response as the answer
-    - Questions surface in a separate tab below article
-    - Top questions shown in article feed card (preview)
-  □ GET /v1/articles/:id/questions → unanswered questions first
-  □ POST /v1/comments (type: 'question')
-  □ PATCH /v1/comments/:id/answer → mark comment as author answer
-  □ Build question tab on article page (Q&A section below article body)
-  □ Build author answer UI (highlighted, "Author" badge)
-  □ Build question compose box ("Have a question for the author?")
+□ Build "Ask the Author" feature (extends comment system): - Any reader can submit a question via comment with type='question' - Author can mark their response as the answer - Questions surface in a separate tab below article - Top questions shown in article feed card (preview)
+□ GET /v1/articles/:id/questions → unanswered questions first
+□ POST /v1/comments (type: 'question')
+□ PATCH /v1/comments/:id/answer → mark comment as author answer
+□ Build question tab on article page (Q&A section below article body)
+□ Build author answer UI (highlighted, "Author" badge)
+□ Build question compose box ("Have a question for the author?")
 
 Branch: feat/129-implement-ask-the-author-feature
 Commit messages:
-  feat(community): implement ask-the-author Q&A feature with answered marking
-  feat(ui): build article Q&A section with author answer highlighting
+feat(community): implement ask-the-author Q&A feature with answered marking
+feat(ui): build article Q&A section with author answer highlighting
+
 ```
 
 ---
@@ -3683,28 +3529,28 @@ Commit messages:
 **Owner:** Dev 3 (metrics), Dev 2 (UX polish)
 
 ```
+
 TASKS:
-  □ Add community metrics to creator analytics:
-    - Comments received per article
-    - Questions asked and answered rate
-    - Reaction breakdown per article
-  □ Build creator Quality Score display (based on read completion, reactions, comments)
-  □ Polish: reaction animations (micro-animations on react)
-  □ Polish: comment notification badge clears on page visit
-  □ Performance: paginate comment threads (load more)
-  □ Performance: lazy-load annotation sidebar
-  □ Fix any cross-feature bugs found during full-feature testing
+□ Add community metrics to creator analytics: - Comments received per article - Questions asked and answered rate - Reaction breakdown per article
+□ Build creator Quality Score display (based on read completion, reactions, comments)
+□ Polish: reaction animations (micro-animations on react)
+□ Polish: comment notification badge clears on page visit
+□ Performance: paginate comment threads (load more)
+□ Performance: lazy-load annotation sidebar
+□ Fix any cross-feature bugs found during full-feature testing
 
 Branch: feat/132-community-polish-and-metrics
 Commit messages:
-  feat(analytics): add community engagement metrics to creator analytics
-  perf(community): implement pagination for comment threads
-  fix(community): resolve notification badge and reaction animation issues
+feat(analytics): add community engagement metrics to creator analytics
+perf(community): implement pagination for comment threads
+fix(community): resolve notification badge and reaction animation issues
+
 ```
 
 **End of Phase 5 Acceptance Criteria:**
 
 ```
+
 ✓ 5 reactions work with optimistic updates
 ✓ Inline comments anchored to paragraphs
 ✓ Authors can answer questions publicly
@@ -3713,6 +3559,7 @@ Commit messages:
 ✓ Annotations in Study mode work with public highlights
 ✓ Circles discoverable and joinable
 ✓ Circle feed shows relevant content
+
 ```
 
 ---
@@ -3726,30 +3573,32 @@ Commit messages:
 **Owner:** Dev 2 (frontend perf), Dev 1 (backend perf)
 
 ```
+
 FRONTEND PERFORMANCE TASKS:
-  □ Run Lighthouse audit on: Home, Article, Feed, Editor, Profile pages
-  □ Target: LCP <2.5s, FID <100ms, CLS <0.1, FCP <1.8s
-  □ Identify and fix all Lighthouse issues
-  □ Implement route-level code splitting (already via React.lazy, verify)
-  □ Audit bundle size: install bundle analyzer
-  □ Remove unused dependencies
-  □ Optimize images: WebP, correct sizes, lazy loading
-  □ Implement virtual scrolling for long article feeds (if needed)
-  □ Profile React renders: eliminate unnecessary re-renders
+□ Run Lighthouse audit on: Home, Article, Feed, Editor, Profile pages
+□ Target: LCP <2.5s, FID <100ms, CLS <0.1, FCP <1.8s
+□ Identify and fix all Lighthouse issues
+□ Implement route-level code splitting (already via React.lazy, verify)
+□ Audit bundle size: install bundle analyzer
+□ Remove unused dependencies
+□ Optimize images: WebP, correct sizes, lazy loading
+□ Implement virtual scrolling for long article feeds (if needed)
+□ Profile React renders: eliminate unnecessary re-renders
 
 BACKEND PERFORMANCE TASKS:
-  □ Identify N+1 query problems in all API responses
-  □ Add database indexes for all frequent queries (verify EXPLAIN ANALYZE)
-  □ Implement Redis caching for: feed (TTL 5 min), article (TTL 1 hour), profile (TTL 15 min)
-  □ Cache invalidation strategy on data mutation
-  □ Add database connection pooling configuration (pg-pool settings)
-  □ Run load test (k6 or Artillery): simulate 100 concurrent readers
+□ Identify N+1 query problems in all API responses
+□ Add database indexes for all frequent queries (verify EXPLAIN ANALYZE)
+□ Implement Redis caching for: feed (TTL 5 min), article (TTL 1 hour), profile (TTL 15 min)
+□ Cache invalidation strategy on data mutation
+□ Add database connection pooling configuration (pg-pool settings)
+□ Run load test (k6 or Artillery): simulate 100 concurrent readers
 
 Branch: perf/135-performance-audit-and-optimization
 Commit messages:
-  perf(web): eliminate render bottlenecks and optimize code splitting
-  perf(api): add Redis caching layer for feed, article, and profile endpoints
-  perf(db): add missing indexes and resolve N+1 query patterns
+perf(web): eliminate render bottlenecks and optimize code splitting
+perf(api): add Redis caching layer for feed, article, and profile endpoints
+perf(db): add missing indexes and resolve N+1 query patterns
+
 ```
 
 ---
@@ -3761,28 +3610,25 @@ Commit messages:
 **Owner:** Dev 2 (meta tags), Dev 1 (sitemap, structured data)
 
 ```
+
 TASKS:
-  □ Implement dynamic meta tags per page:
-    - <title>: Article title | VAMI
-    - <meta description>: Article subtitle or AI summary
-    - Open Graph: og:title, og:description, og:image, og:url, og:type=article
-    - Twitter Card: summary_large_image
-    - Article meta: article:author, article:published_time, article:tag
-  □ Implement canonical URL for all article pages
-  □ Implement hreflang (when translation ships)
-  □ Generate dynamic sitemap.xml (all published public articles)
-  □ Generate sitemap for creator profiles
-  □ robots.txt (allow: articles and profiles, disallow: dashboard, api, editor)
-  □ Implement JSON-LD structured data (Article, Person, BreadcrumbList)
-  □ Verify with Google Rich Results Test
-  □ Set up Google Search Console
-  □ Implement 301 redirects for old URL patterns (future import traffic)
+□ Implement dynamic meta tags per page: - <title>: Article title | VAMI - <meta description>: Article subtitle or AI summary - Open Graph: og:title, og:description, og:image, og:url, og:type=article - Twitter Card: summary_large_image - Article meta: article:author, article:published_time, article:tag
+□ Implement canonical URL for all article pages
+□ Implement hreflang (when translation ships)
+□ Generate dynamic sitemap.xml (all published public articles)
+□ Generate sitemap for creator profiles
+□ robots.txt (allow: articles and profiles, disallow: dashboard, api, editor)
+□ Implement JSON-LD structured data (Article, Person, BreadcrumbList)
+□ Verify with Google Rich Results Test
+□ Set up Google Search Console
+□ Implement 301 redirects for old URL patterns (future import traffic)
 
 Branch: feat/138-implement-comprehensive-seo-system
 Commit messages:
-  feat(seo): implement dynamic meta, Open Graph, and Twitter Card tags per page
-  feat(seo): add JSON-LD structured data for articles and creator profiles
-  feat(seo): generate dynamic XML sitemap and configure robots.txt
+feat(seo): implement dynamic meta, Open Graph, and Twitter Card tags per page
+feat(seo): add JSON-LD structured data for articles and creator profiles
+feat(seo): generate dynamic XML sitemap and configure robots.txt
+
 ```
 
 ---
@@ -3794,32 +3640,24 @@ Commit messages:
 **Owner:** Dev 2 (primary audit), Dev 1 (infrastructure)
 
 ```
+
 AUDIT CHECKLIST (run on every page):
-  □ Run axe-core automated scan (fix all critical and serious violations)
-  □ Keyboard navigation test: can user navigate EVERY interaction without mouse?
-    - Tab order is logical
-    - Focus indicator always visible (never hidden via CSS outline:none)
-    - Modal/dialog traps focus correctly
-    - Dropdown menus openable via keyboard
-    - Editor commands accessible via keyboard shortcuts
-  □ Screen reader test (VoiceOver on Mac, NVDA on Windows):
-    - All images have meaningful alt text
-    - All icons have aria-label
-    - Form inputs have associated labels
-    - Error messages announced
-    - Dynamic content changes announced (aria-live regions)
-  □ Color contrast: all text passes WCAG AA (4.5:1 for body, 3:1 for large text)
-  □ Check dark mode contrast separately
-  □ Text resize test: app usable at 200% zoom
-  □ Motion: respect prefers-reduced-motion (no auto-playing animations)
-  □ Fix ALL issues found before proceeding to Week 48
+□ Run axe-core automated scan (fix all critical and serious violations)
+□ Keyboard navigation test: can user navigate EVERY interaction without mouse? - Tab order is logical - Focus indicator always visible (never hidden via CSS outline:none) - Modal/dialog traps focus correctly - Dropdown menus openable via keyboard - Editor commands accessible via keyboard shortcuts
+□ Screen reader test (VoiceOver on Mac, NVDA on Windows): - All images have meaningful alt text - All icons have aria-label - Form inputs have associated labels - Error messages announced - Dynamic content changes announced (aria-live regions)
+□ Color contrast: all text passes WCAG AA (4.5:1 for body, 3:1 for large text)
+□ Check dark mode contrast separately
+□ Text resize test: app usable at 200% zoom
+□ Motion: respect prefers-reduced-motion (no auto-playing animations)
+□ Fix ALL issues found before proceeding to Week 48
 
 Branch: fix/141-wcag-aa-accessibility-compliance
 Commit messages:
-  fix(a11y): add missing ARIA labels and keyboard navigation support
-  fix(a11y): implement focus management for modals and dropdowns
-  fix(a11y): correct color contrast violations in light and dark modes
-  fix(a11y): add screen reader announcements for dynamic content
+fix(a11y): add missing ARIA labels and keyboard navigation support
+fix(a11y): implement focus management for modals and dropdowns
+fix(a11y): correct color contrast violations in light and dark modes
+fix(a11y): add screen reader announcements for dynamic content
+
 ```
 
 ---
@@ -3831,36 +3669,30 @@ Commit messages:
 **Owner:** Dev 1 (backend security), Dev 2 (frontend security)
 
 ```
+
 SECURITY CHECKLIST:
-  □ Run npm audit on all packages — fix critical and high vulns
-  □ SQL injection: verify all queries use parameterized statements (no exceptions)
-  □ XSS: verify all user content is sanitized before rendering and before storage
-    - Use DOMPurify on any HTML rendered from user input
-    - Verify Tiptap editor serialization is sanitized
-  □ CSRF: not applicable for JWT-based API, but verify no session cookie auth
-  □ Authentication:
-    - JWT tokens never stored in localStorage (use httpOnly cookies for refresh tokens)
-    - Verify refresh token rotation on every use
-    - Verify old refresh tokens are invalidated after rotation
-  □ Authorization:
-    - Verify every endpoint checks ownership (no IDOR vulnerabilities)
-    - Test: can User A access User B's private drafts? (should be 403)
-    - Test: can reader access creator-only endpoints? (should be 403)
-  □ Rate limiting: verify all auth endpoints are rate limited
-  □ Stripe webhook signature: verify every webhook is verified (not just trusted)
-  □ File uploads: verify file type validation, size limits, no execution
-  □ Secrets: verify no secrets in codebase (git log scan)
-  □ Security headers: verify all Helmet headers present and correct
-  □ HTTPS: verify redirect from HTTP → HTTPS everywhere
-  □ Password handling: N/A (magic link only) — verify tokens are hashed in DB
-  □ Dependency pinning: lock all dependency versions in package.json
+□ Run npm audit on all packages — fix critical and high vulns
+□ SQL injection: verify all queries use parameterized statements (no exceptions)
+□ XSS: verify all user content is sanitized before rendering and before storage - Use DOMPurify on any HTML rendered from user input - Verify Tiptap editor serialization is sanitized
+□ CSRF: not applicable for JWT-based API, but verify no session cookie auth
+□ Authentication: - JWT tokens never stored in localStorage (use httpOnly cookies for refresh tokens) - Verify refresh token rotation on every use - Verify old refresh tokens are invalidated after rotation
+□ Authorization: - Verify every endpoint checks ownership (no IDOR vulnerabilities) - Test: can User A access User B's private drafts? (should be 403) - Test: can reader access creator-only endpoints? (should be 403)
+□ Rate limiting: verify all auth endpoints are rate limited
+□ Stripe webhook signature: verify every webhook is verified (not just trusted)
+□ File uploads: verify file type validation, size limits, no execution
+□ Secrets: verify no secrets in codebase (git log scan)
+□ Security headers: verify all Helmet headers present and correct
+□ HTTPS: verify redirect from HTTP → HTTPS everywhere
+□ Password handling: N/A (magic link only) — verify tokens are hashed in DB
+□ Dependency pinning: lock all dependency versions in package.json
 
 Branch: fix/144-security-audit-and-hardening
 Commit messages:
-  fix(security): enforce parameterized queries and add XSS sanitization
-  fix(security): implement httpOnly cookie for refresh token storage
-  fix(security): harden authorization middleware with ownership checks
-  fix(security): verify Stripe webhook signatures on all payment events
+fix(security): enforce parameterized queries and add XSS sanitization
+fix(security): implement httpOnly cookie for refresh token storage
+fix(security): harden authorization middleware with ownership checks
+fix(security): verify Stripe webhook signatures on all payment events
+
 ```
 
 ---
@@ -3872,36 +3704,38 @@ Commit messages:
 **Owner:** Dev 3 (test writing), all devs verify their own modules
 
 ```
+
 COVERAGE TARGETS:
-  Backend:  70% line coverage minimum
-  Frontend: 60% line coverage minimum
+Backend: 70% line coverage minimum
+Frontend: 60% line coverage minimum
 
 CRITICAL FLOWS REQUIRING E2E TESTS (Playwright):
-  □ User can sign up via magic link, complete onboarding, see feed
-  □ Writer can create draft, write content, publish article
-  □ Reader can find article via search, read, bookmark, react
-  □ Creator can view earnings dashboard, understand formula
-  □ Subscriber can subscribe to creator, receive newsletter
-  □ Writer can export subscriber list as CSV
+□ User can sign up via magic link, complete onboarding, see feed
+□ Writer can create draft, write content, publish article
+□ Reader can find article via search, read, bookmark, react
+□ Creator can view earnings dashboard, understand formula
+□ Subscriber can subscribe to creator, receive newsletter
+□ Writer can export subscriber list as CSV
 
 E2E TEST SETUP:
-  □ Install Playwright
-  □ Configure test environment (uses staging-like local environment)
-  □ Write auth helpers (reusable login for test users)
-  □ Write page object models for: Feed, Editor, Article, Profile, Analytics
+□ Install Playwright
+□ Configure test environment (uses staging-like local environment)
+□ Write auth helpers (reusable login for test users)
+□ Write page object models for: Feed, Editor, Article, Profile, Analytics
 
 UNIT TEST GAPS (fill the biggest gaps):
-  □ authService (target: 95%)
-  □ earningsCalculationService (target: 100% — financial logic)
-  □ recommendationService (target: 85%)
-  □ aiService (target: 80%)
-  □ All React hooks (target: 80%)
+□ authService (target: 95%)
+□ earningsCalculationService (target: 100% — financial logic)
+□ recommendationService (target: 85%)
+□ aiService (target: 80%)
+□ All React hooks (target: 80%)
 
 Branch: test/147-improve-test-coverage-and-add-e2e-tests
 Commit messages:
-  test(api): increase authService and earnings calculation test coverage
-  test(web): add E2E tests for critical user flows with Playwright
-  test(web): improve React hook unit test coverage
+test(api): increase authService and earnings calculation test coverage
+test(web): add E2E tests for critical user flows with Playwright
+test(web): improve React hook unit test coverage
+
 ```
 
 ---
@@ -3913,33 +3747,20 @@ Commit messages:
 **Owner:** Dev 3 (import tool), Dev 2 (onboarding), Dev 1 (infrastructure)
 
 ```
+
 TASKS:
-  □ Build content import tool:
-    - Import from Medium: paste profile URL → fetch + convert articles to blocks
-    - Import from Substack: export ZIP upload → parse and import
-    - Import from HTML file: convert to block format
-    - Show import progress, per-article success/failure report
-  □ Build onboarding wizard (new user flow):
-    - Step 1: Are you a reader, writer, or both?
-    - Step 2: Select 5+ topics you're interested in
-    - Step 3: Follow 3 recommended creators in your topics
-    - Step 4: Read your first article recommendation
-    - (Writer path): Step 2.5: Set up your creator profile
-  □ Build waitlist page (pre-launch):
-    - Email signup
-    - Referral mechanism (each referral moves up list)
-    - Referral count displayed ("You've referred 3 people")
-  □ Build founding creator invite flow:
-    - Invite-only signup during beta (invite code required)
-    - Special "Founding Creator" badge on profile
-    - Lifetime Pro plan assignment
-  □ Infrastructure: verify staging handles 100 concurrent users
+□ Build content import tool: - Import from Medium: paste profile URL → fetch + convert articles to blocks - Import from Substack: export ZIP upload → parse and import - Import from HTML file: convert to block format - Show import progress, per-article success/failure report
+□ Build onboarding wizard (new user flow): - Step 1: Are you a reader, writer, or both? - Step 2: Select 5+ topics you're interested in - Step 3: Follow 3 recommended creators in your topics - Step 4: Read your first article recommendation - (Writer path): Step 2.5: Set up your creator profile
+□ Build waitlist page (pre-launch): - Email signup - Referral mechanism (each referral moves up list) - Referral count displayed ("You've referred 3 people")
+□ Build founding creator invite flow: - Invite-only signup during beta (invite code required) - Special "Founding Creator" badge on profile - Lifetime Pro plan assignment
+□ Infrastructure: verify staging handles 100 concurrent users
 
 Branch: feat/150-beta-launch-preparation
 Commit messages:
-  feat(onboarding): implement content import from Medium, Substack, and HTML
-  feat(onboarding): build new user onboarding wizard with topic and creator selection
-  feat(growth): add waitlist page with referral mechanism
+feat(onboarding): implement content import from Medium, Substack, and HTML
+feat(onboarding): build new user onboarding wizard with topic and creator selection
+feat(growth): add waitlist page with referral mechanism
+
 ```
 
 ---
@@ -3951,32 +3772,32 @@ Commit messages:
 **Owner:** All devs
 
 ```
+
 TASKS:
-  □ Send invites to 100 founding creators (stagger: 10 per day × 10 days)
-  □ Monitor: error rate (Sentry dashboard), server health (Railway metrics), DB performance
-  □ Daily feedback review: synthesize GitHub Issues from creator feedback
-  □ Bug fix prioritization:
-    - P0 (block): fix within 4 hours, hotfix deploy to production
-    - P1 (bad UX): fix within 2 days, deploy in weekly release
-    - P2 (nice to have): add to backlog
-  □ Create hotfix pipeline:
-    - hotfix branch → staging (verify) → main (emergency approval, 1 dev is enough)
-  □ Track: daily active writers, articles published, subscription conversions
+□ Send invites to 100 founding creators (stagger: 10 per day × 10 days)
+□ Monitor: error rate (Sentry dashboard), server health (Railway metrics), DB performance
+□ Daily feedback review: synthesize GitHub Issues from creator feedback
+□ Bug fix prioritization: - P0 (block): fix within 4 hours, hotfix deploy to production - P1 (bad UX): fix within 2 days, deploy in weekly release - P2 (nice to have): add to backlog
+□ Create hotfix pipeline: - hotfix branch → staging (verify) → main (emergency approval, 1 dev is enough)
+□ Track: daily active writers, articles published, subscription conversions
 
 HOTFIX PROCESS:
-  1. Branch: hotfix/[issue-number]-[description] from main
-  2. Fix issue
-  3. Deploy to staging, verify fix
-  4. PR to main (emergency — 1 approval sufficient)
-  5. Commit message: fix(scope): resolve [specific issue] (hotfix)
-  6. After merge to main: merge main back to develop (keep in sync)
+
+1. Branch: hotfix/[issue-number]-[description] from main
+2. Fix issue
+3. Deploy to staging, verify fix
+4. PR to main (emergency — 1 approval sufficient)
+5. Commit message: fix(scope): resolve [specific issue] (hotfix)
+6. After merge to main: merge main back to develop (keep in sync)
 
 BETA METRICS TO MONITOR DAILY:
-  - DAU / WAU
-  - Articles published
-  - Errors logged (Sentry)
-  - P95 API response time
-  - AI API costs
+
+- DAU / WAU
+- Articles published
+- Errors logged (Sentry)
+- P95 API response time
+- AI API costs
+
 ```
 
 ---
@@ -3988,33 +3809,35 @@ BETA METRICS TO MONITOR DAILY:
 **Owner:** All devs + founders
 
 ```
+
 PRE-LAUNCH CHECKLIST (verify 48 hours before):
-  □ All P0 and P1 bugs from beta resolved
-  □ Infrastructure scaled for expected traffic (upgrade plans if needed)
-  □ Monitoring and alerting configured (PagerDuty or manual on-call rotation)
-  □ Custom domain fully configured (vami.app) with SSL
-  □ Email deliverability verified (DMARC, SPF, DKIM records)
-  □ Stripe is in live mode (not test mode) in production
-  □ Privacy policy and Terms of Service published
-  □ GDPR: cookie consent banner (if applicable to user geography)
-  □ Support email functional (hello@vami.app)
+□ All P0 and P1 bugs from beta resolved
+□ Infrastructure scaled for expected traffic (upgrade plans if needed)
+□ Monitoring and alerting configured (PagerDuty or manual on-call rotation)
+□ Custom domain fully configured (vami.app) with SSL
+□ Email deliverability verified (DMARC, SPF, DKIM records)
+□ Stripe is in live mode (not test mode) in production
+□ Privacy policy and Terms of Service published
+□ GDPR: cookie consent banner (if applicable to user geography)
+□ Support email functional (hello@vami.app)
 
 LAUNCH DAY:
-  □ Product Hunt submission prepared and scheduled (12:01 AM PT)
-  □ Founding creators informed: post simultaneously on their existing platforms
-  □ Founders post Twitter/X thread
-  □ Press pitches sent (The Information, Digiday, creator economy newsletters)
-  □ Waitlist conversion emails sent
-  □ Remove invite code requirement (open to all)
-  □ Monitor all systems continuously for 12 hours post-launch
+□ Product Hunt submission prepared and scheduled (12:01 AM PT)
+□ Founding creators informed: post simultaneously on their existing platforms
+□ Founders post Twitter/X thread
+□ Press pitches sent (The Information, Digiday, creator economy newsletters)
+□ Waitlist conversion emails sent
+□ Remove invite code requirement (open to all)
+□ Monitor all systems continuously for 12 hours post-launch
 
 POST-LAUNCH (first 72 hours):
-  □ Daily metrics review
-  □ Personal responses to all feedback
-  □ Rapid iteration on feedback (have hotfix process ready)
+□ Daily metrics review
+□ Personal responses to all feedback
+□ Rapid iteration on feedback (have hotfix process ready)
 
 Branch: chore/public-launch-readiness
 Commit message: chore: prepare platform for public launch
+
 ```
 
 ---
@@ -4024,13 +3847,15 @@ Commit message: chore: prepare platform for public launch
 ## K.1 Testing Stack
 
 ```
-Backend Unit Tests:    Jest
-Backend Integration:   Jest + supertest (HTTP assertions)
-Frontend Unit Tests:   Vitest
-Frontend Components:   Vitest + React Testing Library
-E2E Tests:             Playwright
-Visual Regression:     (Deferred — Week 52+, use Percy or Chromatic)
-Load Testing:          k6 (scripts in /scripts/load-tests/)
+
+Backend Unit Tests: Jest
+Backend Integration: Jest + supertest (HTTP assertions)
+Frontend Unit Tests: Vitest
+Frontend Components: Vitest + React Testing Library
+E2E Tests: Playwright
+Visual Regression: (Deferred — Week 52+, use Percy or Chromatic)
+Load Testing: k6 (scripts in /scripts/load-tests/)
+
 ```
 
 ## K.2 Testing Conventions
@@ -4038,48 +3863,55 @@ Load Testing:          k6 (scripts in /scripts/load-tests/)
 **Backend test file structure:**
 
 ```
+
 Each test file tests ONE module.
 Three sections: describe → it/test.
 
 Naming convention:
-  describe('moduleName')
-    describe('methodName')
-      it('should [expected behavior] when [condition]')
-      it('should throw [error] when [invalid condition]')
+describe('moduleName')
+describe('methodName')
+it('should [expected behavior] when [condition]')
+it('should throw [error] when [invalid condition]')
 
 Arrange-Act-Assert pattern in every test.
 No test shares state with another test (beforeEach resets state).
 Database tests use transactions rolled back after each test (not deletion).
+
 ```
 
 **Frontend test priorities:**
 
 ```
+
 Test in this order of importance:
+
 1. Custom hooks (stateful logic, highest value)
 2. Form components (complex interaction)
 3. Service layer (API calls)
 4. Pure utility functions
 5. Simple presentational components (lowest value — skip if rushed)
+
 ```
 
 ## K.3 Test Coverage Requirements
 
 ```
+
 BACKEND:
-  authService.js:             90% minimum (security-critical)
-  earningsService.js:         100% minimum (financial-critical)
-  articleService.js:          75% minimum
-  recommendationService.js:   70% minimum
-  All other services:         60% minimum
-  Route handlers:             Integration test coverage only (unit test services)
+authService.js: 90% minimum (security-critical)
+earningsService.js: 100% minimum (financial-critical)
+articleService.js: 75% minimum
+recommendationService.js: 70% minimum
+All other services: 60% minimum
+Route handlers: Integration test coverage only (unit test services)
 
 FRONTEND:
-  All custom hooks:           80% minimum
-  All form components:        70% minimum
-  All service modules:        75% minimum
-  All utility functions:      90% minimum
-  UI components:              50% minimum (basic render tests)
+All custom hooks: 80% minimum
+All form components: 70% minimum
+All service modules: 75% minimum
+All utility functions: 90% minimum
+UI components: 50% minimum (basic render tests)
+
 ```
 
 ---
@@ -4097,48 +3929,57 @@ FRONTEND:
 ## L.2 Security Controls by Category
 
 ```
+
 AUTHENTICATION:
-  - Magic link tokens: 32-byte random (crypto.randomBytes), stored as SHA-256 hash
-  - JWT: RS256 asymmetric signing (if possible) or HS256 with 64+ char secret
-  - JWT lifetime: 15 minutes access token, 90 days refresh token
-  - Refresh token: rotated on every use, old tokens invalidated
-  - OAuth state parameter: CSRF prevention on OAuth flows
+
+- Magic link tokens: 32-byte random (crypto.randomBytes), stored as SHA-256 hash
+- JWT: RS256 asymmetric signing (if possible) or HS256 with 64+ char secret
+- JWT lifetime: 15 minutes access token, 90 days refresh token
+- Refresh token: rotated on every use, old tokens invalidated
+- OAuth state parameter: CSRF prevention on OAuth flows
 
 AUTHORIZATION:
-  - Every route: authenticated (valid JWT required)
-  - Every data mutation: ownership verified (user owns the resource)
-  - Creator-only routes: middleware checks is_creator flag
-  - Pro-only features: middleware checks creator_tier = 'pro'
+
+- Every route: authenticated (valid JWT required)
+- Every data mutation: ownership verified (user owns the resource)
+- Creator-only routes: middleware checks is_creator flag
+- Pro-only features: middleware checks creator_tier = 'pro'
 
 INPUT VALIDATION:
-  - Every API endpoint: Zod schema validation
-  - File uploads: MIME type check + magic bytes check + size limit
-  - Image uploads: server-side validation via Cloudinary (not client-only)
-  - HTML content: DOMPurify sanitization before storage
+
+- Every API endpoint: Zod schema validation
+- File uploads: MIME type check + magic bytes check + size limit
+- Image uploads: server-side validation via Cloudinary (not client-only)
+- HTML content: DOMPurify sanitization before storage
 
 DATA PROTECTION:
-  - Passwords: not stored (magic link only)
-  - Refresh tokens: hashed with SHA-256 before storage
-  - PII in logs: redacted (email → e***@domain.com in logs)
-  - Database at rest: encrypted by Neon.tech (platform-level)
-  - Stripe data: never stored locally (reference Stripe IDs only)
+
+- Passwords: not stored (magic link only)
+- Refresh tokens: hashed with SHA-256 before storage
+- PII in logs: redacted (email → e\*\*\*@domain.com in logs)
+- Database at rest: encrypted by Neon.tech (platform-level)
+- Stripe data: never stored locally (reference Stripe IDs only)
 
 TRANSPORT:
-  - HTTPS only (Cloudflare enforces)
-  - HSTS header (max-age=31536000, includeSubdomains)
-  - Certificate: managed by Cloudflare and Vercel
+
+- HTTPS only (Cloudflare enforces)
+- HSTS header (max-age=31536000, includeSubdomains)
+- Certificate: managed by Cloudflare and Vercel
 
 RATE LIMITING:
-  - Global: 100 req/15 min per IP (unauthenticated)
-  - Authenticated: 1000 req/15 min per user
-  - Magic link: 5 req/hour per email + per IP
-  - AI endpoints: per-tier daily limits
-  - Newsletter send: 1/24 hours per creator
+
+- Global: 100 req/15 min per IP (unauthenticated)
+- Authenticated: 1000 req/15 min per user
+- Magic link: 5 req/hour per email + per IP
+- AI endpoints: per-tier daily limits
+- Newsletter send: 1/24 hours per creator
 
 SECRETS MANAGEMENT:
-  - All secrets: GitHub Secrets (never in codebase)
-  - Secret rotation: documented process, perform on team member departure
-  - .env files: never committed, verified by .gitignore
+
+- All secrets: GitHub Secrets (never in codebase)
+- Secret rotation: documented process, perform on team member departure
+- .env files: never committed, verified by .gitignore
+
 ```
 
 ---
@@ -4150,7 +3991,9 @@ SECRETS MANAGEMENT:
 **Every deployment follows this sequence without exception:**
 
 ```
+
 FEATURE DEPLOY (standard — weekly):
+
 1. Close sprint: merge all approved feature PRs to develop
 2. Create release branch: git checkout -b release/v[version] from develop
 3. Version bump only: update package.json version numbers
@@ -4165,6 +4008,7 @@ FEATURE DEPLOY (standard — weekly):
 12. Merge main → develop (keep in sync): open PR develop ← main
 
 HOTFIX DEPLOY (emergency):
+
 1. Branch from main: hotfix/[issue]-[description]
 2. Fix only the specific issue
 3. Deploy to staging, verify fix
@@ -4172,6 +4016,7 @@ HOTFIX DEPLOY (emergency):
 5. After merge to main: manually trigger deploy
 6. Monitor: 15 minutes
 7. Merge main → develop
+
 ```
 
 ## M.2 Rollback Protocol
@@ -4179,26 +4024,32 @@ HOTFIX DEPLOY (emergency):
 **Rollback is not failure. Rollback is discipline.**
 
 ```
+
 FRONTEND ROLLBACK (Vercel — takes 30 seconds):
+
 1. Go to Vercel dashboard → Deployments
 2. Select previous deployment
 3. Click "Promote to Production"
 4. Deployment is instant
 
 BACKEND ROLLBACK (Railway — takes 2 minutes):
+
 1. Go to Railway dashboard → Deployments
 2. Select previous deployment
 3. Click "Redeploy"
 
 DATABASE ROLLBACK (if migration caused issue):
+
 1. Run: pnpm db:rollback (rolls back last migration)
 2. Warning: only possible if rollback migration exists and no data loss occurred
 3. If data loss: restore from Neon.tech point-in-time recovery (backup before every deployment)
 
 ROLLBACK DECISION CRITERIA:
-  - Error rate spikes >5x baseline: immediate rollback
-  - Any P0 bug affecting >10% of users: immediate rollback
-  - Financial/payment system broken: immediate rollback
+
+- Error rate spikes >5x baseline: immediate rollback
+- Any P0 bug affecting >10% of users: immediate rollback
+- Financial/payment system broken: immediate rollback
+
 ```
 
 ---
@@ -4210,48 +4061,50 @@ ROLLBACK DECISION CRITERIA:
 **Complete 72 hours before public launch:**
 
 ```
+
 INFRASTRUCTURE:
-  □ Production database: backup verified and restorable
-  □ Redis: memory limits configured, eviction policy set
-  □ CDN: assets cached correctly (verify Cache-Control headers)
-  □ Custom domain: DNS records propagated globally
-  □ SSL certificate: valid and auto-renewing
-  □ Environment variables: all production values set (no dev/test values)
-  □ Stripe: live mode activated, webhook endpoint registered with live secret
-  □ Email: DMARC/SPF/DKIM records verified via MXToolbox
-  □ Monitoring: Sentry DSN configured for production
-  □ Error alerting: email alert configured for error spike
+□ Production database: backup verified and restorable
+□ Redis: memory limits configured, eviction policy set
+□ CDN: assets cached correctly (verify Cache-Control headers)
+□ Custom domain: DNS records propagated globally
+□ SSL certificate: valid and auto-renewing
+□ Environment variables: all production values set (no dev/test values)
+□ Stripe: live mode activated, webhook endpoint registered with live secret
+□ Email: DMARC/SPF/DKIM records verified via MXToolbox
+□ Monitoring: Sentry DSN configured for production
+□ Error alerting: email alert configured for error spike
 
 SECURITY:
-  □ npm audit: no high or critical vulnerabilities
-  □ All API endpoints tested with unauthorized requests (expect 401/403)
-  □ Stripe webhook signature verified in production
-  □ No debug logging enabled in production
-  □ Rate limiting verified at production levels
+□ npm audit: no high or critical vulnerabilities
+□ All API endpoints tested with unauthorized requests (expect 401/403)
+□ Stripe webhook signature verified in production
+□ No debug logging enabled in production
+□ Rate limiting verified at production levels
 
 FUNCTIONALITY:
-  □ Magic link: sends and works in production email client
-  □ Google OAuth: works in production (verify redirect URI registered)
-  □ GitHub OAuth: works in production
-  □ Article publish: full flow tested in production
-  □ Stripe checkout: real payment made in test (using Stripe test card in live mode)
-  □ File upload: image uploads to Cloudinary in production
-  □ Search: articles indexed and searchable
-  □ Newsletter: sends from production email address
-  □ CSV export: downloads correctly
+□ Magic link: sends and works in production email client
+□ Google OAuth: works in production (verify redirect URI registered)
+□ GitHub OAuth: works in production
+□ Article publish: full flow tested in production
+□ Stripe checkout: real payment made in test (using Stripe test card in live mode)
+□ File upload: image uploads to Cloudinary in production
+□ Search: articles indexed and searchable
+□ Newsletter: sends from production email address
+□ CSV export: downloads correctly
 
 LEGAL & COMPLIANCE:
-  □ Privacy Policy: published at /privacy
-  □ Terms of Service: published at /terms
-  □ Cookie Policy: if using analytics cookies
-  □ GDPR: data deletion process documented and tested
-  □ Stripe: terms of service accepted in Dashboard
+□ Privacy Policy: published at /privacy
+□ Terms of Service: published at /terms
+□ Cookie Policy: if using analytics cookies
+□ GDPR: data deletion process documented and tested
+□ Stripe: terms of service accepted in Dashboard
 
 CONTENT:
-  □ Landing page: compelling, typo-free, load-tested
-  □ Onboarding: smooth flow verified by non-team person
-  □ Help documentation: basic FAQ published
-  □ Email templates: all look correct in Gmail, Outlook, Apple Mail
+□ Landing page: compelling, typo-free, load-tested
+□ Onboarding: smooth flow verified by non-team person
+□ Help documentation: basic FAQ published
+□ Email templates: all look correct in Gmail, Outlook, Apple Mail
+
 ```
 
 ## N.2 Version Control Throughout Launch
@@ -4259,10 +4112,12 @@ CONTENT:
 **Version milestones:**
 
 ```
+
 v0.1.0 — First beta invite sent (Week 51)
 v0.9.0 — Public launch (Week 52)
 v1.0.0 — First 1,000 users milestone
 v1.x.x — Ongoing feature releases (weekly cadence post-launch)
+
 ```
 
 ---
@@ -4270,6 +4125,7 @@ v1.x.x — Ongoing feature releases (weekly cadence post-launch)
 # APPENDIX A — COMMIT MESSAGE QUICK REFERENCE
 
 ```
+
 feat(editor): add LaTeX math block extension to article editor
 fix(auth): resolve refresh token not rotating on mobile Safari
 perf(feed): reduce feed query time by adding composite index
@@ -4278,6 +4134,7 @@ test(earnings): add unit tests for quality pool calculation edge cases
 docs(api): document subscriber export endpoint response schema
 chore(deps): update Anthropic SDK to version 0.24.0
 ci(deploy): add database migration step to staging deploy workflow
+
 ```
 
 ---
@@ -4285,16 +4142,18 @@ ci(deploy): add database migration step to staging deploy workflow
 # APPENDIX B — BRANCH QUICK REFERENCE
 
 ```
-PERMANENT:     main, develop, staging
-FEATURE:       feat/[issue#]-[imperative-verb]-[noun]
-BUG FIX:       fix/[issue#]-[imperative-verb]-[noun]
-HOTFIX:        hotfix/[issue#]-[imperative-verb]-[noun]
-RELEASE:       release/v[major].[minor].[patch]
-CHORE:         chore/[imperative-verb]-[noun]
+
+PERMANENT: main, develop, staging
+FEATURE: feat/[issue#]-[imperative-verb]-[noun]
+BUG FIX: fix/[issue#]-[imperative-verb]-[noun]
+HOTFIX: hotfix/[issue#]-[imperative-verb]-[noun]
+RELEASE: release/v[major].[minor].[patch]
+CHORE: chore/[imperative-verb]-[noun]
 DOCUMENTATION: docs/[imperative-verb]-[noun]
-REFACTOR:      refactor/[issue#]-[imperative-verb]-[noun]
-PERFORMANCE:   perf/[issue#]-[imperative-verb]-[noun]
-TEST:          test/[issue#]-[imperative-verb]-[noun]
+REFACTOR: refactor/[issue#]-[imperative-verb]-[noun]
+PERFORMANCE: perf/[issue#]-[imperative-verb]-[noun]
+TEST: test/[issue#]-[imperative-verb]-[noun]
+
 ```
 
 ---
@@ -4302,25 +4161,27 @@ TEST:          test/[issue#]-[imperative-verb]-[noun]
 # APPENDIX C — WEEKLY SPRINT RHYTHM
 
 ```
+
 MONDAY:
-  09:00 — Sprint planning (30 min max)
-           Review previous week metrics
-           Confirm this week's tasks and owners
-           Identify blockers proactively
+09:00 — Sprint planning (30 min max)
+Review previous week metrics
+Confirm this week's tasks and owners
+Identify blockers proactively
 
 TUESDAY–THURSDAY:
-  Async work. Stand-up if needed (blockers only).
-  PRs open during this period.
-  Reviews responded to within 4 hours.
+Async work. Stand-up if needed (blockers only).
+PRs open during this period.
+Reviews responded to within 4 hours.
 
 FRIDAY:
-  14:00 — Sprint close (60 min)
-           Demo: each dev shows what shipped (live demo, not slides)
-           Metrics: did we hit the week's acceptance criteria?
-           Retro: one thing that worked, one thing to improve
-           Next week: confirm tasks for Monday planning
-  17:00 — Weekly release cut (if features are ready)
-           Create release branch, open PR
+14:00 — Sprint close (60 min)
+Demo: each dev shows what shipped (live demo, not slides)
+Metrics: did we hit the week's acceptance criteria?
+Retro: one thing that worked, one thing to improve
+Next week: confirm tasks for Monday planning
+17:00 — Weekly release cut (if features are ready)
+Create release branch, open PR
+
 ```
 
 ---
@@ -4328,27 +4189,32 @@ FRIDAY:
 # APPENDIX D — ESCALATION FRAMEWORK
 
 ```
+
 PRODUCTION IS DOWN (all users affected):
-  1. Anyone can declare P0 incident
-  2. All devs drop current work immediately
-  3. Dev 1 leads incident response
-  4. Dev 2 + Dev 3: support and communicate
-  5. Target: restored within 1 hour
-  6. Post-incident review within 24 hours (blameless)
+
+1. Anyone can declare P0 incident
+2. All devs drop current work immediately
+3. Dev 1 leads incident response
+4. Dev 2 + Dev 3: support and communicate
+5. Target: restored within 1 hour
+6. Post-incident review within 24 hours (blameless)
 
 SECURITY INCIDENT:
-  1. Do NOT commit any security-related information to public channels
-  2. Dev 1 leads response
-  3. Assess scope (what was exposed, for how long)
-  4. Remediate before announcing
-  5. Notify affected users per legal requirement
+
+1. Do NOT commit any security-related information to public channels
+2. Dev 1 leads response
+3. Assess scope (what was exposed, for how long)
+4. Remediate before announcing
+5. Notify affected users per legal requirement
 
 DATA LOSS:
-  1. STOP all writes to affected tables immediately
-  2. Assess what was lost and for what time period
-  3. Restore from Neon.tech point-in-time backup
-  4. Verify restored data
-  5. Notify affected users
+
+1. STOP all writes to affected tables immediately
+2. Assess what was lost and for what time period
+3. Restore from Neon.tech point-in-time backup
+4. Verify restored data
+5. Notify affected users
+
 ```
 
 ---
@@ -4359,3 +4225,4 @@ DATA LOSS:
 **Status:** This document supersedes all verbal agreements. Conflicts resolved by updating this document first, then implementing.
 
 _Nothing in VAMI is built without a linked GitHub Issue. Nothing is merged without a passing CI pipeline. Nothing ships to production without at minimum one other developer's review. These are not guidelines — they are the operating system._
+```
