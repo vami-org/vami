@@ -2,7 +2,9 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import env from "./env.js";
+import authRoutes from "../routes/authRoutes.js";
 
 const app = express();
 
@@ -14,8 +16,12 @@ app.use(
   }),
 );
 app.use(morgan(env.NODE_ENV === "production" ? "combined" : "dev"));
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Mount routes
+app.use("/auth", authRoutes);
 
 // Basic health check
 app.get("/health", (req, res) => {
