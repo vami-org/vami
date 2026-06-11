@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --passWithNoTests"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --passWithNoTests",
+    "db:migrate": "node -r dotenv/config ./node_modules/node-pg-migrate/bin/node-pg-migrate up --migrations-dir database/migrations",
+    "db:rollback": "node -r dotenv/config ./node_modules/node-pg-migrate/bin/node-pg-migrate down --migrations-dir database/migrations",
+    "db:seed": "node -r dotenv/config ../../scripts/seed-dev.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "node-pg-migrate": "^8.0.4",
     "nodemon": "^3.1.0",
     "supertest": "^6.3.4"
   }

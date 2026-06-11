@@ -6,8 +6,8 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 
 ## 📊 Summary Dashboard
 
-- **Current Sprint/Week:** Phase 0, Week 2
-- **Overall Completion:** ~25% (27/100+ Core Setup Tasks)
+- **Current Sprint/Week:** Phase 1, Week 4
+- **Overall Completion:** ~40% (47/100+ Core Setup Tasks)
 - **Status Key:**
   - 🟢 **Completed:** Work is done, verified, and merged.
   - 🟡 **In Progress:** Active work is being planned or executed.
@@ -17,7 +17,7 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 
 ## Phase-by-Phase Roadmap
 
-### 🟡 Phase 0: Foundation Setup (Weeks 1–2)
+### 🟢 Phase 0: Foundation Setup (Weeks 1–2)
 
 #### 🟢 Week 1 — Repository, Environment, Toolchain
 
@@ -54,10 +54,10 @@ _Status: Completed_
 
 ---
 
-#### 🟡 Week 2 — CI/CD Pipeline & Design Token Foundation
+#### 🟢 Week 2 — CI/CD Pipeline & Design Token Foundation
 
 **Goal:** CI runs on every PR. Design tokens defined. Staging and production environments created.
-_Status: In Progress (AI Skeletons & Configs Completed, User manual actions remaining)_
+_Status: Completed_
 
 - **Completed Tasks:**
   - [x] Day 8-9 (Dev 1): Write `ci-web.yml` GitHub Actions workflow (lint + test + build jobs)
@@ -67,31 +67,42 @@ _Status: In Progress (AI Skeletons & Configs Completed, User manual actions rema
   - [x] Day 12-13 (Dev 2): Create `apps/web/src/styles/globals.css` with base layout resets
   - [x] Day 12-13 (Dev 2): Create `apps/web/src/styles/typography.css` with font-scale configuration
   - [x] Day 12-13 (Dev 2): Verify tokens load correctly and document token definitions in `docs/design-system/TOKENS.md`
-
-- **Remaining Tasks (User Manual Actions):**
-  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Vercel project linked to GitHub repository
-  - [ ] Day 10-11 (Dev 1 + Dev 3): Configure Vercel staging & production environments
-  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Railway project
-  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Neon.tech databases for staging and production
-  - [ ] Day 10-11 (Dev 1 + Dev 3): Create Upstash Redis databases for staging and production
-  - [ ] Day 10-11 (Dev 1): Write `deploy-staging.yml` deployment workflow
-  - [ ] Day 10-11 (Dev 1): Write `deploy-production.yml` deployment workflow with manual approval gate
-  - [ ] Day 10-11 (Dev 1): Test staging deployment pipeline
+  - [x] Day 10-11 (Dev 1 + Dev 3): Create Vercel project linked to GitHub repository (Manual)
+  - [x] Day 10-11 (Dev 1 + Dev 3): Configure Vercel staging & production environments (Manual)
+  - [x] Day 10-11 (Dev 1 + Dev 3): Create Railway project (Manual)
+  - [x] Day 10-11 (Dev 1 + Dev 3): Create Neon.tech databases for staging and production (Manual)
+  - [x] Day 10-11 (Dev 1 + Dev 3): Create Upstash Redis databases for staging and production (Manual)
+  - [x] Day 10-11 (Dev 1): Write `deploy-staging.yml` deployment workflow
+  - [x] Day 10-11 (Dev 1): Write `deploy-production.yml` deployment workflow with manual approval gate
+  - [x] Day 10-11 (Dev 1): Test staging deployment pipeline
 
 ---
 
-### ⚪ Phase 1: Core Infrastructure (Weeks 3–10)
+### 🟡 Phase 1: Core Infrastructure (Weeks 3–10)
 
-_Status: Remaining_
+_Status: In Progress_
 
-- **Week 3:** Database Schema & Migrations
-- **Week 4:** Authentication System (Backend)
-- **Week 5:** Authentication System (Frontend)
-- **Week 6:** User Profile System & Follows
-- **Week 7:** Atom Component Library (Part 1)
-- **Week 8:** Atom Component Library (Part 2) + Core Molecules
-- **Week 9:** API Infrastructure (Middleware, Error Handling, Routing)
-- **Week 10:** Navigation, Layout, & Application Shell
+#### 🟢 Week 3 — Database Schema & Migrations
+
+**Goal:** Complete database schema exists. Migration system operational. Can create and roll back all tables.
+_Status: Completed_
+
+- **Completed Tasks:**
+  - [x] Day 15 (Dev 1): Install `node-pg-migrate` in `apps/api`
+  - [x] Day 15 (Dev 1): Configure migrations proxy scripts in monorepo packages (`pnpm db:migrate`, `pnpm db:rollback`, `pnpm db:seed`)
+  - [x] Day 16-17 (Dev 1 + Dev 2): Write sequential migrations for all 34 database tables (using pgvector with fallback check)
+  - [x] Day 18 (Dev 3): Set up development seeding script (`scripts/seed-dev.js`) to generate mock records
+  - [x] Day 19 (Dev 1): Verify local Postgres migration up/down database workflows
+  - [x] Day 20-21 (Dev 1): Document monorepo structure, commands, and schema definitions in workspace `README.md`
+
+- **Remaining Tasks:**
+  - [ ] **Week 4:** Authentication System (Backend)
+  - [ ] **Week 5:** Authentication System (Frontend)
+  - [ ] **Week 6:** User Profile System & Follows
+  - [ ] **Week 7:** Atom Component Library (Part 1)
+  - [ ] **Week 8:** Atom Component Library (Part 2) + Core Molecules
+  - [ ] **Week 9:** API Infrastructure (Middleware, Error Handling, Routing)
+  - [ ] **Week 10:** Navigation, Layout, & Application Shell
 
 ---
 
