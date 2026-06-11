@@ -2258,24 +2258,24 @@ test(auth): add authentication flow integration tests
 ```
 
 BACKEND TASKS (Dev 3):
-□ userRepository.js — findByUsername, findById, updateProfile, deleteAccount
-□ followRepository.js — createFollow, deleteFollow, getFollowing, getFollowers
-□ userService.js — profile logic, follow/unfollow business rules
-□ PATCH /v1/users/me — profile update (displayName, bio, avatarUrl, websiteUrl)
-□ GET /v1/users/:username — public profile (+ subscriber count, quality score)
-□ POST /v1/follows/:userId — follow
-□ DELETE /v1/follows/:userId — unfollow
-□ GET /v1/follows/following — who I follow
-□ GET /v1/follows/followers — who follows me
-□ Cloudinary image upload signed URL endpoint: POST /v1/media/upload-url
+[x] userRepository.js — findByUsername, findById, updateProfile, deleteAccount (Completed)
+[x] followRepository.js — createFollow, deleteFollow, getFollowing, getFollowers (Completed)
+[x] userService.js — profile logic, follow/unfollow business rules (Completed)
+[x] PATCH /v1/users/me — profile update (displayName, bio, avatarUrl, websiteUrl) (Completed)
+[x] GET /v1/users/:username — public profile (+ subscriber count, quality score) (Completed)
+[x] POST /v1/follows/:userId — follow (Completed)
+[x] DELETE /v1/follows/:userId — unfollow (Completed)
+[x] GET /v1/follows/following — who I follow (Completed)
+[x] GET /v1/follows/followers — who follows me (Completed)
+[x] Cloudinary image upload signed URL endpoint: POST /v1/media/upload-url (Completed)
 
 FRONTEND TASKS (Dev 2):
-□ Build ProfileHero organism (avatar, name, bio, follow button, subscriber count)
-□ Build writer profile page (WriterProfile template)
-□ Build avatar upload component (using Cloudinary direct upload)
-□ Build profile edit form
-□ Build VamiAvatar atom (all sizes, fallback to initials)
-□ Wire follow/unfollow button with optimistic updates
+[x] Build ProfileHero organism (avatar, name, bio, follow button, subscriber count) (Completed)
+[x] Build writer profile page (WriterProfile template) (Completed)
+[x] Build avatar upload component (using Cloudinary direct upload) (Completed)
+[x] Build profile edit form (Completed)
+[x] Build VamiAvatar atom (all sizes, fallback to initials) (Completed)
+[x] Wire follow/unfollow button with optimistic updates (Completed)
 
 Branch: feat/15-implement-user-profile-and-follow-system
 Commit messages:

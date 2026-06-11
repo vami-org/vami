@@ -6,8 +6,8 @@ This document tracks the execution progress of the VAMI Master Engineering Bluep
 
 ## 📊 Summary Dashboard
 
-- **Current Sprint/Week:** Phase 1, Week 6
-- **Overall Completion:** ~55% (63/110+ Core Setup Tasks)
+- **Current Sprint/Week:** Phase 1, Week 7
+- **Overall Completion:** ~65% (72/110+ Core Setup Tasks)
 - **Status Key:**
   - 🟢 **Completed:** Work is done, verified, and merged.
   - 🟡 **In Progress:** Active work is being planned or executed.
@@ -128,8 +128,25 @@ _Status: Completed_
   - [x] Day 34 (Dev 2): Create Dashboard profile cockpit with manual token refresh triggers
   - [x] Day 35 (Dev 3): Configure routes in App.jsx and write frontend Vitest tests achieving 100% passing results
 
+---
+
+#### 🟢 Week 6 — User Profile System & Follows
+
+**Goal:** User can view and edit their profile. Support public/private profile states, pending/accepted follow approvals, Cloudinary uploads with mock fallbacks, content locks, and Vitest/Jest test suites.
+_Status: Completed_
+
+- **Completed Tasks:**
+  - [x] Day 36 (Dev 1): Create database migration `008_add_user_privacy_and_follow_status`
+  - [x] Day 36 (Dev 1): Install `cloudinary` dependency in `apps/api` and validate env variables
+  - [x] Day 37 (Dev 1): Implement profile query actions in `userRepository.js` and social relationships in `followRepository.js`
+  - [x] Day 38 (Dev 1): Write `userService.js` and `userController.js` for profile edits and follow approval actions
+  - [x] Day 39 (Dev 1): Implement `mediaController.js` supporting local mock uploads and Cloudinary integration
+  - [x] Day 39 (Dev 2): Build reusable `VamiAvatar` and optimistic follow toggle controls in `ProfileHero`
+  - [x] Day 40 (Dev 2): Build custom `AvatarUpload` uploader, settings `ProfileEditForm`, and inbox dashboard `FollowRequestsList`
+  - [x] Day 41 (Dev 2): Create page routes for public profile `/users/:username` with privacy checks, and hook up dashboard settings
+  - [x] Day 42 (Dev 3): Write full backend integration tests (`userRoutes.test.js`, `userService.test.js`) and frontend Vitest component tests (`profile.test.jsx`) achieving clean passes
+
 - **Remaining Tasks:**
-  - [ ] **Week 6:** User Profile System & Follows
   - [ ] **Week 7:** Atom Component Library (Part 1)
   - [ ] **Week 8:** Atom Component Library (Part 2) + Core Molecules
   - [ ] **Week 9:** API Infrastructure (Middleware, Error Handling, Routing)
