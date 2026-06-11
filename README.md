@@ -2,6 +2,16 @@
 
 A custom-designed developer content platform with robust atomic design tokens, serverless caching, database migration tooling, and automated pipelines setup.
 
+## 🔒 Authentication Flow (Week 5 Implementation)
+
+Vami implements a passwordless **Magic Link** authentication and **OAuth** (Google/GitHub) system:
+
+- **Session Tokens**: Access tokens are kept strictly in-memory (Zustand store) to mitigate XSS risks, and rotated using a long-lived, secure HTTP-only cookie refresh session.
+- **Client Routing**: Protected routes are guarded via `<ProtectedRoute>` checking context state and executing silent token-refresh handshakes on startup.
+- **Developer Debugging**:
+  - Visit `/login` to request magic links (check caught emails at MailHog: http://localhost:8025).
+  - Visit `/dev-sandbox` for low-level manual testing of backend endpoints.
+
 ---
 
 ## 📁 Repository Architecture
