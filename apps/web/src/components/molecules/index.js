@@ -5,3 +5,4 @@ export { AlertBanner } from "./AlertBanner";
 export { EmptyState } from "./EmptyState";
 export { ReadTimeDisplay } from "./ReadTimeDisplay";
 export { AuthorByline } from "./AuthorByline";
+export { NavItem } from "./NavItem";

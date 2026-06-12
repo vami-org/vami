@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useTheme } from "../../context/ThemeContext";
 
 export function AuthTemplate({
   children,
   subtitle = "Sign in to your account",
 }) {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  const { activeTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    setTheme(activeTheme === "light" ? "dark" : "light");
   };
 
   return (
@@ -34,7 +28,7 @@ export function AuthTemplate({
           onClick={toggleTheme}
           className="flex h-10 items-center justify-center rounded-md border border-border-strong bg-surface-elevated px-4 font-ui text-xs font-semibold text-ink-800 transition-all hover:bg-ink-050 active:scale-95 cursor-pointer shadow-sm"
         >
-          {theme === "light" ? "Dark" : "Light"} Mode
+          {activeTheme === "light" ? "Dark" : "Light"} Mode
         </button>
       </header>
 

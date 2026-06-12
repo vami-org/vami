@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
-import { AuthTemplate } from "../components/AuthTemplate";
+import { AuthTemplate } from "../components/templates/AuthTemplate";
 import { VamiButton } from "../components/atoms/VamiButton";
 
 export function Login() {

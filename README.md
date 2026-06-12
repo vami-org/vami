@@ -69,6 +69,24 @@ Vami implements a standardized, high-performance API infrastructure under `apps/
 
 ---
 
+## 📱 Application Shell & Navigation (Week 10 Implementation)
+
+Vami implements a responsive application shell, persistent theming, layout templates, and routing setup:
+
+- **System-Aware Theme Management**: Persists theme selections (`light`, `dark`, `system`) inside a global `ThemeContext` and `localStorage`, automatically listening and adapting to OS theme changes via CSS media queries and the `data-theme` variable hierarchy.
+- **Responsive Navigation Controls**:
+  - `TopNavigation` features a custom brand logo SVG mark, search routing box integration, creator write triggers, and user profile menus.
+  - Features smart visibility tracking, hiding the navigation bar when users scroll down and sliding it back in on scroll-up.
+  - `MobileNavDrawer` opens a drawer for navigation links and integrates theme mode selectors.
+- **Layout Templates**: Encapsulates layouts into `PublicPageTemplate`, `AuthenticatedTemplate`, and `ErrorTemplate` wrappers.
+- **Scalable Dynamic Routing**: Routes are defined in a clean, isolated array config `routesConfig.jsx`. Maps routes dynamically, enabling easy updates and scaling to 500+ routes with lazy loading and `<Suspense>` loaders.
+- **Routing Side Effects & Recovery**:
+  - `ScrollRestoration` resets scroll coordinates to `(0, 0)` on path transitions.
+  - `TitleManager` dynamically maps route configurations to window title tags.
+  - `ErrorBoundary` catches unexpected render crashes to present a beautiful, dev-friendly `ServerError` (500) fallback screen.
+
+---
+
 ## 📁 Repository Architecture
 
 This codebase is configured as a `pnpm` workspace monorepo:
